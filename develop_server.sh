@@ -18,7 +18,8 @@ CONFFILE=$BASEDIR/pelicanconf.py
 SRV_PID=$BASEDIR/srv.pid
 PELICAN_PID=$BASEDIR/pelican.pid
 
-function usage(){
+usage()
+{
   echo "usage: $0 (stop) (start) (restart) [port]"
   echo "This starts Pelican in debug and reload mode and then launches"
   echo "an HTTP server to help site development. It doesn't read"
@@ -27,11 +28,11 @@ function usage(){
   exit 3
 }
 
-function alive() {
+alive() {
   kill -0 $1 >/dev/null 2>&1
 }
 
-function shut_down(){
+shut_down(){
   PID=$(cat $SRV_PID)
   if [[ $? -eq 0 ]]; then
     if alive $PID; then
@@ -59,7 +60,7 @@ function shut_down(){
   fi
 }
 
-function start_up(){
+start_up(){
   local port=$1
   echo "Starting up Pelican and HTTP server"
   shift
@@ -85,7 +86,9 @@ function start_up(){
 ###
 #  MAIN
 ###
-[[ ($# -eq 0) || ($# -gt 2) ]] && usage
+if [ $# -eq 0  -o  $# -gt 2 ] ; then
+	usage
+	fi
 port=''
 [[ $# -eq 2 ]] && port=$2
 
