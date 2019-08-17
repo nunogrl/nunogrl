@@ -88,7 +88,7 @@ on my laptop:
       Least significant byte first in each pixel.
       True colour: max red 255 green 255 blue 255, shift red 16 green 8     blue 0
     
-![Alt white screen]({filename}/images/RaspberryTFTGPIO.jpg)
+![Alt white screen]({static}/images/RaspberryTFTGPIO.jpg)
 
 
 # References:

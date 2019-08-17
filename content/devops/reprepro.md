@@ -11,4 +11,4 @@ Summary: Build and provision a debian repository
 
 In November 2017, a gunman entered a church in Sutherland Springs in Texas, where he killed 26 people and wounded 20 others. He escaped in his car, with police and residents in hot pursuit, before losing control of [...]
 
-![Alt white screen]({filename}/images/RaspberryTFTGPIO.jpg)
+![Alt white screen]({static}/images/RaspberryTFTGPIO.jpg)
