@@ -59,7 +59,7 @@ LINKS = (('My Shaarli', 'http://bookmarks.barbearclassico/'))
 
 DEFAULT_PAGINATION = 10
 
-THEME = "themes/clean-blog"
+THEME = "themes/pelican-clean-blog"
 # THEME = "themes/bricks"
 # THEME = "themes/blue-penguin"
 
