@@ -1,10 +1,5 @@
-Title: About
-Date: 2019-08-17 19:02
-Category: About
-Tags: About
-Slug: about
-Authors: Nuno Leitao
-Summary: about
+Title: about
+url:
 save_as: about.html
 
 
