@@ -1,10 +1,10 @@
 Title: Raspberry Touchscreen 3.5 Inc
 Date: 2018-09-23 15:20
-Category: Interests
+Category: personal
 Tags: Technology
 Slug: rpi-tft-touchscreen
 Authors: Nuno Leitao
-Summary: frustration
+Summary: Raspberry pi - broken touchscreen
 
 # Raspberry pi
 
