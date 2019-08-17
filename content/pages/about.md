@@ -5,9 +5,6 @@ Tags: About
 Slug: about
 Authors: Nuno Leitao
 Summary: about
-
-
-url:
 save_as: about.html
 
 

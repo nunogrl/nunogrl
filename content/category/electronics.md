@@ -1,17 +1,14 @@
 Title: Electronics
 Date: 2019-08-17 19:02
-Category: electronics
+Category: about
 Tags: electronics
 Slug: electronics
 Authors: Nuno Leitao
 Summary: electronics
-
-
-url:
 save_as: electronics.html
 
 
-# electronics 
+# blog 
 
 This is my personal blog.
 
