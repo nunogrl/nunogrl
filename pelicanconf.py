@@ -31,9 +31,12 @@ DISPLAY_PAGES_ON_MENU = False
 
 MENUITEMS = (
     ('About', '/pages/about.html'),
-    ('Blog', '/category/blog.html'),
-    ('Email', 'http://www.google.com/recaptcha/mailhide/d?...'),
-    ('Vita', '/pdfs/HouserCV.pdf')
+    ('Devops', '/category/devops.html'),
+    ('Electronics', '/category/electronics.html')
+    # ('Music', '/category/music.html'),
+    # ('Photo', '/category/photo.html')
+    # ('Electronics', 'http://www.google.com/recaptcha/mailhide/d?...'),
+    # ('Vita', '/pdfs/HouserCV.pdf')
 )
 
 # Feed generation is usually not desired when developing
