@@ -6,7 +6,7 @@ AUTHOR = u'Nuno Leitao'
 SITENAME = u'nunogrl.com'
 SITEURL = ''
 PATH = 'content'
-DEFAULT_CATEGORY = 'personal'
+# DEFAULT_CATEGORY = 'personal'
 
 ARTICLE_SAVE_AS = '{date:%Y}/{slug}.html'
 ARTICLE_URL = '{date:%Y}/{slug}.html'
@@ -31,10 +31,23 @@ USE_FOLDER_AS_CATEGORY = False
 
 
 DISPLAY_CATEGORIES_ON_MENU = False
+# DISPLAY_PAGES_ON_MENU = False
+
 DISPLAY_PAGES_ON_MENU = False
+PAGE_PATHS = ['pages']
+PAGE_URL = 'pages/{slug}.html'
+PAGE_LANG_URL = 'pages/{slug}-{lang}.html'
+PAGE_SAVE_AS = 'pages/{slug}.html'
+PAGE_LANG_SAVE_AS = 'pages/{slug}-{lang}.html'
+
+# PATH = 'content'
+# ARTICLE_PATHS = ['blog']
+# ARTICLE_SAVE_AS = '{date:%Y}/{slug}.html'
+# ARTICLE_URL = '{date:%Y}/{slug}.html'
+# SHOW_FULL_ARTICLE = True
 
 MENUITEMS = (
-    ('About', '/about.html'),
+    ('About', '/pages/about.html'),
     ('Devops', '/category/devops.html'),
     ('Electronics', '/category/electronics.html')
     # ('Music', '/category/music.html'),
