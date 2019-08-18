@@ -64,11 +64,12 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('My Shaarli', 'http://bookmarks.barbearclassico/'))
+LINKS = (('My Shaarli', 'http://bookmarks.barbearclassico/'),
+          ('Another social link', '#'),)
 
 # Social widget
-# SOCIAL = (('You can add links in your config file', '#'),
-#          ('Another social link', '#'),)
+SOCIAL = (('You can add links in your config file', '#'),
+          ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
 
