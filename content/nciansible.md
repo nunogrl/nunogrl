@@ -144,11 +144,7 @@ So after this I must keep in mind that:
 - hosts file should be also kept on the repository.
 
 
-
-
-
 # References:
-
 
 - [nci-ansible-ui on Github](https://github.com/node-ci/nci-ansible-ui)
 - []nci-ansible-ui-quick-setup](https://github.com/node-ci/nci-ansible-ui-quick-setup)
