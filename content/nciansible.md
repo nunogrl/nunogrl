@@ -147,4 +147,4 @@ So after this I must keep in mind that:
 # References:
 
 - [nci-ansible-ui on Github](https://github.com/node-ci/nci-ansible-ui)
-- []nci-ansible-ui-quick-setup](https://github.com/node-ci/nci-ansible-ui-quick-setup)
+- [nci-ansible-ui-quick-setup](https://github.com/node-ci/nci-ansible-ui-quick-setup)
