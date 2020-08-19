@@ -11,7 +11,7 @@ Summary: Create a simple panel to keep tools
 
 Painel de Ferramenta  
 
-[![](http://2.bp.blogspot.com/-1XGmNiXO0r0/VM9hk30NW-I/AAAAAAAAIL4/ysnk63pv-EQ/s1600/Painel_final.jpg)](http://2.bp.blogspot.com/-1XGmNiXO0r0/VM9hk30NW-I/AAAAAAAAIL4/ysnk63pv-EQ/s1600/Painel_final.jpg)
+[![image01](http://2.bp.blogspot.com/-1XGmNiXO0r0/VM9hk30NW-I/AAAAAAAAIL4/ysnk63pv-EQ/s1600/Painel_final.jpg)](http://2.bp.blogspot.com/-1XGmNiXO0r0/VM9hk30NW-I/AAAAAAAAIL4/ysnk63pv-EQ/s1600/Painel_final.jpg)
 
   
 
@@ -45,7 +45,7 @@ material:
 
   
 
-[![](http://1.bp.blogspot.com/-43KlZIuLbCs/VM9g0xHCJyI/AAAAAAAAILs/hCnr8G4XhmY/s1600/Painelmaterial.jpg)](http://1.bp.blogspot.com/-43KlZIuLbCs/VM9g0xHCJyI/AAAAAAAAILs/hCnr8G4XhmY/s1600/Painelmaterial.jpg)
+[![image02](http://1.bp.blogspot.com/-43KlZIuLbCs/VM9g0xHCJyI/AAAAAAAAILs/hCnr8G4XhmY/s1600/Painelmaterial.jpg)](http://1.bp.blogspot.com/-43KlZIuLbCs/VM9g0xHCJyI/AAAAAAAAILs/hCnr8G4XhmY/s1600/Painelmaterial.jpg)
 
   
 
@@ -53,7 +53,7 @@ material:
 
  Coloquei os suportes para estantes para segurar o painel, fiz os buracos e aparafusei tudo.  
 
-[![](http://2.bp.blogspot.com/-fEZu2hf-eO4/VM9hkkXj-oI/AAAAAAAAIL0/rFq-NCQywbc/s1600/Painel_prancha.jpg)](http://2.bp.blogspot.com/-fEZu2hf-eO4/VM9hkkXj-oI/AAAAAAAAIL0/rFq-NCQywbc/s1600/Painel_prancha.jpg)
+[![image03](http://2.bp.blogspot.com/-fEZu2hf-eO4/VM9hkkXj-oI/AAAAAAAAIL0/rFq-NCQywbc/s1600/Painel_prancha.jpg)](http://2.bp.blogspot.com/-fEZu2hf-eO4/VM9hkkXj-oI/AAAAAAAAIL0/rFq-NCQywbc/s1600/Painel_prancha.jpg)
 
   
 
@@ -69,7 +69,7 @@ Prova de conceito com martelo
 
   
 
-[![](http://4.bp.blogspot.com/-atzD7syN4hw/VM9j4OWPxNI/AAAAAAAAIMQ/-QKzzIOTf4g/s1600/painel_martelo.jpg)](http://4.bp.blogspot.com/-atzD7syN4hw/VM9j4OWPxNI/AAAAAAAAIMQ/-QKzzIOTf4g/s1600/painel_martelo.jpg)
+[![image04](http://4.bp.blogspot.com/-atzD7syN4hw/VM9j4OWPxNI/AAAAAAAAIMQ/-QKzzIOTf4g/s1600/painel_martelo.jpg)](http://4.bp.blogspot.com/-atzD7syN4hw/VM9j4OWPxNI/AAAAAAAAIMQ/-QKzzIOTf4g/s1600/painel_martelo.jpg)
 
   
 
@@ -77,7 +77,7 @@ Distribuição de mais algumas ferramentas:
 
   
 
-[![](http://1.bp.blogspot.com/-LPsowsmtyQo/VM9j4Bd3UII/AAAAAAAAIMI/nfl7jEay9ro/s1600/painel_alicate.jpg)](http://1.bp.blogspot.com/-LPsowsmtyQo/VM9j4Bd3UII/AAAAAAAAIMI/nfl7jEay9ro/s1600/painel_alicate.jpg)
+[![image05](http://1.bp.blogspot.com/-LPsowsmtyQo/VM9j4Bd3UII/AAAAAAAAIMI/nfl7jEay9ro/s1600/painel_alicate.jpg)](http://1.bp.blogspot.com/-LPsowsmtyQo/VM9j4Bd3UII/AAAAAAAAIMI/nfl7jEay9ro/s1600/painel_alicate.jpg)
 
   
 
@@ -85,13 +85,13 @@ Vista geral a meio dos trabalhos:
 
   
 
-[![](http://2.bp.blogspot.com/-wwESkeLDVc0/VM9j4JspimI/AAAAAAAAIMM/kBTpHbKytt0/s1600/painel_montagem.jpg)](http://2.bp.blogspot.com/-wwESkeLDVc0/VM9j4JspimI/AAAAAAAAIMM/kBTpHbKytt0/s1600/painel_montagem.jpg)
+[![image06](http://2.bp.blogspot.com/-wwESkeLDVc0/VM9j4JspimI/AAAAAAAAIMM/kBTpHbKytt0/s1600/painel_montagem.jpg)](http://2.bp.blogspot.com/-wwESkeLDVc0/VM9j4JspimI/AAAAAAAAIMM/kBTpHbKytt0/s1600/painel_montagem.jpg)
 
   
 
 Antes da retirada dos excedentes de fita:
 
-[![](http://1.bp.blogspot.com/-w7amE2eqMNM/VM9nMFOmd0I/AAAAAAAAIMk/tG1T86GHdXE/s1600/painel_comFita.jpg)](http://1.bp.blogspot.com/-w7amE2eqMNM/VM9nMFOmd0I/AAAAAAAAIMk/tG1T86GHdXE/s1600/painel_comFita.jpg)
+[![image07](http://1.bp.blogspot.com/-w7amE2eqMNM/VM9nMFOmd0I/AAAAAAAAIMk/tG1T86GHdXE/s1600/painel_comFita.jpg)](http://1.bp.blogspot.com/-w7amE2eqMNM/VM9nMFOmd0I/AAAAAAAAIMk/tG1T86GHdXE/s1600/painel_comFita.jpg)
 
   
 
@@ -99,7 +99,7 @@ Antes da retirada dos excedentes de fita:
 
 Resultado final:
 
-[![](http://2.bp.blogspot.com/-1XGmNiXO0r0/VM9hk30NW-I/AAAAAAAAIL4/ysnk63pv-EQ/s1600/Painel_final.jpg)](http://2.bp.blogspot.com/-1XGmNiXO0r0/VM9hk30NW-I/AAAAAAAAIL4/ysnk63pv-EQ/s1600/Painel_final.jpg)
+[![image08](http://2.bp.blogspot.com/-1XGmNiXO0r0/VM9hk30NW-I/AAAAAAAAIL4/ysnk63pv-EQ/s1600/Painel_final.jpg)](http://2.bp.blogspot.com/-1XGmNiXO0r0/VM9hk30NW-I/AAAAAAAAIL4/ysnk63pv-EQ/s1600/Painel_final.jpg)
 
   
 
