@@ -25,13 +25,13 @@ Apesar de ter parafusos, estes não têm outro fim que não seja estético - tap
 Para conseguir aceder às malditas molas, usei vários métodos, todos sem sucesso - os apetrechos ou eram muito finos ou entravam à justa, que tornava impossível fazer a coisa. Tive sucesso usando um cabide de arame, que tive de destruir para o efeito.  
   
 
-[![](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_final01.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_final01.jpg)
+[![image01](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_final01.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_final01.jpg)
 
   
   
 Passo a apresentar o material que utilizei:  
 
-[![](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_material.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_material.jpg)
+[![image02](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_material.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_material.jpg)
 
   
 
@@ -51,7 +51,7 @@ Com a chave de fendas pequena retirei a tampa que protege a placa de circuito im
 
 Procurei fazer um buraco, não por cima dos conectores, mas um pouco mais afastado, para que o cabo pudesse esticar, prevenindo curto circuitos.
 
-[![](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_tampa.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_tampa.jpg)
+[![image03](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_tampa.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_tampa.jpg)
 
   
 
@@ -59,7 +59,7 @@ Ora os pinos são estes dois, do que apurei noutros sites, o A é o canal esquer
 
 Falta o sinal terra, ainda não resolvi essa questão no momento em que escrevo isto, mas pretendo fazer uma solução mais elegante do que as que já encontrei.
 
-[![](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_conectoresAlvo.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_conectoresAlvo.jpg)
+[![image04](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_conectoresAlvo.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_conectoresAlvo.jpg)
 
   
 
@@ -75,7 +75,7 @@ A receita que apresento consiste em primeiramente, mergulhar os conectores na re
 
   
 
-[![](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_estanharFio1.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_estanharFio1.jpg)
+[![image05](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_estanharFio1.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_estanharFio1.jpg)
 
   
 
@@ -84,25 +84,25 @@ A resina serve somente para baixar o ponto de fusão da solda. Pessoalmente dou 
 A técnica para estanhar o fio, baseia-se na técnica de capilaridade. Juntando o ferro e a solda ao fio encharcado em resina, a resina irá evaporar e a solda irá ocupar o seu lugar.  
   
 
-[![](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_estanharFio2.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_estanharFio2.jpg)
+[![image06](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_estanharFio2.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_estanharFio2.jpg)
 
   
 Seguidamente corta-se as pontas para a dimensão que melhor se adequa.  
   
 
-[![](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_estanharFio3.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_estanharFio3.jpg)
+[![image07](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_estanharFio3.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_estanharFio3.jpg)
 
   
 
 Mergulha-se a solda na resina tal como se fez com o fio, e estanha-se os conectores
 
-[![](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_estanharConectores.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_estanharConectores.jpg)
+[![image08](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_estanharConectores.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_estanharConectores.jpg)
 
   
 
 Agora o processo de soldadura é muito mais simples. Basta encostar os dois elementos e encostar o ferro ligeiramente.
 
-[![](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_soldar.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_soldar.jpg)
+[![image09](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_soldar.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_soldar.jpg)
 
   
 
@@ -110,14 +110,14 @@ Agora o processo de soldadura é muito mais simples. Basta encostar os dois elem
 
 Devidamente validada a soldadura com o multímetro,agora é só fechar tudo. Repare-se o fio devidamente entalado, e o selo de garantia quebrado.  
 
-[![](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_fechado.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_fechado.jpg)
+[![image10](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_fechado.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_fechado.jpg)
 
   
 Uma vez fechado, quis dar uma vista de olhos melhor ao sistema de fecho do rádio.  
 
-[![](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_retirar1.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_retirar1.jpg)
+[![image11](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_retirar1.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_retirar1.jpg)
 
-[![](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_retirar2.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_retirar2.jpg)
+[![image12](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_retirar2.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_retirar2.jpg)
 
   
 
@@ -130,7 +130,7 @@ Falta
 
   
 
-[![](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_ferro.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_ferro.jpg)
+[![image13](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_ferro.jpg)](http://i935.photobucket.com/albums/ad194/nunogrl/radioaux/raux_ferro.jpg)
 
   
 Resultados:  
@@ -138,7 +138,7 @@ O rádio funciona perfeitamente, contudo a ligação externa tem demasiado ruíd
 Claro que não pude utilizar o ponto de massa que tinha escolhido, pois está demasiado afastado e perdia o propósito da blindagem.  
   
 
-[![](http://4.bp.blogspot.com/-PrsmtXYyOzo/Uvi656DNU9I/AAAAAAAABc0/Zj6-l2e61h8/s1600/raux_fix01.jpg)](http://4.bp.blogspot.com/-PrsmtXYyOzo/Uvi656DNU9I/AAAAAAAABc0/Zj6-l2e61h8/s1600/raux_fix01.jpg)
+[![image14](http://4.bp.blogspot.com/-PrsmtXYyOzo/Uvi656DNU9I/AAAAAAAABc0/Zj6-l2e61h8/s1600/raux_fix01.jpg)](http://4.bp.blogspot.com/-PrsmtXYyOzo/Uvi656DNU9I/AAAAAAAABc0/Zj6-l2e61h8/s1600/raux_fix01.jpg)
 
   
 
@@ -148,19 +148,19 @@ A seta amarela indica onde estava o a massa soldada, e onde está soldada actual
 
   
 
-[![](http://2.bp.blogspot.com/-3ugc3rTshZY/Uvi6_cxwPyI/AAAAAAAABc8/uC_fPRFbShQ/s1600/raux_fix02.jpg)](http://2.bp.blogspot.com/-3ugc3rTshZY/Uvi6_cxwPyI/AAAAAAAABc8/uC_fPRFbShQ/s1600/raux_fix02.jpg)
+[![image15](http://2.bp.blogspot.com/-3ugc3rTshZY/Uvi6_cxwPyI/AAAAAAAABc8/uC_fPRFbShQ/s1600/raux_fix02.jpg)](http://2.bp.blogspot.com/-3ugc3rTshZY/Uvi6_cxwPyI/AAAAAAAABc8/uC_fPRFbShQ/s1600/raux_fix02.jpg)
 
   
 Caixa do rádio fechada. Agora com o cabo blindado.  
   
 
-[![](http://3.bp.blogspot.com/-BDa-_xiRdsQ/Uvi6_TQEhkI/AAAAAAAABdA/xpSePHzij4Q/s1600/raux_fix03.jpg)](http://3.bp.blogspot.com/-BDa-_xiRdsQ/Uvi6_TQEhkI/AAAAAAAABdA/xpSePHzij4Q/s1600/raux_fix03.jpg)
+[![image16](http://3.bp.blogspot.com/-BDa-_xiRdsQ/Uvi6_TQEhkI/AAAAAAAABdA/xpSePHzij4Q/s1600/raux_fix03.jpg)](http://3.bp.blogspot.com/-BDa-_xiRdsQ/Uvi6_TQEhkI/AAAAAAAABdA/xpSePHzij4Q/s1600/raux_fix03.jpg)
 
   
 Rádio colocado no sítio, colocando os parafusos estéticos.  
   
 
-[![](http://3.bp.blogspot.com/--51aWaSgbt8/Uvi6_bBP81I/AAAAAAAABdE/SpXKhf7HP0Y/s1600/raux_fix04.jpg)](http://3.bp.blogspot.com/--51aWaSgbt8/Uvi6_bBP81I/AAAAAAAABdE/SpXKhf7HP0Y/s1600/raux_fix04.jpg)
+[![image17](http://3.bp.blogspot.com/--51aWaSgbt8/Uvi6_bBP81I/AAAAAAAABdE/SpXKhf7HP0Y/s1600/raux_fix04.jpg)](http://3.bp.blogspot.com/--51aWaSgbt8/Uvi6_bBP81I/AAAAAAAABdE/SpXKhf7HP0Y/s1600/raux_fix04.jpg)
 
   
 E em funcionamento! :D
