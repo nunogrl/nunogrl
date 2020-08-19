@@ -11,7 +11,7 @@ Status: draft
 
 This is my insight of Sceptre from my experience so far.
 
-![Red buttons are scary]({static}/images/bigredbutton.gif)
+![Red buttons are scary]({static}/images/redbutton.png)
 
 I've started working with Sceptre in 2017, as the organization I was working
 were using it for build their infrastructure, and using hef to maintain it.
