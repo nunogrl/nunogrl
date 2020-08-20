@@ -1,17 +1,17 @@
-Title: GPG practices
-Date: 2020-08-18 08:08
-Modified: 2019-08-19 20:08
-Category: DevOps
-Tags: gpg, devices, security, identity
-Slug: gpg-practices
-Authors: Nuno Leitao
-Summary: Handling GPG - entities and devices
 
+*************
+GPG practices
+*************
 
+:Title: GPG practices
+:Date: 2020-08-18 08:08
+:Modified: 2019-08-19 20:08
+:Category: DevOps
+:Tags: gpg, devices, security, identity
+:Slug: gpg-practices
+:Authors: Nuno Leitao
+:Summary: Handling GPG - entities and devices
 
-*********
-GPG Intro
-*********
 
 I'm working with gpg for a few years now, and although I feel confortable
 with the features of signing and encryption, is also true that I don't
