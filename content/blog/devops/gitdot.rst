@@ -1,26 +1,26 @@
 
-******************************
 Git setup
-******************************
+#########
 
-:Title: Git home tools
-:Date: 2020-08-31
-:Category: devops
-:Tags: Technology 
-:Slug: git-config
-:Authors: Nuno Leitao
-:Summary: multi setup for git
+:date:     2020-08-31 10:00
+:category: devops
+:tags:     Technology
+:slug:     git-config
+:authors:  Nuno Leitao
+:summary:  multi setup for git
 
+
+How to save time with gitconfig
+*******************************
 
 Here I share the content of my gitconfig
 
-
-.. code-block::
+.. code-block:: INI
 
     [user]
         name = Nuno Leitao
-    	email = nuno.leitao@myoptiquegroup.com
-     	signingkey = A528ACE22DF6A908
+        email = example@example.com
+        signingkey = 123456789ABCDEFG
 
     [commit]
         gpgsign = true
@@ -32,12 +32,18 @@ Here I share the content of my gitconfig
     	diffc =	diff --color-words=.
     	meld = difftool --tool=meld -y
     	meldd = difftool --dir-diff --tool=meld
-    	# meldbase = !git meld $(git merge-base origin/master HEAD)
-    	# review = !git fetch $1 $2 && git checkout FETCH_HEAD && git meldbase && true
+        meldbase = !git meld $(git merge-base origin/master HEAD)
+        review = !git fetch $1 $2 && git checkout FETCH_HEAD && git meldbase && true
 
     [core]
     	editor = vim
     
+
+
+Multiple git configurations
+***************************
+
+Having multiple git accounts, for instance to differenciate personal mail from work mail.
 
 Since git 2.13, it is possible to solve this using newly introduced Conditional includes.
 
@@ -60,8 +66,6 @@ Work specific config ~/work/.gitconfig
 
     [user]
         email = john.doe@company.tld
-
-
 
 
 References
