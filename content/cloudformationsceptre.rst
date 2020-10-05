@@ -1,18 +1,29 @@
-Title: Sceptre - say no to big red buttons
-Date: 2018-09-23 15:20
-Category: devops
-Tags: Technology
-Slug: sceptre-say-no-to-big-red-buttons
-Authors: Nuno Leitao
-Summary: Deploying in a safe way
-Status: draft
+Sceptre - cloudformation deployment
+###################################
 
-# Sceptre by Cloudreach
+:Title: Sceptre - cloudformation deployment
+:Date: 2018-09-23 15:20
+:Category: devops
+:Tags: Technology
+:Slug: sceptre-say-no-to-big-red-buttons-rst
+:Authors: Nuno Leitao
+:Summary: Deploying in a safe way
+:Status: draft
+
+Sceptre by Cloudreach
+*********************
 
 This is my insight of Sceptre from my experience so far.
 
-![Red buttons are scary]({static}/images/redbutton.png)
+.. image:: {static}/images/redbutton.png
+  :alt: Alternative text2
 
+   
+   
+.. |Substitution Name| image:: {static}/images/redbutton.png
+  :width: 400
+  :alt: Alternative text
+  
 I've started working with Sceptre in 2017, as the organization I was working
 were using it for build their infrastructure, and using hef to maintain it.
 
