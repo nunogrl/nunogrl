@@ -1,26 +1,32 @@
-Title: Debian Repository Mirror
-Date: 2007-03-06 08:08
-Modified: 2019-08-12 08:08
-Category: DevOps
-Tags: debian repository mirror
-Slug: debian-mirror-repository
-Authors: Nuno Leitao
-Summary: Mirror an existing repository using reprepro
+Debian repository mirror
+########################
 
-
-# Debian repository mirror
-
+:Title: Debian Repository Mirror
+:Date: 2007-03-06 08:08
+:Category: DevOps
+:Tags: debian repository mirror
+:Slug: debian-mirror-repository
+:Authors: Nuno Leitao
+:Summary: Mirror an existing repository using reprepro
+:Status: draft
 
 I adquired a few months ago a external hard drive.
-Recently I found usefull to create a repository of the latest stable debian distribution. It might be extremely usefull, if you usually don't have a fast internet connection and have some machines to keep up to date
+Recently I found usefull to create a repository of the latest stable debian
+distribution.
+It might be extremely usefull, if you usually don't have a fast internet 
+connection and have some machines to keep up to date
 
-## Make the partitions
+Make the partitions
+*******************
 
-I had made mine recently..Inicially the hard drive have been formated in a big 300Gb NTFS partition.
+I had made mine recently..Inicially the hard drive have been formated in 
+a big 300Gb NTFS partition.
 Cool, apart the fact I cannot write on it using Linux.
 
-So in order to keep portability I made more partitions in FAT32, the disk now, looks like this:
+So in order to keep portability I made more partitions in FAT32, the disk 
+now, looks like this:
 
+.. code-block:: TXT
 
     ~# fdisk -l /dev/sda
     
@@ -28,20 +34,23 @@ So in order to keep portability I made more partitions in FAT32, the disk now, l
     255 heads, 63 sectors/track, 36481 cylinders
     Units = cylinders of 16065 * 512 = 8225280 bytes
     
-    Device Boot Start End Blocks Id System
-    /dev/sda1 1 18266 146721613+ 7 HPFS/NTFS
-    /dev/sda2 18267 36481 146311987+ f W95 Ext'd (LBA)
-    /dev/sda5 18267 23470 41801098+ b W95 FAT32
-    /dev/sda6 23471 29972 52227283+ b W95 FAT32
-    /dev/sda7 29973 36481 52283511 b W95 FAT32
+    Device    Boot Start   End      Blocks Id System
+    /dev/sda1          1 18266  146721613+  7 HPFS/NTFS
+    /dev/sda2      18267 36481  146311987+  f W95 Ext'd (LBA)
+    /dev/sda5      18267 23470   41801098+  b W95 FAT32
+    /dev/sda6      23471 29972   52227283+  b W95 FAT32
+    /dev/sda7      29973 36481    52283511  b W95 FAT32
     ~#
 
 
+I choosed the last partition the be the target of formating. It's empty for 
+now, and will be formated in ext3 format
+I must make sure that the disk is not beeing acessed by any other application 
+and umount it.
 
-I choosed the last partition the be the target of formating. It's empty for now, and will be formated in ext3 format
-I must make sure that the disk is not beeing acessed by any other application and umount it.
+.. code-block:: TXT
 
-    ~#umount /dev/sda*
+    ~# umount /dev/sda*
     umount: /dev/sda: not mounted
     umount: /dev/sda1: not mounted
     umount: /dev/sda2: not mounted
@@ -50,7 +59,9 @@ I must make sure that the disk is not beeing acessed by any other application an
     ~#
 
 Fomat the partition  
-   
+
+.. code-block:: TXT
+
     ~# mkfs.ext3 /dev/sda7  
     mke2fs 1.40-WIP (02-Oct-2006)  
     Filesystem label=  
@@ -75,9 +86,11 @@ Fomat the partition
     This filesystem will be automatically checked every 36 mounts or  
     180 days, whichever comes first. Use tune2fs -c or -i to override.  
     ~#
-  
-Now it must be formated.. Now I have to change the partition system ID to ext3  
-  
+
+Now it must be formated.. Now I have to change the partition system ID to ext3
+
+.. code-block:: TXT
+
     ~# fdisk /dev/sda
     
     Command (m for help): t  
@@ -97,9 +110,12 @@ Now it must be formated.. Now I have to change the partition system ID to ext3
     /dev/sda5 18267 23470 41801098+ b W95 FAT32  
     /dev/sda6 23471 29972 52227283+ b W95 FAT32  
     /dev/sda7 29973 36481 52283511 83 Linux  
+
+
+Now I must apply changes made  
   
-Now i must apply changes made  
-  
+.. code-block:: TXT
+
     Command (m for help): w  
     The partition table has been altered!  
     
@@ -112,6 +128,8 @@ Now i must apply changes made
     ~#
 
 checking:  
+
+.. code-block:: TXT
 
     ~# fdisk -l /dev/sda  
        
@@ -130,17 +148,24 @@ Hooray!
 Let's mount it and start building the repostory
 
 
-## Creating a debian stable repository
-(Tuesday, March 06, 2007)
+Creating a debian stable repository
+***********************************
+
 
 Now that we have space for the new repository, is time to create it.
-For that, I use the reprepro tool because it allow me to create new repositories for "out of the box" specific packages.
+For that, I use the reprepro tool because it allow me to create new 
+repositories for "out of the box" specific packages.
 
-To set reprepro you'll need to prepare a directory. I created a "repository" directory, and all the repositorys will be below that.
+To set reprepro you'll need to prepare a directory. I created a 
+"repository" directory, and all the repositorys will be below that.
 
-Since I only use this once, before this time I generated a new dir "apt" below repository, so I can manage multiple configuration.
+Since I only use this once, before this time I generated a new dir 
+"apt" below repository, so I can manage multiple configuration.
 
-cd to the place where to generate, and create a directory named conf/ and create a file named "distributions" and fill it like this:
+cd to the place where to generate, and create a directory named 
+conf/ and create a file named "distributions" and fill it like this:
+
+.. code-block:: TXT
 
     Origin: Debian
     Label: Debian
@@ -153,18 +178,27 @@ cd to the place where to generate, and create a directory named conf/ and create
     Update: sarge
 
 
-For this step I only describe how to mirror a known repository, but is possible to generate your own repository (I'll talk about that later).
+For this step I only describe how to mirror a known repository, but is possible
+to generate your own repository (I'll talk about that later).
 
-Having a mirror is particulary usefull for times there's no stable internet or just is not possible to everyone to access the internet at the same time to install packages.
+Having a mirror is particulary usefull for times there's no stable internet or 
+just is not possible to everyone to access the internet at the same time to 
+install packages.
 
-This tool is very flexible, so you can manage different repositorys by the input of a new entry. So have in mind that:
+This tool is very flexible, so you can manage different repositorys by the input
+of a new entry. So have in mind that:
 - Multiple entries are separated with an empty line.
 - The codename is used to determine the directory to create.
 
-The Update line is described later. If `SignWith` is there, it will try to sign it. (Either use "`yes`" or give something gpg can use to identify the key you want to use).
+The Update line is described later. If ``SignWith`` is there, it will try to sign
+it. (Either use "``yes``" or give something gpg can use to identify the key you
+want to use).
 The other fields are copied into the appropriate Release files generated.
 
-So... I don't want only the sarge repository.. i'd like a etch as well! so my `conf/distribution` looks like this (and only the `i386` part, as you can see):
+So... I don't want only the sarge repository.. i'd like a etch as well! so my
+``conf/distribution`` looks like this (and only the ``i386`` part, as you can see):
+
+.. code-block:: TXT
 
     Origin: Debian
     Label: Debian
@@ -188,6 +222,8 @@ So... I don't want only the sarge repository.. i'd like a etch as well! so my `c
 Now, that I've defined what I want, I must set the update part.
 Each configuration will search its updates in the destinations set at conf/updates. Mine looks just like this:
 
+.. code-block:: TXT
+
     Name: sarge
     Method: http://debian.ua.pt/debian
     Architectures: i386
@@ -198,20 +234,28 @@ Each configuration will search its updates in the destinations set at conf/updat
     Architectures: i386
     IgnoreRelease: yes
 
-Now, it's all set. reprepro command must be runned at the path before of `conf/`. After a `ls` you should see this
+Now, it's all set. reprepro command must be runned at the path before of ``conf/``. After a ``ls`` you should see this
+
+.. code-block:: TXT
 
     # ls
     conf db dists lists pool
 
 To update everything possible do:
 
+.. code-block:: TXT
+
     reprepro -Vb . update
 
 To only update some distributions do:
 
+.. code-block:: TXT
+
     reprepro -Vb . update sarge
 
-**Note:** You can use the `VerifyRelease` field also, which can be retrieved using:
+**Note:** You can use the ``VerifyRelease`` field also, which can be retrieved using:
+
+.. code-block:: TXT
 
     gpg --with-colons --list-keys
 
