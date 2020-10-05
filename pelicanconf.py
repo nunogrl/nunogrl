@@ -115,7 +115,7 @@ EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
 }
 
-TWITTER_USERNAME = 'thedigicat'
+TWITTER_USERNAME = 'nunogrl'
 
 THEME = "themes/editorial"
 
@@ -135,19 +135,6 @@ MARKDOWN = {
 }
 
 QUOTES = [
-    {
-        'quote': "I've seen things you people wouldn't believe. Attack ships"
-        " on fire off the shoulder of Orion. I watched C-beams glitter in the"
-        " dark near the Tannhäuser Gate. All those moments will be lost in"
-        " time, like tears in rain. Time to die.",
-        'source': 'Blade Runner, 1982'
-    },
-    {
-        'quote': "Look at this. It’s worthless — ten dollars from a vendor in"
-        " the street. But I take it, I bury it in the sand for a thousand"
-        " years, it becomes priceless.",
-        'source': 'Raiders of the Lost Ark, 1981'
-    },
     {
         'quote': "Roads? Where we're going, we don't need... roads.",
         'source': 'Back to the Future, 1985'
