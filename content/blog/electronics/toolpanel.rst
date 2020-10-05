@@ -1,17 +1,17 @@
 :Title: Painel de ferramentas
 :Date: 2012-02-02 12:09
 :Category: electronics
-:Tags: tools panel
-:Slug: tools-panel
+:Tags: tools tools
+:Slug: tools-tools
 :Authors: Nuno Leitao
-:Image: /panel/Painel_final
-:Summary: Create a simple panel to keep tools
+:Image: /tools/Painel_final
+:Summary: Create a simple tools to keep tools
 
 
 Painel de Ferramenta
 ####################
 
-.. image:: {static}/images/panel/Painel_final.jpg)
+.. image:: {static}/images/tools/Painel_final.jpg
 
 Com tanta ferramenta perdida, espalhada, guardada em sítio incerto, é importante fazer um painel que me garanta sempre uma mesa livre de ferramenta que não esteja a ser usada.
 
@@ -39,34 +39,34 @@ material:
 
   
 
-.. image:: {static}/images/panel/Painelmaterial.jpg)
+.. image:: {static}/images/tools/Painelmaterial.jpg
 
  Coloquei os suportes para estantes para segurar o painel, fiz os buracos e aparafusei tudo.  
 
-.. image:: {static}/images/panel/Painel_prancha.jpg)
+.. image:: {static}/images/tools/Painel_prancha.jpg
   
 Retirei o painel da mesa e apliquei a cola de pintor. Desenhei os items e recortei com recurso a lâmina de barbear
 
 Prova de conceito com martelo
 
-.. image:: {static}/images/panel/painel_martelo.jpg)
+.. image:: {static}/images/tools/painel_martelo.jpg
 
 Distribuição de mais algumas ferramentas:
 
-.. image:: {static}/images/panel/painel_alicate.jpg)
+.. image:: {static}/images/tools/painel_alicate.jpg
 
 Vista geral a meio dos trabalhos:
 
-.. image:: {static}/images/panel/painel_montagem.jpg)
+.. image:: {static}/images/tools/painel_montagem.jpg
 
 Antes da retirada dos excedentes de fita:
 
-.. image:: {static}/images/panel/painel_comFita.jpg)
+.. image:: {static}/images/tools/painel_comFita.jpg
 
 
 Resultado final:
 
-.. image:: {static}/images/panel/Painel_final.jpg)
+.. image:: {static}/images/tools/Painel_final.jpg
 
 
 Conclusões
