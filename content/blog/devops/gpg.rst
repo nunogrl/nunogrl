@@ -10,6 +10,7 @@ GPG practices
 :Tags: gpg, devices, security, identity
 :Slug: gpg-practices
 :Authors: Nuno Leitao
+:Image: gpg 
 :Summary: Handling GPG - entities and devices
 
 
