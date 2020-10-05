@@ -7,7 +7,9 @@ Opel Corsa AUX
 :Tags: car audio aux cd
 :Slug: car-aux-input-cd
 :Authors: Nuno Leitao
+:Image: aux/raux_fix04
 :Summary: Added AUX input to autoradio
+
 
 Tendo um autorádio de origem num carro de 2001, leva a que não tenha algumas
 funcionalidades que é quase um absurdo não ter hoje em dia.  
@@ -22,7 +24,8 @@ qualquer altura.
   
 Encontrei algumas receitas online e venho aqui fazer um registo.  
 Baseei esta adaptação nesta solução:
-[http://www.css-haupt.de/vectra/english.html](http://www.css-haupt.de/vectra/english.html)  
+
+`<http://www.css-haupt.de/vectra/english.html>`_
   
 O principal problema foi retirar o aparelho do carro.  
 Apesar de ter parafusos, estes não têm outro fim que não seja estético - tapar
