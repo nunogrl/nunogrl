@@ -1,10 +1,11 @@
-Title: nci-ansible-ui
-Date: 2019-08-25 22:28
-Category: devops
-Tags: Technology
-Slug: ansible-deploy-using-node
-Authors: Nuno Leitao
-Summary: CI/CD with ... Node?!😱😱
+:Title: nci-ansible-ui
+:Date: 2019-08-25 22:28
+:Category: devops
+:Tags: Technology
+:Slug: ansible-deploy-using-node
+:Authors: Nuno Leitao
+:Image: nci-ansible-ui2
+:Summary: CI/CD with ... Node?!😱😱
 
 This is to expressn an idea that has been growing for a while now.
 
@@ -13,9 +14,11 @@ Everyone loves the concept of CI/CD and most people kind of dislikes Jenkins.
 It's not a dislike from my side, it's just that I feel that if we want to have
 something indoors to build and deploy our stuff, there's not many options around.
 
-> Jenkins get's the job done
->
-> -- <cite>internet users</cite> 
+.. code-block:: TXT
+
+  Jenkins get's the job done
+ 
+          -- internet users
 
 That's a hell of a premise to compete with. Specially because it's true. It's a
 heavy duty solution for heavy duty work. 
@@ -39,7 +42,8 @@ etc.
 
 I finally found this one and decided to give it a go.
 
-# nci-ansible-ui
+nci-ansible-ui
+**************
 
 This is done in node, and has ansible... if we were running away from jenkins's
 Java, here is where we put everything on perspective again.
@@ -51,12 +55,15 @@ to pick the git source, set up the frequency to look up for changes and a mail
 configuration to notify people when some playbook is runnning (or failing)
 
 
-![nci-ansible-ui interface]({static}/images/nci-ansible-ui2.png)
+.. image:: {static}/images/nci-ansible-ui2.png
 
+Configuring
+===========
 
-## Configuring
 
 The nci-ansible directory tree it's as simple as it gets:
+
+.. code-block:: TXT
 
     nci-ansible-ui/
     ├── data
@@ -90,7 +97,9 @@ can preview the changes locally using pelican.
 
 Here's the structure that we need to prepare.
 
-    projects
+.. code-block:: TXT
+
+   projects
     └── publishblog
         ├── config.yaml
         └── workspace/
@@ -99,7 +108,8 @@ Here's the structure that we need to prepare.
 
 Lets work on that `config.yaml`:
 
-```yaml
+.. code-block:: YAML
+
     scm:
         type: git
         repository: git@git.barbearclassico.com:pelican-website
@@ -136,15 +146,16 @@ Lets work on that `config.yaml`:
           inventories:
               - name: blogsite
                 path: projects/some_project/inventories/sample/hosts
-```
 
 
 So after this I must keep in mind that:
-- the content repository should have a `playbook.yaml` on the `/` that will perform all the changes on the live site.
+
+- the content repository should have a ``playbook.yaml`` on the ``/`` that will perform all the changes on the live site.
 - hosts file should be also kept on the repository.
 
 
-# References:
+References
+**********
 
-- [nci-ansible-ui on Github](https://github.com/node-ci/nci-ansible-ui)
-- [nci-ansible-ui-quick-setup](https://github.com/node-ci/nci-ansible-ui-quick-setup)
+- `nci-ansible-ui on Github <https://github.com/node-ci/nci-ansible-ui>`_
+- `nci-ansible-ui-quick-setup <https://github.com/node-ci/nci-ansible-ui-quick-setup>`_
