@@ -1,0 +1,3 @@
+before_install:
+- openssl aes-256-cbc -K $encrypted_3d3858f01ea0_key -iv $encrypted_3d3858f01ea0_iv
+  -in TravisCIDeployKey.enc -out ./TravisCIDeployKey -d
