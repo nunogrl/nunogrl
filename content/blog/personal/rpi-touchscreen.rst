@@ -14,7 +14,7 @@ Some time ago, I found a neat tft for the raspberry pi at amazon.
 
 I thought that it would be a good add on as I didn't have a spare monitor (my
 usage for the raspberry pi was very restrict - testing deployments, local git
- repositories, etc).
+repositories, etc).
 
 The device came with no written instructions. Came with a CD with an image to
 flash the raspberry. Back in the day, the image didn't work as expected. I
