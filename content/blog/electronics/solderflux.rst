@@ -9,7 +9,7 @@ Soldering Flux
 :Authors: Nuno Leitao
 :Image: solder/20141116_205222
 :Summary: Getting good quality soldering flux from hardware store
-
+:Status: Draft
 
 .. image:: {static}/images/solder/20141116_205222.jpg
   :alt: image 01
@@ -71,28 +71,11 @@ Coloquei os pedaços na peça de barro e coloquei em lume muito brando.
 Agitei a resina com um palito, para ir verificando a consistência/viscosidade:  
   
 
-.. image:: {static}/images/solder/20141116_183957.mp4
-  :alt: image 07
-
-.. image:: {static}/images/solder/20141116_184345.mp4
-  :alt: image 08
-
-Perfeitamente líquido:  
-
-.. image:: {static}/images/solder/20141116_184345.mp4
-  :alt: image 09
-
-
-
-Cuidadosamente verter a resina para o novo lar
+Quando perfeitamente líquido, cuidadosamente verter a resina para o novo lar
 
 
 .. image:: {static}/images/solder/20141116_183929.jpg
   :alt: image 10
-
-.. image:: {static}/images/solder/20141116_184507.mp4
-  :alt: image 11
-
 
 
 Com o palito "rapar o tacho", destacar o rebuçado do palito de deixar cair no recipiente.

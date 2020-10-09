@@ -9,6 +9,7 @@ Opel Corsa AUX
 :Authors: Nuno Leitao
 :Image: aux/raux_fix04
 :Summary: Added AUX input to autoradio
+:Status: Draft
 
 
 Tendo um autorádio de origem num carro de 2001, leva a que não tenha algumas
@@ -96,10 +97,6 @@ o ferro e a solda ao fio encharcado em resina, a resina irá evaporar e a solda
 irá ocupar o seu lugar.  
   
 
-.. image:: {static}/images/aux/raux_estanharFio2.jpg
-  :alt: "Estanhar fio 2"
-
-  
 Seguidamente corta-se as pontas para a dimensão que melhor se adequa.  
   
 
@@ -161,10 +158,6 @@ demasiado afastado e perdia o propósito da blindagem.
 
 A seta amarela indica onde estava o a massa soldada, e onde está soldada
 actualmente.
-
-
-.. image:: {static}/images/aux/raux_fix02.jpg
-  :alt: "fix 2"
 
   
 Caixa do rádio fechada. Agora com o cabo blindado.  
