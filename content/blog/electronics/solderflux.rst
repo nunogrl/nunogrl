@@ -12,6 +12,7 @@ Soldering Flux
 
 
 .. image:: {static}/images/solder/20141116_205222.jpg
+  :alt: image 01
 
 Venho partilhar uma dica que aprendi com um colega, e é uma pena que não seja difundida.  
   
@@ -19,6 +20,7 @@ Quem faz soldadura por hobby ou até profissionalmente, conhece com certeza o co
   
 
 .. image:: {static}/images/solder/20141116_191707.jpg
+  :alt: image 02
 
 Esta é uma resina comercial usada para o efeito.
 
@@ -28,7 +30,8 @@ Uma lata de 20g custa sensivelmente 3.00 Euros
 
 Uma alternativa mais em conta e que não fica a dever nada a esta, é a resina natural. 
 
-.. image:: {static}/images/solder/breu.jpg)
+.. image:: {static}/images/solder/breu.jpg
+  :alt: image 03
 
 Compra-se a preços irrisórios nas lojas de ferragens e vem devidamente filtrada. Se bem que se pode usar tal como está, acaba por ser mais prático colocar num recipiente (até porque neste estado a pedra é muito quebradiça).
 
@@ -49,6 +52,7 @@ Preparação
 Preparei a bancada a contar com o pior acidente. A resina atinge temperaturas elevadas, e deve-se ter algum cuidado com contacto com a pele. O papel é para facilitar a limpeza, é mais simples jogar fora o papel do que limpar a pedra. Usei ainda um alicate para verter o cadinho para o recipiente de alumínio.
 
 .. image:: {static}/images/solder/20141116_183916.jpg
+  :alt: image 04
 
 
 Coloquei os pedaços na peça de barro e coloquei em lume muito brando.
@@ -58,21 +62,25 @@ Coloquei os pedaços na peça de barro e coloquei em lume muito brando.
   
 
 .. image:: {static}/images/solder/20141116_183835.jpg
+  :alt: image 05
 
 
-.. image:: {static}/images/solder/20141116_183839.jpg)
-
+.. image:: {static}/images/solder/20141116_183839.jpg
+  :alt: image 06
 
 Agitei a resina com um palito, para ir verificando a consistência/viscosidade:  
   
 
-.. image:: {static}/images/solder/20141116_183957.mp4)
+.. image:: {static}/images/solder/20141116_183957.mp4
+  :alt: image 07
 
-.. image:: {static}/images/solder/20141116_184345.mp4)
+.. image:: {static}/images/solder/20141116_184345.mp4
+  :alt: image 08
 
 Perfeitamente líquido:  
 
-.. image:: {static}/images/solder/20141116_184345.mp4)
+.. image:: {static}/images/solder/20141116_184345.mp4
+  :alt: image 09
 
 
 
@@ -80,22 +88,27 @@ Cuidadosamente verter a resina para o novo lar
 
 
 .. image:: {static}/images/solder/20141116_183929.jpg
+  :alt: image 10
 
 .. image:: {static}/images/solder/20141116_184507.mp4
+  :alt: image 11
 
 
 
 Com o palito "rapar o tacho", destacar o rebuçado do palito de deixar cair no recipiente.
 
 .. image:: {static}/images/solder/20141116_184718.jpg
+  :alt: image 12
 
 .. image:: {static}/images/solder/20141116_184702.jpg
+  :alt: image 13
 
 Neste tipo de coisas, convém um recipiente não muito grande, pois é mais simples transportar
 
 Como precisava de algo para guardar um bloco maior, para manter a uso na bancada de trabalho optei por esta solução. Agora só falta rotular e guardar!
 
 .. image:: {static}/images/solder/20141116_203118.jpg
-
+  :alt: image 14
 
 .. image:: {static}/images/solder/20141116_203200.jpg
+  :alt: image 15

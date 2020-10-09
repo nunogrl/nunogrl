@@ -1,3 +1,6 @@
+Raspberry Touchscreen 3.5 Inc
+#############################
+
 :Title: Raspberry Touchscreen 3.5 Inc
 :Date: 2018-09-23 15:20
 :Category: personal
@@ -7,16 +10,18 @@
 :Image: RaspberryTFTGPIO
 :Summary: Raspberry pi - broken touchscreen
 
-Raspberry pi
-############
-
 Some time ago, I found a neat tft for the raspberry pi at amazon.
 
-I thought that it would be a good add on as I didn't have a spare monitor (my usage for the raspberry pi was very restrict - testing deployments, local git repositories, etc).
+I thought that it would be a good add on as I didn't have a spare monitor (my
+usage for the raspberry pi was very restrict - testing deployments, local git
+ repositories, etc).
 
-The device came with no written instructions. Came with a CD with an image to flash the raspberry. Back in the day, the image didn't work as expected. I thought something was wrong.
+The device came with no written instructions. Came with a CD with an image to
+flash the raspberry. Back in the day, the image didn't work as expected. I
+thought something was wrong.
 
-This week I've decided to give it a go again, as I have a new project for the raspberry pi.
+This week I've decided to give it a go again, as I have a new project for the
+raspberry pi.
 
 
 .. code-block:: TXT
@@ -118,6 +123,7 @@ on my laptop:
     
 
 .. image:: {static}/images/RaspberryTFTGPIO.jpg
+  :alt: image
 
 
 References

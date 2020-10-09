@@ -1,3 +1,8 @@
+
+Painel de Ferramenta
+####################
+
+
 :Title: Painel de ferramentas
 :Date: 2012-02-02 12:09
 :Category: electronics
@@ -8,10 +13,8 @@
 :Summary: Create a simple tools to keep tools
 
 
-Painel de Ferramenta
-####################
-
 .. image:: {static}/images/tools/Painel_final.jpg
+  :alt: "Resulaltado final"
 
 Com tanta ferramenta perdida, espalhada, guardada em sítio incerto, é importante fazer um painel que me garanta sempre uma mesa livre de ferramenta que não esteja a ser usada.
 
@@ -40,33 +43,40 @@ material:
   
 
 .. image:: {static}/images/tools/Painelmaterial.jpg
+  :alt: "soldar"
 
  Coloquei os suportes para estantes para segurar o painel, fiz os buracos e aparafusei tudo.  
 
 .. image:: {static}/images/tools/Painel_prancha.jpg
+  :alt: "soldar"
   
 Retirei o painel da mesa e apliquei a cola de pintor. Desenhei os items e recortei com recurso a lâmina de barbear
 
 Prova de conceito com martelo
 
 .. image:: {static}/images/tools/painel_martelo.jpg
+  :alt: "soldar"
 
 Distribuição de mais algumas ferramentas:
 
 .. image:: {static}/images/tools/painel_alicate.jpg
+  :alt: "soldar"
 
 Vista geral a meio dos trabalhos:
 
 .. image:: {static}/images/tools/painel_montagem.jpg
+  :alt: "soldar"
 
 Antes da retirada dos excedentes de fita:
 
 .. image:: {static}/images/tools/painel_comFita.jpg
+  :alt: "soldar"
 
 
 Resultado final:
 
 .. image:: {static}/images/tools/Painel_final.jpg
+  :alt: "soldar"
 
 
 Conclusões

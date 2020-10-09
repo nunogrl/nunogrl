@@ -1,3 +1,6 @@
+nci-ansible-ui
+##############
+
 :Title: nci-ansible-ui
 :Date: 2019-08-25 22:28
 :Category: devops
@@ -56,6 +59,7 @@ configuration to notify people when some playbook is runnning (or failing)
 
 
 .. image:: {static}/images/nci-ansible-ui2.png
+  :alt: "nci-ansible user interface"
 
 Configuring
 ===========
