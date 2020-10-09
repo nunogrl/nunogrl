@@ -108,12 +108,12 @@ PAGINATION_PATTERNS = (
 RELATIVE_URLS = True
 
 STATIC_PATHS = [
-    'images',
-    'code',
-    'notebooks',
-    'files',
-    'extra/CNAME',
-    'extra/robots.txt'
+    'images'
+#    'code',
+#    'notebooks',
+#    'files',
+#    'extra/CNAME',
+#/    'extra/robots.txt'
 ]
 EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
