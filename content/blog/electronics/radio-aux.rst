@@ -36,10 +36,12 @@ sucesso - os apetrechos ou eram muito finos ou entravam à justa, que tornava im
 fazer a coisa. Tive sucesso usando um cabide de arame, que tive de destruir para o efeito.  
 
 .. image:: {static}/images/aux/raux_final01.jpg
+  :alt: final
 
 Passo a apresentar o material que utilizei:  
 
 .. image:: {static}/images/aux/raux_material.jpg
+  :alt: material
 
 Por ordem de utilização:
 
@@ -60,6 +62,7 @@ Procurei fazer um buraco, não por cima dos conectores, mas um pouco mais
 afastado, para que o cabo pudesse esticar, prevenindo curto circuitos.
 
 .. image:: {static}/images/aux/raux_tampa.jpg
+  :alt: cover
 
 Ora os pinos são estes dois, do que apurei noutros sites, o A é o canal
 esquerdo, o B é o canal direito.
@@ -68,6 +71,7 @@ Falta o sinal terra, ainda não resolvi essa questão no momento em que escrevo
 isto, mas pretendo fazer uma solução mais elegante do que as que já encontrei.
 
 .. image:: {static}/images/aux/raux_conectoresAlvo.jpg
+  :alt: pontos
 
 Este texto dedica-se a quem nunca fez este tipo de trabalhos.
 
@@ -83,6 +87,7 @@ evitar respirar os vapores). Quando a resina estiver liquefeita, então
 retira-se o ferro e mergulha-se as pontas descarnadas.
 
 .. image:: {static}/images/aux/raux_estanharFio1.jpg
+  :alt: "Estanhar fio"
 
 A resina serve somente para baixar o ponto de fusão da solda. Pessoalmente dou
 preferência à solda 60-40  pois é muito fácil de utilizar.  
@@ -92,38 +97,43 @@ irá ocupar o seu lugar.
   
 
 .. image:: {static}/images/aux/raux_estanharFio2.jpg
+  :alt: "Estanhar fio 2"
 
   
 Seguidamente corta-se as pontas para a dimensão que melhor se adequa.  
   
 
 .. image:: {static}/images/aux/raux_estanharFio3.jpg
+  :alt: "Estanhar fio 3"
 
 Mergulha-se a solda na resina tal como se fez com o fio, e estanha-se os
 conectores
 
 .. image:: {static}/images/aux/raux_estanharConectores.jpg
-
-  
+  :alt: "Estanhar conectores"
 
 Agora o processo de soldadura é muito mais simples. Basta encostar os dois
 elementos e encostar o ferro ligeiramente.
 
 .. image:: {static}/images/aux/raux_soldar.jpg
+  :alt: "soldar"
 
 
 Devidamente validada a soldadura com o multímetro,agora é só fechar tudo.
 Repare-se o fio devidamente entalado, e o selo de garantia quebrado.  
 
 .. image:: {static}/images/aux/raux_fechado.jpg
+  :alt: "radio fechado"
 
   
 Uma vez fechado, quis dar uma vista de olhos melhor ao sistema de fecho do
 rádio.
 
 .. image:: {static}/images/aux/raux_retirar1.jpg
+  :alt: "retirar 1"
 
 .. image:: {static}/images/aux/raux_retirar2.jpg
+  :alt: "retirar 2"
 
 Falta  
   
@@ -134,6 +144,7 @@ Falta
 
   
 .. image:: {static}/images/aux/raux_ferro.jpg
+  :alt: "ferro"
 
 
 Resultados
@@ -146,24 +157,28 @@ demasiado afastado e perdia o propósito da blindagem.
   
 
 .. image:: {static}/images/aux/raux_fix01.jpg
+  :alt: "fix 1"
 
 A seta amarela indica onde estava o a massa soldada, e onde está soldada
 actualmente.
 
 
 .. image:: {static}/images/aux/raux_fix02.jpg
+  :alt: "fix 2"
 
   
 Caixa do rádio fechada. Agora com o cabo blindado.  
   
 
 .. image:: {static}/images/aux/raux_fix03.jpg
+  :alt: "fix 3"
 
   
 Rádio colocado no sítio, colocando os parafusos estéticos.  
   
 
 .. image:: {static}/images/aux/raux_fix04.jpg
+  :alt: "fix 4"
 
   
 E em funcionamento! :D
