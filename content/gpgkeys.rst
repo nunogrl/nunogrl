@@ -10,6 +10,8 @@ The perfect GPG key
 :Authors: Nuno Leitao
 :Summary: GPG - another guide
 :Status: Draft
+:Series: dotfiles
+:series_index: 1
 
 Cool, another boring page on GPG. The internet need this.
 
