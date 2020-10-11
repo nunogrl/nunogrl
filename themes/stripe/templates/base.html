@@ -11,15 +11,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     {% block meta_description %}{% endblock %}
 
+        {% assets filters="cssmin", output="css/main.min.css", "css/main.css" %}
+        <link rel="stylesheet" href="/{{ ASSET_URL }}">
+        {% endassets %}
 
+        {% block custom_css %}{% endblock %}
+        
+        <link href="/{{ FAVICON }}" rel="icon">
 
-    <link rel="stylesheet" href="../static/assets/css/main.css" />
-  </head>
-  <body class="is-preload">
+        {% if GOOGLE_ANALYTICS_UNIVERSAL %}
+        <!-- Google Analytics Universal -->
+        <script type="text/javascript">
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', '{{ GOOGLE_ANALYTICS_UNIVERSAL }}', '{{ GOOGLE_ANALYTICS_UNIVERSAL_PROPERTY|default("auto") }}');
+            ga('send', 'pageview');
+        </script>
+        <!-- End Google Analytics Universal Code -->
+        {% endif %}
+
+        {% block structured_data %}{% endblock %}
+    </head>
+    <body class="is-preload">
 
     <!-- Content -->
       <div id="content">
         <div class="inner">
+                    {% filter indent(width=14) %}
+                    {% block content %}
+                    {% endblock %}
+                    {% endfilter %}
+
+
+
 
           <!-- Post -->
             <article class="box post post-excerpt">
@@ -52,7 +78,7 @@
                   <li><a href="#" class="icon brands fa-facebook-f">128</a></li>
                 </ul>
               </div>
-              <a href="#" class="image featured"><img src="../static/images/pic01.jpg" alt="" /></a>
+              <a href="#" class="image featured"><img src="../theme/images/pic01.jpg" alt="" /></a>
               <p>
                 <strong>Hello!</strong> You're looking at <strong>Striped</strong>, a fully responsive HTML5 site template designed by <a href="http://twitter.com/ajlkn">AJ</a>
                 for <a href="http://html5up.net">HTML5 UP</a> It features a clean, minimalistic design, styling for all basic page elements (including blockquotes, tables and lists), a
@@ -80,7 +106,7 @@
                   <li><a href="#" class="icon brands fa-facebook-f">128</a></li>
                 </ul>
               </div>
-              <a href="#" class="image featured"><img src="../static/images/pic02.jpg" alt="" /></a>
+              <a href="#" class="image featured"><img src="../theme/images/pic02.jpg" alt="" /></a>
               <p>
                 Quisque vel sapien sit amet tellus elementum ultricies. Nunc vel orci turpis. Donec id malesuada metus.
                 Nunc nulla velit, fermentum quis interdum quis, tate etiam commodo lorem ipsum dolor sit amet dolore.
@@ -106,8 +132,11 @@
         </div>
       </div>
 
-    <!-- Sidebar -->
-      <div id="sidebar">
+            <!-- Sidebar -->
+            <div id="sidebar">
+                {% filter indent(width=14) %}
+                {% include 'includes/sidebar.html' %}
+                {% endfilter %}
 
         <!-- Logo -->
           <h1 id="logo"><a href="#">STRIPED</a></h1>
@@ -234,12 +263,13 @@
 
       </div>
 
-    <!-- Scripts -->
-      <script src="../static/assets/js/jquery.min.js"></script>
-      <script src="../static/assets/js/browser.min.js"></script>
-      <script src="../static/assets/js/breakpoints.min.js"></script>
-      <script src="../static/assets/js/util.js"></script>
-      <script src="../static/assets/js/main.js"></script>
+        <!-- Scripts -->
+            <script src="/{{ THEME_STATIC_DIR }}/js/jquery.min.js"></script>
+            <script src="/{{ THEME_STATIC_DIR }}/js/browser.min.js"></script>
+            <script src="/{{ THEME_STATIC_DIR }}/js/breakpoints.min.js"></script>
+        {% assets filters="jsmin", output="js/packed.js", "js/util.js", "js/main.js" %}
+            <script src="/{{ ASSET_URL }}"></script>
+        {% endassets %}
 
-  </body>
+    </body>
 </html>
