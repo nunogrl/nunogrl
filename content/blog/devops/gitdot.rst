@@ -8,7 +8,7 @@ Git setup
 :slug:     git-config
 :authors:  Nuno Leitao
 :summary:  multi setup for git
-
+:Image:    git-config
 
 How to save time with gitconfig
 *******************************
