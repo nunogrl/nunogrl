@@ -10,6 +10,7 @@ Devops
 :Summary: Devops
 :save_as: devops.html
 :Image: devops
+:Status: draft
 
 This is about devops related projects and ideas.  
 

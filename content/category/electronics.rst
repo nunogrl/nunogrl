@@ -10,6 +10,7 @@ Electronics
 :Authors: Nuno Leitao
 :Summary: electronics
 :save_as: electronics.html
+:Status: Draft
 
 
 Some small hacks and projects 
