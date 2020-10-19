@@ -93,57 +93,98 @@ MARKDOWN = {
 
 EXTRACOPYRIGHT = 'Cover picture by: <a href="https://pxhere.com/en/photo/1428515">An Min @ pxhere.com'
 
-TOPSERIES = [
+CATEGORIES = [
     {
-        'title': "Python 3 Object-oriented Programming",
-        'href': "/blog/2014/08/20/python-3-oop-part-1-objects-and-types/",
-        'image': "/images/python-3-oop.jpg",
-        'alt': "Python 3 OOP",
-        'description': "A series of posts that dig into the Python implementation of"
-            " the Object-oriented paradigm. No previous knowledge of the topic is"
-            " required, but an initial knowledge of the Python syntax is useful."
-        },
-    {
-        'href': "/blog/2017/05/09/a-game-of-tokens-write-an-interpreter-in-python-with-tdd-part-1/",
-        'image': "/images/a-game-of-tokens-1.jpg",
-        'alt': "A Game of Tokens",
-        'title': "A game of tokens",
-        'description': "Python, Ruby, Javascript, C, Erlang, how many different"
-            " languages. But how does a compiler work? How si the source code"
-            " converted into something that works? Let's write a simple language"
-            " interpreter using TDD!"
-        },
-    {
-        'title': "Exploring the Amiga",
-        'href': "/blog/2018/05/28/exploring-the-amiga-1/",
-        'image': "/images/exploring-the-amiga-1.jpg",
-        'alt': "Exploring the Amiga",
-        'description': "Is it worth unearthing old architectures? Is it"
-            " worth understanding how a computer system from the 80s worked?"
-            " I believe old architectures can teach us a lot, so let's explore"
-            " \"the computer that wouldn’t die\"!"
-        },
-]
+        'title': "Electronics",
+        'href': "/category/electronics/",
+        'icon': "icon fa-microchip",
+        'description': "Articles on DIY projects on electronics"
 
-MYVIDEOS = [
+        },
     {
-        'href': "https://www.youtube.com/playlist?list=PLWtCrYLGt7T2REIrEcpGY6nT2t7Wcoj-m",
-        'image': "/images/video-tdd-in-python-with-pytest.jpg",
-        'alt': "TDD in Python with pytest (playlist)",
-        'title': "TDD in Python with pytest (playlist)",
-        'description': "I recorded my successful workshop \"TDD in Python with"
-            " pytest\" and produced my first series of videos, for a grand total"
-            " of 2 hours of hands-on tutorial on Test-Driven Development in Python."
-    },
+        'title': "DevOps",
+        'href': "/category/devops/",
+        'icon': "icon fa-robot",
+        'description': "Articles on articles on DevOps"
+
+        },
     {
-        'href': "https://www.youtube.com/playlist?list=PLWtCrYLGt7T3DUFPYdqrdEqzt-OCfBQ5O",
-        'image': "/images/video-object-oriented-programming-in-python.jpg",
-        'alt': "Object-oriented programming in Python (playlist)",
-        'title': "Object-oriented programming in Python (playlist)",
-        'description': "A journey into the Python implementation of the Object-oriented"
-            " paradigm, specifically tailored for beginner programmers."
-    },
-]
+        'title': "hiking",
+        'href': "/category/hiking/",
+        'icon': "icon fa-walking",
+        'description': "Articles and maps on hiking"
+
+        },
+
+    {
+        'title': "Programming",
+        'href': "/category/programming",
+        'icon': "icon fa-desktop",
+        'description': "Articles about programming in various languages, mainly"
+        " Python but also Scala, Erlang, C. Other topics I discuss are"
+        " algorithms, compilers, architectures, operating systems, testing."
+        }, 
+    {
+        'title': "Retro",
+        'ref': "/category/retro",
+        'icon': "icon fa-save",
+        'title': "Retro",
+        'description': "All my retroprogramming articles, bits and bytes, and"
+        " low level investigations. Home of the \"Exploring the Amiga\""
+        " series. Beware of the dragons!"
+        },
+    ]
+# TOPSERIES = [
+#     {
+#         'title': "Python 3 Object-oriented Programming",
+#         'href': "/blog/2014/08/20/python-3-oop-part-1-objects-and-types/",
+#         'image': "/images/python-3-oop.jpg",
+#         'alt': "Python 3 OOP",
+#         'description': "A series of posts that dig into the Python implementation of"
+#             " the Object-oriented paradigm. No previous knowledge of the topic is"
+#             " required, but an initial knowledge of the Python syntax is useful."
+#         },
+#     {
+#         'href': "/blog/2017/05/09/a-game-of-tokens-write-an-interpreter-in-python-with-tdd-part-1/",
+#         'image': "/images/a-game-of-tokens-1.jpg",
+#         'alt': "A Game of Tokens",
+#         'title': "A game of tokens",
+#         'description': "Python, Ruby, Javascript, C, Erlang, how many different"
+#             " languages. But how does a compiler work? How si the source code"
+#             " converted into something that works? Let's write a simple language"
+#             " interpreter using TDD!"
+#         },
+#     {
+#         'title': "Exploring the Amiga",
+#         'href': "/blog/2018/05/28/exploring-the-amiga-1/",
+#         'image': "/images/exploring-the-amiga-1.jpg",
+#         'alt': "Exploring the Amiga",
+#         'description': "Is it worth unearthing old architectures? Is it"
+#             " worth understanding how a computer system from the 80s worked?"
+#             " I believe old architectures can teach us a lot, so let's explore"
+#             " \"the computer that wouldn’t die\"!"
+#         },
+# ]
+# 
+# MYVIDEOS = [
+#     {
+#         'href': "https://www.youtube.com/playlist?list=PLWtCrYLGt7T2REIrEcpGY6nT2t7Wcoj-m",
+#         'image': "/images/video-tdd-in-python-with-pytest.jpg",
+#         'alt': "TDD in Python with pytest (playlist)",
+#         'title': "TDD in Python with pytest (playlist)",
+#         'description': "I recorded my successful workshop \"TDD in Python with"
+#             " pytest\" and produced my first series of videos, for a grand total"
+#             " of 2 hours of hands-on tutorial on Test-Driven Development in Python."
+#     },
+#     {
+#         'href': "https://www.youtube.com/playlist?list=PLWtCrYLGt7T3DUFPYdqrdEqzt-OCfBQ5O",
+#         'image': "/images/video-object-oriented-programming-in-python.jpg",
+#         'alt': "Object-oriented programming in Python (playlist)",
+#         'title': "Object-oriented programming in Python (playlist)",
+#         'description': "A journey into the Python implementation of the Object-oriented"
+#             " paradigm, specifically tailored for beginner programmers."
+#     },
+# ]
 
 QUOTES = [
     {

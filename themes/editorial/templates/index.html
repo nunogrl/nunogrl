@@ -44,30 +44,29 @@
         </span>
     </section>
 
+
+{% if CATEGORIES %}
+
 <!-- Section -->
     <section>
         <header class="major">
             <h2>Sections</h2>
         </header>
         <div class="features">
+	    {% for cat in CATEGORIES %}
             <article>
-                <span class="icon fa-desktop"></span>
+		<span class="{{ cat.icon }}"></span>
                 <div class="content">
-                    <h3>Programming</h3>
-                    <p>Articles about programming in various languages, mainly Python but also Scala, Erlang, C. Other topics I discuss are algorithms, compilers, architectures, operating systems, testing.</p>
-                    <a href="/category/programming" class="button">More</a>
+		    <h3>{{ cat.title }}</h3>
+		    <p>{{ cat.description }}</p>
+		    <a href="{{ cat.href }}" class="button">More</a>
                 </div>
             </article>
-            <article>
-                <span class="icon fa-save"></span>
-                <div class="content">
-                    <h3>Retro</h3>
-                    <p>All my retroprogramming articles, bits and bytes, and low level investigations. Home of the "Exploring the Amiga" series. Beware of the dragons!</p>
-                    <a href="/category/retro" class="button">More</a>
-                </div>
-            </article>
+            {% endfor %}
         </div>
     </section>
+
+{% endif %}
 
 <!-- Section -->
 {% if TOPSERIES %}
