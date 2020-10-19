@@ -8,54 +8,11 @@ SITEURL = 'https://www.nunogrl.com'
 PATH = 'content'
 DEBUG = True
 
-# DEFAULT_CATEGORY = 'personal'
-
-ARTICLE_URL = 'blog/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
-ARTICLE_SAVE_AS = ARTICLE_URL + 'index.html'
+PATH = 'content'
 
 TIMEZONE = 'Europe/London'
 
 DEFAULT_LANG = u'en'
-#####################
-
-# all defaults to True.
-DISPLAY_HEADER = True
-DISPLAY_FOOTER = True
-DISPLAY_HOME   = True
-DISPLAY_MENU   = True
-
-
-MENU_ITEMS = True
-# DISPLAY_PAGES_ON_MENU = True
-# DISPLAY_CATEGORIES_ON_MENU = True
-USE_FOLDER_AS_CATEGORY = False
-
-
-DISPLAY_CATEGORIES_ON_MENU = False
-# DISPLAY_PAGES_ON_MENU = False
-
-DISPLAY_PAGES_ON_MENU = False
-PAGE_PATHS = ['pages']
-PAGE_URL = 'pages/{slug}.html'
-PAGE_LANG_URL = 'pages/{slug}-{lang}.html'
-PAGE_SAVE_AS = 'pages/{slug}.html'
-PAGE_LANG_SAVE_AS = 'pages/{slug}-{lang}.html'
-
-# PATH = 'content'
-# ARTICLE_PATHS = ['blog']
-# ARTICLE_SAVE_AS = '{date:%Y}/{slug}.html'
-# ARTICLE_URL = '{date:%Y}/{slug}.html'
-# SHOW_FULL_ARTICLE = True
-
-MENUITEMS = (
-    ('About', '/pages/about.html'),
-    ('Devops', '/category/devops.html'),
-    ('Electronics', '/category/electronics.html')
-    # ('Music', '/category/music.html'),
-    # ('Photo', '/category/photo.html')
-    # ('Electronics', 'http://www.google.com/recaptcha/mailhide/d?...'),
-    # ('Vita', '/pdfs/HouserCV.pdf')
-)
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = 'atom.xml'
@@ -109,11 +66,6 @@ RELATIVE_URLS = True
 
 STATIC_PATHS = [
     'images'
-#    'code',
-#    'notebooks',
-#    'files',
-#    'extra/CNAME',
-#/    'extra/robots.txt'
 ]
 EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
@@ -139,16 +91,89 @@ MARKDOWN = {
     'output_format': 'html5',
 }
 
+EXTRACOPYRIGHT = 'Cover picture by: <a href="https://pxhere.com/en/photo/1428515">An Min @ pxhere.com'
+
+TOPSERIES = [
+    {
+        'title': "Python 3 Object-oriented Programming",
+        'href': "/blog/2014/08/20/python-3-oop-part-1-objects-and-types/",
+        'image': "/images/python-3-oop.jpg",
+        'alt': "Python 3 OOP",
+        'description': "A series of posts that dig into the Python implementation of"
+            " the Object-oriented paradigm. No previous knowledge of the topic is"
+            " required, but an initial knowledge of the Python syntax is useful."
+        },
+    {
+        'href': "/blog/2017/05/09/a-game-of-tokens-write-an-interpreter-in-python-with-tdd-part-1/",
+        'image': "/images/a-game-of-tokens-1.jpg",
+        'alt': "A Game of Tokens",
+        'title': "A game of tokens",
+        'description': "Python, Ruby, Javascript, C, Erlang, how many different"
+            " languages. But how does a compiler work? How si the source code"
+            " converted into something that works? Let's write a simple language"
+            " interpreter using TDD!"
+        },
+    {
+        'title': "Exploring the Amiga",
+        'href': "/blog/2018/05/28/exploring-the-amiga-1/",
+        'image': "/images/exploring-the-amiga-1.jpg",
+        'alt': "Exploring the Amiga",
+        'description': "Is it worth unearthing old architectures? Is it"
+            " worth understanding how a computer system from the 80s worked?"
+            " I believe old architectures can teach us a lot, so let's explore"
+            " \"the computer that wouldn’t die\"!"
+        },
+]
+
+MYVIDEOS = [
+    {
+        'href': "https://www.youtube.com/playlist?list=PLWtCrYLGt7T2REIrEcpGY6nT2t7Wcoj-m",
+        'image': "/images/video-tdd-in-python-with-pytest.jpg",
+        'alt': "TDD in Python with pytest (playlist)",
+        'title': "TDD in Python with pytest (playlist)",
+        'description': "I recorded my successful workshop \"TDD in Python with"
+            " pytest\" and produced my first series of videos, for a grand total"
+            " of 2 hours of hands-on tutorial on Test-Driven Development in Python."
+    },
+    {
+        'href': "https://www.youtube.com/playlist?list=PLWtCrYLGt7T3DUFPYdqrdEqzt-OCfBQ5O",
+        'image': "/images/video-object-oriented-programming-in-python.jpg",
+        'alt': "Object-oriented programming in Python (playlist)",
+        'title': "Object-oriented programming in Python (playlist)",
+        'description': "A journey into the Python implementation of the Object-oriented"
+            " paradigm, specifically tailored for beginner programmers."
+    },
+]
+
 QUOTES = [
+    {
+        'quote': "If I have seen further it is by standing on the shoulders of"
+            " Giants",
+        'source': "Isaac Newton"
+    },
+    {
+        'quote': "We are like dwarfs on the shoulders of giants, so that we can"
+            " see more than they, and things at a greater distance, not by"
+            " virtue of any sharpness of sight on our part, or any physical"
+            " distinction, but because we are carried high and raised up by"
+            " their giant size.",
+        'source': "Bernard De Chartres"
+    },
+    {
+        'quote': "I've seen things you people wouldn't believe. Attack ships"
+            " on fire off the shoulder of Orion. I watched C-beams glitter in the"
+            " dark near the Tannhäuser Gate. All those moments will be lost in"
+            " time, like tears in rain. Time to die.",
+        'source': 'Blade Runner, 1982'
+    },
+    {
+        'quote': "Look at this. It’s worthless — ten dollars from a vendor in"
+            " the street. But I take it, I bury it in the sand for a thousand"
+            " years, it becomes priceless.",
+        'source': 'Raiders of the Lost Ark, 1981'
+    },
     {
         'quote': "Roads? Where we're going, we don't need... roads.",
         'source': 'Back to the Future, 1985'
     },
 ]
-
-
-# THEME = "themes/bricks"
-# THEME = "themes/blue-penguin"
-
-# Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
