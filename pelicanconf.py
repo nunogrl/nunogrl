@@ -113,25 +113,6 @@ CATEGORIES = [
         'href': "/category/hiking/",
         'icon': "icon fa-walking",
         'description': "Articles and maps on hiking"
-
-        },
-
-    {
-        'title': "Programming",
-        'href': "/category/programming",
-        'icon': "icon fa-desktop",
-        'description': "Articles about programming in various languages, mainly"
-        " Python but also Scala, Erlang, C. Other topics I discuss are"
-        " algorithms, compilers, architectures, operating systems, testing."
-        }, 
-    {
-        'title': "Retro",
-        'ref': "/category/retro",
-        'icon': "icon fa-save",
-        'title': "Retro",
-        'description': "All my retroprogramming articles, bits and bytes, and"
-        " low level investigations. Home of the \"Exploring the Amiga\""
-        " series. Beware of the dragons!"
         },
     ]
 # TOPSERIES = [
@@ -199,22 +180,5 @@ QUOTES = [
             " distinction, but because we are carried high and raised up by"
             " their giant size.",
         'source': "Bernard De Chartres"
-    },
-    {
-        'quote': "I've seen things you people wouldn't believe. Attack ships"
-            " on fire off the shoulder of Orion. I watched C-beams glitter in the"
-            " dark near the Tannhäuser Gate. All those moments will be lost in"
-            " time, like tears in rain. Time to die.",
-        'source': 'Blade Runner, 1982'
-    },
-    {
-        'quote': "Look at this. It’s worthless — ten dollars from a vendor in"
-            " the street. But I take it, I bury it in the sand for a thousand"
-            " years, it becomes priceless.",
-        'source': 'Raiders of the Lost Ark, 1981'
-    },
-    {
-        'quote': "Roads? Where we're going, we don't need... roads.",
-        'source': 'Back to the Future, 1985'
     },
 ]
