@@ -77,7 +77,7 @@ A identidade
 
 Configuração de dados locais e globais
 
-.. code-block:: TXT
+.. code-block:: TEXT
 
     git config --global user.name "FIRST_NAME"
     git config --global user.email "EMAIL"
@@ -100,7 +100,7 @@ repositório.
 Vamos fazer um directório de trabalho e neste directório vamos proceder à
 inicialização com o seguinte comando:
 
-.. code-block:: TXT
+.. code-block:: TEXT
 
     git init
 
@@ -153,7 +153,7 @@ Para isto vamos criar um ficheiro com o nome carta.txt
 Vamos adicionar o ficheiro ao repositório. Para isto podemos consultar o
 estado do repositório antes de submeter.
 
-.. code-block:: TXT
+.. code-block:: TEXT
 
     git status
 
@@ -179,7 +179,7 @@ Podemos verificar que o ficheiro não está no sistem de revisões, pois aparece
 
 Vamos então adicioná-lo:
 
-.. code-block:: TXT
+.. code-block:: TEXT
 
    git add carta.txt
 
@@ -204,7 +204,7 @@ Isto produz o resultado:
 e fazer commit com a  mensagem **"added presentation letter"**
 
 
-.. code-block:: TXT
+.. code-block:: TEXT
 
     $ git commit -m "added presentation letter"
     [master (root-commit) 4220cb6] added presentation letter
@@ -215,7 +215,7 @@ e fazer commit com a  mensagem **"added presentation letter"**
 E por fim verificamos que que o repositório não tem mais ficheiros por
 rever:
 
-.. code-block:: TXT
+.. code-block:: TEXT
 
     $ git status
     On branch master
@@ -230,7 +230,7 @@ No exemplo anterior acrescentamos um novo ficheiro ao sistema de revisões com o
 
 Aqui fizemos os comandos:
 
-.. code-block:: git
+.. code-block:: TEXT
 
     git init
     git add carta.txt
