@@ -13,6 +13,22 @@ Since everything is a work in progress and we can only evolve based on previous
 achievements, I hope this can help others to solve the same problems I once had
 and allow others to go to the next step, the same way this helped me
 
+
+Why
+===
+
+Across the years I've been looking for information to do my work.
+
+The source could be some forum, some blog, some personal page hosted on an
+university... These pages for some reason aren't maintained anymore so they
+got lost forever.
+The authors eventually forgot they wrote that, or moved the content to another
+place to be found.
+
+This is blog is where I keep a personal log of things I've been doing and also
+an homage to some articles that I consider relevant to keep.
+
+
 About myself
 ============
 
