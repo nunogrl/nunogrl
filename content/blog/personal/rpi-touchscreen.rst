@@ -129,12 +129,11 @@ on my laptop:
 References
 **********
 
-- [willprice.org](https://www.willprice.org/2017/09/16/adventures-with-tft-screens-for-raspberry-pi.html)
-- [github](https://github.com/goodtft/LCD-show)
-- [iwannabe1337.wordpress.com](https://iwannabe1337.wordpress.com/2016/03/26/rpi-set-raspberry-pi-lcd-3-5-inch-rpi-lcd-v3-0/)
-- [github](https://github.com/swkim01/waveshare-dtoverlays)
-- [raspberry pi forum 1](https://www.raspberrypi.org/forums/viewtopic.php?f=44&t=173993&p=1112311#p1111423)
-- [raspberry pi forum 2](https://www.raspberrypi.org/forums/viewtopic.php?t=119088)
-- [spotbear](http://www.spotpear.com/learn/EN/raspberry-pi/Raspberry-Pi-LCD/Drive-the-LCD.html)
-- [iwannabe1337](https://iwannabe1337.wordpress.com/2016/03/26/rpi-set-raspberry-pi-lcd-3-5-inch-rpi-lcd-v3-0/)
-- [waveshare](https://www.waveshare.com/wiki/3.5inch_RPi_LCD_(A)#Method_1._Driver_installation)
+- `willprice.org <https://www.willprice.org/2017/09/16/adventures-with-tft-screens-for-raspberry-pi.html>`_ 
+- `LCD-show by goodtft on github <https://github.com/goodtft/LCD-show>`_
+- `iwannabe1337 blog <https://iwannabe1337.wordpress.com/2016/03/26/rpi-set-raspberry-pi-lcd-3-5-inch-rpi-lcd-v3-0/>`_
+- `waveshare-dtoverlays by swkim01 on github <https://github.com/swkim01/waveshare-dtoverlays>`_
+- `raspberry pi forum 1 <https://www.raspberrypi.org/forums/viewtopic.php?f=44&t=173993&p=1112311#p1111423>`_
+- `raspberry pi forum 2 <https://www.raspberrypi.org/forums/viewtopic.php?t=119088>`_
+- `spotbear <http://www.spotpear.com/learn/EN/raspberry-pi/Raspberry-Pi-LCD/Drive-the-LCD.html>`_
+- `waveshare <https://www.waveshare.com/wiki/3.5inch_RPi_LCD_(A)#Method_1._Driver_installation>`_
