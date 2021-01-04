@@ -115,16 +115,17 @@ CATEGORIES = [
         'description': "Articles and maps on hiking"
         },
     ]
-# TOPSERIES = [
-#     {
-#         'title': "Python 3 Object-oriented Programming",
-#         'href': "/blog/2014/08/20/python-3-oop-part-1-objects-and-types/",
-#         'image': "/images/python-3-oop.jpg",
-#         'alt': "Python 3 OOP",
-#         'description': "A series of posts that dig into the Python implementation of"
-#             " the Object-oriented paradigm. No previous knowledge of the topic is"
-#             " required, but an initial knowledge of the Python syntax is useful."
-#         },
+TOPSERIES = [
+     {
+         'title': "GPG usages",
+         'href': "/blog/2019/08/30/the-perfect-gpg-key/",
+         'image': "/images/gpg-series.png",
+         'alt': "GPG",
+         'description':
+             "A series of posts with examples on GPG creation and usage, for"
+             " simple password maintaining, password sharing, authentication"
+             " and signing."
+         },
 #     {
 #         'href': "/blog/2017/05/09/a-game-of-tokens-write-an-interpreter-in-python-with-tdd-part-1/",
 #         'image': "/images/a-game-of-tokens-1.jpg",
@@ -145,7 +146,7 @@ CATEGORIES = [
 #             " I believe old architectures can teach us a lot, so let's explore"
 #             " \"the computer that wouldn’t die\"!"
 #         },
-# ]
+]
 # 
 # MYVIDEOS = [
 #     {
