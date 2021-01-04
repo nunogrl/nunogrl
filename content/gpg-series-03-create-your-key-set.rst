@@ -10,8 +10,9 @@ GPG series
 :Slug: gpg-series
 :Authors: Nuno Leitao
 :Summary: How to use GPG
-:Status: published
-
+:Status: Published
+:Series: Using GPG
+:series_index: 3
 
 Objective
 =========
@@ -20,7 +21,7 @@ Objective
 - Create and manage local keys.
 
 
-.. code-block:: TXT
+.. code-block:: TEXT
 
     $ gpg -k
     /home/nuno/.gnupg/pubring.kbx

@@ -9,7 +9,9 @@ Password Store for teams and infrastruture
 :Slug: gpg-series
 :Authors: Nuno Leitao
 :Summary: Password Store for teams and infrastruture
-:Status: draft
+:Series: Using GPG
+:series_index: 4
+:Status: Published
 
 Security Requirements
 ======================
@@ -29,7 +31,7 @@ I'm using password store to keep most of my passwords so I don't have to:
 - get the passwords from a web password manager;
 - can call the passwords directly using scripts;
 - ensure that my passwords aren't written in plain text anywhere;
-- have to memorize any of my passwords.
+- memorize any of my passwords.
 
 
 .. image:: {static}/vendiagram.jpg
@@ -141,9 +143,6 @@ verify its content.
     +----------+ _:|__| '.\.''..' ) ___________ ( )_):|_|:
        :....::''::/  | : :|''| "/ /_=_=_=_=_=/ :_[__'_\3_)
         ''''      '-''-'-'.__)-'
-
-
-
 
 
 

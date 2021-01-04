@@ -9,8 +9,8 @@ The perfect GPG key - a new approach
 :Slug:  the-perfect-gpg-key-multiple-devices
 :Authors: Nuno Leitao
 :Summary: GPG - another guide
-:Status: Draft
-:Series: dotfiles
+:Status: Published
+:Series: Using GPG
 :series_index: 2
 
 I've decided to write this to reflect my impressions on the "the perfect GPG
