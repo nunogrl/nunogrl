@@ -3,7 +3,8 @@
 {% block title %}{{ SITENAME }} - Home{% endblock %}
 
 {% block meta_description %}
-<meta name="description" content="A blog featuring in-depth posts about Python, Scala, TDD, devops, security and all things development.">
+    <meta name="description" content="A blog featuring posts about DevOps,
+    Security, and some personal bits.">
 {% endblock %}
 
 {% block content %}
@@ -31,8 +32,9 @@
     <section id="banner">
         <div class="content">
             <header>
-                <h1>The Digital Cat</h1>
-                <p>Adventures of a curious cat in the land of programming</p>
+                <h1>Columbus Egg</h1>
+		<p>A blog that covers stuff I work with, and stuff I replicate
+		it so it won't be lost.</p>
             </header>
             {% for q in QUOTES %}
             <p class="quote"><i class="fas fa-quote-right"></i> {{ q.quote }} <i class="fas fa-quote-left"></i></p>
