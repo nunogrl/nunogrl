@@ -11,6 +11,7 @@ Ansible - Managing Users
 :Summary: Deploying and maintaining users using Ansible 
 :Image: Playbook-hand
 :Status: published
+:series_index: 4
 
 This was the very first question I had while using ansible and I wasn't happy
 with any of the tools I found online.

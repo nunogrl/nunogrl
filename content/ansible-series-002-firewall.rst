@@ -7,12 +7,13 @@ Ansible - Managing Firewall
 :Tags: Technology
 :Slug: ansible-managing-firewall
 :Authors: Nuno Leitao
-:Series: Ansible
 :Summary: Deploying and maintaining a firewall using Ansible 
 :Image: Playbook-hand
-:Status: draft
+:Series: Ansible
+:Status: Published
+:series_index: 2
 
-This was the very first question I had while using ansible and I wasn't happy
+               This was the very first question I had while using ansible and I wasn't happy
 with any of the tools I found online.
 
 Deploying users keys should be something that we should be paying attention to

@@ -19,6 +19,9 @@ This topic divides people between genuine security freaks and those who simply
 like the simple things in life and hope that the plans will always get together.
 
 
+.. image:: https://imgs.xkcd.com/comics/public_key.png
+
+
 This article it's intended to be for both. I'm trying to cover the best key
 setup, the purpose of keys and why keys can be really important today.
 
@@ -41,7 +44,11 @@ more pragmatic approach how to use it to:
 - integrate with your favourite orchestration tool without risking compromisin
   passwords
 
-All this can has practical usages on a daily basis for individuals and for
+To cover all the features I'll also cover stuff such as encrypt messages to send
+across the internet in a safe way.
+
+
+All this has practical usages on a daily basis for individuals and for
 businesses of any size.
 
 Here I'd like to cover:
