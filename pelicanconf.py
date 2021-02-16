@@ -108,12 +108,12 @@ CATEGORIES = [
         'description': "Articles on articles on DevOps"
 
         },
-    {
-        'title': "hiking",
-        'href': "/category/hiking/",
-        'icon': "icon fa-walking",
-        'description': "Articles and maps on hiking"
-        },
+#    {
+#        'title': "hiking",
+#        'href': "/category/hiking/",
+#        'icon': "icon fa-walking",
+#        'description': "Articles and maps on hiking"
+#        },
     ]
 TOPSERIES = [
      {
