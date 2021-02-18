@@ -8,14 +8,25 @@ About
 This page is a journal on solutions I came across - professional and personal
 which I found interesting and others that I came up on my own.
 
-
 Since everything is a work in progress and we can only evolve based on previous
 achievements, I hope this can help others to solve the same problems I once had
 and allow others to go to the next step, the same way this helped me
 
 
-Why
-===
+About myself
+============
+
+I'm above alli just another curious person trying to figure some solutions on
+the daily problems, but I'm also a IT professional and sometimes the daily
+problems and the professional challenges overlap, so I found useful to have
+this kind of blog around.
+
+
+
+Why do we need another blog?? 
+=============================
+
+We don't. I created it for my own convenience. 
 
 Across the years I've been looking for information to do my work.
 
@@ -29,33 +40,10 @@ This is blog is where I keep a personal log of things I've been doing and also
 an homage to some articles that I consider relevant to keep.
 
 
-About myself
-============
-
-I'm above all curious person trying to figure some solutions on the daily
-problems, but I'm also a IT professional and sometimes the daily problems
-and the professional challenges overlap, so I found useful to have this
-kind of blog around.
-
-Enjoy.
-
-
-
-
------------------------
-
-
-# About
-
-Why do we need another blog?? 
-=============================
-
-We don't. I created it for my own convenience. 
-
 What's this about 
 =================
 
-Ideas, and projects that I find interesting. 
+Ideas and projects that I find interesting. 
 
 Some stuff I own, other things I just want to keep a copy of stuff I found once
 online and don't want to keep googling to one day just to find the page is not
@@ -94,3 +82,30 @@ I beg to disagree:
   exploits. I just removed the weak links of the chain.
 - I don't want to depend on PHP or MySQL versions to keep a simple site
   running
+
+Credits
+=======
+
+I believe I own very little of the content of this blog. I wrote mostly some
+directives on how to use other people's tools and at most I make some wrapper
+to combine multiple technologies for my own convenience.
+
+I'd like to refer the blog `The Digital Cat <https://www.thedigitalcatonline.com/>`_
+as my inspiration to start using Pelican with a custom theme. Thanks Leonardo
+Giordani for the kick off.
+
+License
+=======
+
+The content of the blog is open source and available on github at
+`nunogrl repository <https://github.com/nunogrl/nunogrl>`_
+
+Feel free to fork it and start creating your own content!
+
+
+
+To do
+=====
+
+- what I'll most likely will post here
+- What you won't find here
