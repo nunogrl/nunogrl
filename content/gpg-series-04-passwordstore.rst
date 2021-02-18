@@ -6,15 +6,17 @@ Password Store for teams and infrastruture
 :Date: 2020-11-23
 :Category: DevOps
 :Tags: gpg, encryption, signing, authenticate
-:Slug: gpg-series
+:Slug: gpg-series-passwordstore
 :Authors: Nuno Leitao
 :Summary: Password Store for teams and infrastruture
 :Series: Using GPG
 :series_index: 4
 :Status: Published
 
+.. image:: https://imgs.xkcd.com/comics/security.png
+
 Security Requirements
-======================
+=====================
 
 While working on any IT project we face some issues regarding security that
 aren't easy to address.
@@ -56,7 +58,7 @@ During onboard he's invited to:
 in case they don't exist).
 - clone some repositories to specific locations on his station.
 
-
+ 
 
 .. code-block:: TEXT 
 

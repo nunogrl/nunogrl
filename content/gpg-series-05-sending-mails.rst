@@ -6,7 +6,7 @@ Encrypt and Decrypt Messages with GPG
 :Date: 2021-01-05
 :Category: DevOps
 :Tags: gpg, encryption, signing, authenticate
-:Slug: gpg-series
+:Slug: gpg-series-encrypting-messages
 :Authors: Nuno Leitao
 :Summary: Password Store for teams and infrastruture
 :Series: Using GPG

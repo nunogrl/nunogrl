@@ -7,7 +7,7 @@ GPG series
 :Date: 2020-10-19
 :Category: DevOps
 :Tags: gpg, encryption, signing, authenticate
-:Slug: gpg-series
+:Slug: gpg-series-how-to-use
 :Authors: Nuno Leitao
 :Summary: How to use GPG
 :Status: Published

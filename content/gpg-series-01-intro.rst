@@ -5,7 +5,7 @@ The perfect GPG key
 :Title: The perfect GPG key
 :Date: 2019-08-30 22:28
 :Category: devops
-:Tags: Technology
+:Tags: gpg, encryption, signing, authenticate
 :Slug:  the-perfect-gpg-key
 :Authors: Nuno Leitao
 :Summary: GPG - another guide
