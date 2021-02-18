@@ -9,6 +9,7 @@ nci-ansible-ui
 :Authors: Nuno Leitao
 :Image: nci-ansible-ui2
 :Summary: CI/CD with ... Node?!😱😱
+:Status: Draft
 
 This is to expressn an idea that has been growing for a while now.
 
@@ -17,7 +18,7 @@ Everyone loves the concept of CI/CD and most people kind of dislikes Jenkins.
 It's not a dislike from my side, it's just that I feel that if we want to have
 something indoors to build and deploy our stuff, there's not many options around.
 
-.. code-block:: TXT
+::
 
   Jenkins get's the job done
  
