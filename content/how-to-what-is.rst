@@ -9,7 +9,7 @@ How to Write a What is Blog Post
 :Authors: Nuno Leitao
 :Summary: How to write a what is blog post 
 :Image: how-to
-:Status: published
+:Status: Draft
 
 
 .. |check| raw:: html

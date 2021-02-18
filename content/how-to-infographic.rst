@@ -11,7 +11,7 @@ How to Write an Infographic Blog Post
 :Authors: Nuno Leitao
 :Summary: How to write an infographic blog post 
 :Image: how-to
-:Status: published
+:Status: Draft
 
 
 Contents

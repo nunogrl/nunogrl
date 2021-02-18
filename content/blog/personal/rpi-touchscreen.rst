@@ -9,6 +9,7 @@ Raspberry Touchscreen 3.5 Inc
 :Authors: Nuno Leitao
 :Image: RaspberryTFTGPIO
 :Summary: Raspberry pi - broken touchscreen
+:Status: Published
 
 Some time ago, I found a neat tft for the raspberry pi at amazon.
 

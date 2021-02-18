@@ -9,7 +9,7 @@ How to Write a How to Blog Post
 :Authors: Nuno Leitao
 :Summary: How to write a blog post 
 :Image: how-to
-:Status: Published
+:Status: Draft
 
 
 Contents

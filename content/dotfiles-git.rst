@@ -9,6 +9,7 @@ Git setup
 :authors:  Nuno Leitao
 :summary:  multi setup for git
 :Image:    git-config
+:Status:   Draft
 
 How to save time with gitconfig
 *******************************

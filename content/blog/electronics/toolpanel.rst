@@ -11,7 +11,7 @@ Painel de Ferramenta
 :Authors: Nuno Leitao
 :Image: /tools/Painel_final
 :Summary: Create a simple tools to keep tools
-
+:Status: Draft
 
 .. image:: {static}/images/tools/Painel_final.jpg
   :alt: "Resulaltado final"
