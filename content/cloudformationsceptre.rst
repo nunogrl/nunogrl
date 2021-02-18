@@ -37,4 +37,5 @@ documentation on this it's a bit scarse.
 I've been using sceptre v1 for the last year to maintain the systems working,
 but I must confess that I wasn't very happy about it.
 
-Deployments were scary
+Deployments can be very scary if you're not in full control .
+
