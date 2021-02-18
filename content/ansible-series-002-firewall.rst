@@ -13,11 +13,12 @@ Ansible - Managing Firewall
 :Status: Published
 :series_index: 2
 
-               This was the very first question I had while using ansible and I wasn't happy
+This was the very first question I had while using ansible and I wasn't happy
 with any of the tools I found online.
 
-Deploying users keys should be something that we should be paying attention to
-the detail and we should be always able to revert the changes.
+Deploying users keys it's something that requires attention to detail. We
+should always be able to create an delete users and user environments.
+
 
 Deploying to metal
 ==================
@@ -34,7 +35,7 @@ But this is not enough, if we're deploying to metal, most suppliers will provide
 you a root password, so if this is detected this also has to prior to run the
 rest of the playbook, has to update root password with a known one
 
-nice to have:
+Nice to have:
 - add the users to sudoers;
 - ensure the users are trusted, so they don't have to type password everytime
 they need to perform operations.
