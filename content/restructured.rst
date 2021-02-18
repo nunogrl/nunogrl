@@ -15,7 +15,7 @@ I had a hard time to get convinced on the benefits of RST files.
 Markdown is so simple and convenient that anyone can start using it from day one
 without any trouble with it.
 
-Unfortunately Markdonw is very incomplete and there's still no aggreement on
+Unfortunately Markdown is very incomplete and there's still no aggreement on
 what features should be ineherent to markdown and which shouldn't. On my opinion
 for the sake of consistency some type of level of compliance should be in place.
 
@@ -74,7 +74,7 @@ And vim highlights the blocks of contents for you, so there's no need for fancy
 html generators to read a file properly.
 
 
-.. code-block:: RST
+::
 
     .. code-block:: bash
     
