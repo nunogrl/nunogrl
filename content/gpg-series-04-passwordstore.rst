@@ -11,7 +11,7 @@ Password Store for teams and infrastruture
 :Summary: Password Store for teams and infrastruture
 :Series: Using GPG
 :series_index: 4
-:Status: Published
+:Status: Draft
 
 .. image:: https://imgs.xkcd.com/comics/security.png
 

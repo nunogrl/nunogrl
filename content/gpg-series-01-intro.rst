@@ -9,7 +9,7 @@ The perfect GPG key
 :Slug:  the-perfect-gpg-key
 :Authors: Nuno Leitao
 :Summary: GPG - another guide
-:Status: Published
+:Status: Draft
 :Series: Using GPG
 :series_index: 1
 

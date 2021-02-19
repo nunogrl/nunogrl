@@ -9,7 +9,7 @@ The perfect GPG key - a new approach
 :Slug:  the-perfect-gpg-key-multiple-devices
 :Authors: Nuno Leitao
 :Summary: GPG - another guide
-:Status: Published
+:Status: Draft
 :Series: Using GPG
 :series_index: 2
 

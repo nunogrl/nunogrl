@@ -9,7 +9,7 @@ Ansible Playbooks
 :Authors: Nuno Leitao
 :Image: Playbook-hand
 :Summary: Orchestration with Ansible 
-:Status: Published
+:Status: Draft
 :Series: Ansible
 :series_index: 1
 

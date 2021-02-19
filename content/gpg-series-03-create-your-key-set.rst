@@ -10,7 +10,7 @@ GPG series
 :Slug: gpg-series-how-to-use
 :Authors: Nuno Leitao
 :Summary: How to use GPG
-:Status: Published
+:Status: Draft
 :Series: Using GPG
 :series_index: 3
 

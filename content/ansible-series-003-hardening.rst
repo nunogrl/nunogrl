@@ -10,7 +10,7 @@ Ansible - motd and bashrc
 :Image: Playbook-hand
 :Series: Ansible
 :Summary: Deploying and maintaining users using Ansible 
-:Status: Published
+:Status: Draft
 :series_index: 3
 
 

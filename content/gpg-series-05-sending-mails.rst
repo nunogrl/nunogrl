@@ -11,7 +11,7 @@ Encrypt and Decrypt Messages with GPG
 :Summary: Password Store for teams and infrastruture
 :Series: Using GPG
 :series_index: 5
-:Status: Published
+:Status: Draft
 
 
 You can easily encrypt and decrypt

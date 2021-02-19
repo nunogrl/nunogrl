@@ -10,7 +10,7 @@ Ansible - Managing Firewall
 :Summary: Deploying and maintaining a firewall using Ansible 
 :Image: Playbook-hand
 :Series: Ansible
-:Status: Published
+:Status: Draft
 :series_index: 2
 
 This was the very first question I had while using ansible and I wasn't happy

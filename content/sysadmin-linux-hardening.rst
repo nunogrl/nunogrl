@@ -9,8 +9,7 @@ Linux Hardening
 :Authors: Nuno Leitao
 :Series: Linux
 :Summary: Keeping your server safe
-:Status: Published
-
+:Status: Draft
 
 This is used overlooked by most people, but I feel that this is a relevant bit.
 
