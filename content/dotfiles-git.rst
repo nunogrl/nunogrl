@@ -9,7 +9,7 @@ Git setup
 :authors:  Nuno Leitao
 :summary:  multi setup for git
 :Image:    git-config
-:Status:   Draft
+:Status:   Published
 
 How to save time with gitconfig
 *******************************
@@ -110,7 +110,7 @@ I'm using the same GPG key for both entries
 References
 ----------
 
-- `StackOverflow: Can I specify multiple users for myself in .gitconfig? <https://stackoverflow.com/questions/4220416/can-i-specify-multiple-users-for-myself-in-gitconfig>`_
+- `git-config documentation <https://git-scm.com/docs/git-config>`_
 
 - `StackOverflow: Pretty git branch graphs <https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs>`_
 
