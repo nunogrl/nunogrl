@@ -91,41 +91,41 @@ MARKDOWN = {
     'output_format': 'html5',
 }
 
-EXTRACOPYRIGHT = 'Cover picture by: <a href="https://pxhere.com/en/photo/1428515">An Min @ pxhere.com'
+# EXTRACOPYRIGHT = ''
 
-CATEGORIES = [
-    {
-        'title': "Electronics",
-        'href': "/category/electronics/",
-        'icon': "icon fa-microchip",
-        'description': "Articles on DIY projects on electronics"
-
-        },
-    {
-        'title': "DevOps",
-        'href': "/category/devops/",
-        'icon': "icon fa-robot",
-        'description': "Articles on articles on DevOps"
-
-        },
+#CATEGORIES = [
+#    {
+#        'title': "Electronics",
+#        'href': "/category/electronics/",
+#        'icon': "icon fa-microchip",
+#        'description': "Articles on DIY projects on electronics"
+#
+#        },
+#    {
+#        'title': "DevOps",
+#        'href': "/category/devops/",
+#        'icon': "icon fa-robot",
+#        'description': "Articles on articles on DevOps"
+#
+#        },
 #    {
 #        'title': "hiking",
 #        'href': "/category/hiking/",
 #        'icon': "icon fa-walking",
 #        'description': "Articles and maps on hiking"
 #        },
-    ]
-TOPSERIES = [
-     {
-         'title': "GPG usages",
-         'href': "/blog/2019/08/30/the-perfect-gpg-key/",
-         'image': "/images/gpg-series.png",
-         'alt': "GPG",
-         'description':
-             "A series of posts with examples on GPG creation and usage, for"
-             " simple password maintaining, password sharing, authentication"
-             " and signing."
-         },
+#    ]
+#TOPSERIES = [
+#     {
+#         'title': "GPG usages",
+#         'href': "/blog/2019/08/30/the-perfect-gpg-key/",
+#         'image': "/images/gpg-series.png",
+#         'alt': "GPG",
+#         'description':
+#             "A series of posts with examples on GPG creation and usage, for"
+#             " simple password maintaining, password sharing, authentication"
+#             " and signing."
+#         },
 #     {
 #         'href': "/blog/2017/05/09/a-game-of-tokens-write-an-interpreter-in-python-with-tdd-part-1/",
 #         'image': "/images/a-game-of-tokens-1.jpg",
@@ -146,7 +146,7 @@ TOPSERIES = [
 #             " I believe old architectures can teach us a lot, so let's explore"
 #             " \"the computer that wouldn’t die\"!"
 #         },
-]
+#]
 # 
 # MYVIDEOS = [
 #     {
