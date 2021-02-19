@@ -2,7 +2,7 @@ YAML Multiline
 ##############
 
 :Date: 2020-12-08
-:Status: Published
+:Status: Draft
 :Image: Playbook-hand
 :Series: Ansible
 :series_index: 5
