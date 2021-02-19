@@ -8,7 +8,7 @@ Debian repository mirror
 :Slug: debian-mirror-repository
 :Authors: Nuno Leitao
 :Summary: Mirror an existing repository using reprepro
-:Status: draft
+:Status: Draft
 
 I adquired a few months ago a external hard drive.
 Recently I found usefull to create a repository of the latest stable debian

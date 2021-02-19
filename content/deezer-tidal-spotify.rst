@@ -5,6 +5,6 @@
 :Slug: spotify-tidal-deezer
 :Authors: Nuno Leitao
 :Summary: Music
-:Status: draft
+:Status: Draft
 
 For serveral years I'm looking to replicate at my place the quality of sound I remember ...

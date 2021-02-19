@@ -10,7 +10,7 @@ Ansible - Managing Users
 :Series: Ansible
 :Summary: Deploying and maintaining users using Ansible 
 :Image: Playbook-hand
-:Status: published
+:Status: Published
 :series_index: 4
 
 This was the very first question I had while using ansible and I wasn't happy

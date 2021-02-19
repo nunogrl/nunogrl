@@ -11,7 +11,7 @@ How to Write a List Blog Post
 :Authors: Nuno Leitao
 :Summary: How to write a list blog post 
 :Image: how-to
-:Status: draft
+:Status: Draft
 
 
 Contents

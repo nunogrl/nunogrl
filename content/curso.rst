@@ -8,7 +8,7 @@ Learning Git
 :Slug: learning-git 
 :Authors: Nuno Leitao
 :Summary: git course
-:Status: draft
+:Status: Draft
 
 
 Tabela de Conteúdos

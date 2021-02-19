@@ -8,7 +8,7 @@ Sceptre - cloudformation deployment
 :Slug: sceptre-say-no-to-big-red-buttons-rst
 :Authors: Nuno Leitao
 :Summary: Deploying in a safe way
-:Status: draft
+:Status: Draft
 
 Sceptre by Cloudreach
 *********************
