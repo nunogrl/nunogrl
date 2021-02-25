@@ -94,6 +94,14 @@ I'd like to refer the blog `The Digital Cat <https://www.thedigitalcatonline.com
 as my inspiration to start using Pelican with a custom theme. Thanks Leonardo
 Giordani for the kick off.
 
+I'd like to refer to the following personal pages:
+
+- `Don's Blog <https://www.donaldsimpson.co.uk/>`_
+- `John Paul Newman <https://johnpaulnewman.com/>`_
+
+as a guideline as it's very close for what I was looking for a portfolio /
+personal page.
+
 License
 =======
 
