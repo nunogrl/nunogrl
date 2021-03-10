@@ -132,6 +132,7 @@ The syntax might look awckward at first, but we get used to it easily.
 References
 ==========
 
-- `"Restructured Text (reST) and Sphinx CheatSheet" <https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html>`_
+- `"Restructured Text (reST) and Sphinx CheatSheet"
+  <https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html>`_
 
 
