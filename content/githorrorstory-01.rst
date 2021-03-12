@@ -9,7 +9,7 @@ A Git Horror Story: Repository Integrity With Signed Commits
 :Image: githorrorstory/githorrorstory
 :Summary: How to improve security in your git repositories to prevent
           unwanted commits to sneak in your code.
-:Status: Draft
+:Status: Published
 :Series: git-horror-story
 :series_index: 1
 
