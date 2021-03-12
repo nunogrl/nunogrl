@@ -8,8 +8,13 @@ Git setup
 :slug:     git-config
 :authors:  Nuno Leitao
 :summary:  multi setup for git
-:Image:    git-config
+:Image:    dotfiles/dotfiles
 :Status:   Published
+
+.. image:: {static}/images/dotfiles/dotfiles.svg
+  :alt: "My dotfiles"
+
+
 
 How to save time with gitconfig
 *******************************
