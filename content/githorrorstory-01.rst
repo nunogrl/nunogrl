@@ -7,6 +7,7 @@ A Git Horror Story: Repository Integrity With Signed Commits
 :Slug: a-git-horror-story-repository-integrity-with-signed-commits-01
 :Authors: Nuno Leitao
 :Image: githorrorstory/githorrorstory
+:opengraph_image: githorrorstory/githorrorstory.jpg
 :Summary: How to improve security in your git repositories to prevent
           unwanted commits to sneak in your code.
 :Status: Published
