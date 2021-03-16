@@ -13,7 +13,7 @@ Git setup
 
 .. image:: {static}/images/dotfiles/dotfiles.svg
   :alt: "My dotfiles"
-  :witdh: 800
+  :width: 800
 
 
 
