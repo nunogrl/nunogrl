@@ -1,4 +1,6 @@
-:Title: Creating a self signed certificate on nginx
+Creating a self signed certificate on nginx
+###########################################
+
 :Date: 2021-01-20 12:00:00 +0100
 :Category: ssl
 :Tags: ssl nginx
