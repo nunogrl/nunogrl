@@ -5,7 +5,7 @@ Page not Found
 :Status: hidden
 :Save_as: 404.html
 
-.. image:: {static}/images/error-404.svg
+.. image:: /images/error-404.svg
   :alt: "Page not Found"
   :width: 800
 
