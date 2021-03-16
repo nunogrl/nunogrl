@@ -45,9 +45,9 @@ iwlwifi -- Wireless LAN
 uvcvideo -- built-in camera
 cdc_acm -- built-in LTE hardware (should really be using cdc_mbim, I guess)
 i915 -- video
-snd_hda_intel -- sound 
+snd_hda_intel -- sound
 rtsx_pci_sdmmc -- built-in SD reader
-thinkpad_acpi -- extra LEDs, 
+thinkpad_acpi -- extra LEDs,
 
 rfkill for bluetooth and LTE Fixing major annoyances Function Keys
 
@@ -64,18 +64,14 @@ get the useless Insert key with FnLock. To fix this, dump this into
 
 .. code-block:: TEXT
 
-    # ThinkPad X240: switch End and Insert keys (so
-    that when Fn-Lock is enabled, End works without Fn).
+    # ThinkPad X240: switch End and Insert keys
+    # so that when Fn-Lock is enabled, End works without Fn.
     keyboard:dmi:bvn*:bvr*:bd*:svnLENOVO:pn*:pvrThinkPadX240:*
-    	KEYBOARD_KEY_d2=end KEYBOARD_KEY_cf=insert
+        KEYBOARD_KEY_d2=end KEYBOARD_KEY_cf=insert
 
-You'll have to run
+You'll have to run "**udevadm hwdb --update**" after that.
 
-.. code-block:: TEXT
-
-    udevadm hwdb --update 
-
-after that. (This hack courtesy of Thinkwiki x240).
+This hack courtesy of Thinkwiki x240.
 
 Touchpad
 ========
@@ -92,9 +88,9 @@ in case I want to recover pad movement later. To use this, drop this into
 .. code-block:: TEXT
 
     Section "InputClass"
-    	Identifier "touchpad"
+        Identifier "touchpad"
         MatchProduct "SynPS/2 Synaptics TouchPad"
-    	Driver "synaptics"
+        Driver "synaptics"
         Option "PalmDetect" "True"
         Option "ClickPad" "True"
         Option "SoftButtonAreas" "67% 100% 0 0 30% 67% 0 0" #Ganz aus: BottomEdge 10 TopEdge 0 
@@ -123,14 +119,16 @@ activity by dropping the following into /etc/network/if-up.d/ledblink:
 
 .. code-block:: SHELL
 
-    #!/bin/sh case $IFACE in eth*|wlan*)
-    	LED_NAME="tpacpi::unknown_led"
-    	TRIGGER="/sys/class/leds/$LED_NAME/trigger" if grep "phy[0-9]*tx"
-    	"$TRIGGER" > /dev/null; then
-    		TX_NAME=`sed -e 's/.*\(phy[0-9]*tx\).*/\1/' "$TRIGGER"`
-    		echo $TX_NAME > $TRIGGER
-    	fi
-    ;; esac
+    #!/bin/sh
+    
+    case $IFACE in eth*|wlan*)
+        LED_NAME="tpacpi::unknown_led"
+        TRIGGER="/sys/class/leds/$LED_NAME/trigger" if grep "phy[0-9]*tx"
+        "$TRIGGER" > /dev/null; then
+            TX_NAME=`sed -e 's/.*\(phy[0-9]*tx\).*/\1/' "$TRIGGER"`
+            echo $TX_NAME > $TRIGGER
+        fi;;
+    esac
 
 I also believe disk access should not go unnoticed, and so I let the power
 LED blink when there's some traffic on the SATA bus. This needs to be
@@ -141,9 +139,9 @@ pmutils configuration: (File: /etc/pm/sleep.d/70diskled)
 
     #!/bin/sh
     case "$1" in
-    	resume|thaw)
-    		echo ide-disk > "/sys/class/leds/tpacpi::power/trigger" :
-    	;;
+        resume|thaw)
+            echo ide-disk > "/sys/class/leds/tpacpi::power/trigger" :
+            ;;
     esac
     exit 0
 
@@ -183,40 +181,45 @@ need there without actually keeping the machine from actually suspending
 when I don't care. So, I came up with this script that's now called with
 enter and exit as parameters in with:
 
-#!/bin/sh # On a thinkpad, make the power button do a heartbeat (or turn
-it off again) # Since you need appropriate privileges to change LEDs, this
-tries to # sudo itself.  To really enjoy this, you'll want something like #
-NOPASSWD: /usr/local/bin/mark-critical in your user's sudoers line.
-
 .. code-block:: SHELL
+
+    #!/bin/sh
+    # On a thinkpad, make the power button do a heartbeat (or turn it off again)
+    # Since you need appropriate privileges to change LEDs, this tries to
+    # sudo itself.  To really enjoy this, you'll want something like
+    #
+    #   NOPASSWD: /usr/local/bin/mark-critical
+    # in your user's sudoers line.
+    # File: /usr/local/bin/mark-critical
     LEDDIR="/sys/class/leds/tpacpi::power"
     
     if [ "t$2" == tmail ]; then
-    	setled() {
-    		redled $1 || echo heartbeat > "$LEDDIR/trigger"
-    	}
+        setled() {
+            redled $1 || echo heartbeat > "$LEDDIR/trigger"
+        }
     else
-    	setled() {
-    		echo $1 > "$LEDDIR/trigger"
-    	}
+        setled() {
+            echo $1 > "$LEDDIR/trigger"
+        }
     fi
     
     modprobe ledtrig_heartbeat
     
     if id | grep root 2>&1 > /dev/null then
-    	:
+        :
     else
-    	exec sudo $0 $*
+        exec sudo $0 $*
     fi
     
     case $1 in
-    	enter)
-    		setled heartbeat ;;
-    	exit)
-    		setled none ;;
-    	*)
-    		echo "Usage: $0 enter|exit" ;;
-    esac File: /usr/local/bin/mark-critical
+         enter)
+             setled heartbeat ;;
+         exit)
+             setled none ;;
+         *)
+             echo "Usage: $0 enter|exit" ;;
+    esac
+
 
 Battery and Power
 =================
@@ -228,40 +231,53 @@ from Lenovo's docs to completely discharge the battery before recharging
 it. Frankly, I think it's utter bullshit.
 
 Instead, when there's no reason to expect I'll actually need 20 hours of
-juice, I usually limit charging to 80% of full. To do this, you need two
-ingredients: A kernel module called acpi_call, and, for convenience, the
-tpacpi-bat script. For even more convenience, I'm using the following shell
-script to configure the system to charge as much as possible ("travel") to
-charge below 70% up to 80% ("normal") or to not charge at all ("nocharge";
-this is useful if you have weakish power supplies and want to run the
+juice, I usually limit charging to 80% of full.
+
+To do this, you need two ingredients: A kernel module called acpi_call, and,
+for convenience, the `tpacpi-bat` script.
+
+For even more convenience, I'm using the following shell script to configure
+the system to charge as much as possible ("travel")
+to charge below 70% up to 80% ("normal")
+or to not charge at all ("nocharge").
+
+This is useful if you have weakish power supplies and want to run the
 machine from them):
 
 .. code-block:: SHELL
 
-    #!/bin/sh if id | grep root 2>&1 > /dev/null then
-    	true
+    #!/bin/sh
+    
+    if id | grep root 2>&1 > /dev/null then
+        true
     else
-    	exec sudo $0 $*
+        exec sudo $0 $*
     fi
     
     usage() {
-    	echo "Usage: $0 [show|travel|normal|nocharge]" exit 1
+        echo "Usage: $0 [show|travel|normal|nocharge]" exit 1
     }
     
-    case "$1" in show)
-    	echo "Start/Stop 1:" `tpacpi-bat -g ST 1` `tpacpi-bat -g SP 1` echo
-    	"Start/Stop 2:" `tpacpi-bat -g ST 2` `tpacpi-bat -g SP 2` ;;
-    travel)
-    	tpacpi-bat -s --start 0 0 tpacpi-bat -s --stop 0 0 ;;
-    normal)
-    	tpacpi-bat -s --start 0 67 tpacpi-bat -s --stop 0 74 ;;
-    nocharge)
-    	tpacpi-bat -s --start 0 1 tpacpi-bat -s --stop 0 1 ;;
-    *)
-    	usage ;;
+    case "$1" in
+        show)
+            echo "Start/Stop 1:" `tpacpi-bat -g ST 1` `tpacpi-bat -g SP 1`
+            echo "Start/Stop 2:" `tpacpi-bat -g ST 2` `tpacpi-bat -g SP 2`
+            ;;
+        travel)
+            tpacpi-bat -s --start 0 0 tpacpi-bat -s --stop 0 0
+            ;;
+        normal)
+            tpacpi-bat -s --start 0 67 tpacpi-bat -s --stop 0 74
+            ;;
+        nocharge)
+            tpacpi-bat -s --start 0 1 tpacpi-bat -s --stop 0 1
+            ;;
+        *)
+            usage
+            ;;
     esac
     
-    File: /home/msdemlei/mybin/chargeconfig
+    # File: /home/msdemlei/mybin/chargeconfig
 
 As the battery's estimate of its current capacity decreases, I'm decreasing
 the threshold, too, as it apparently is the threshold of the design capacity;
@@ -274,165 +290,262 @@ parameters can be passed in through modprobe. I don't keep this separate but
 instead in my local modprobe configuration together with several blacklists
 that may or may not be appropirate for your setup:
 
-options i915 enable_rc6=7 enable_fbc=1 enable_dc=2 options iwlwifi
-power_save=1 power_level=3 bt_coex_active=1 11n_disable=1 #options iwlwifi
-power_save=1 power_level=3
+.. code-block:: TEXT
 
-options snd-hda-intel patch=x240-alsa.fw,x240-alsa.fw,x240-alsa.fw
+    options i915 enable_rc6=7 enable_fbc=1 enable_dc=2
+    options iwlwifi power_save=1 power_level=3 bt_coex_active=1 11n_disable=1
+    #options iwlwifi power_save=1 power_level=3
+    
+    options snd-hda-intel patch=x240-alsa.fw,x240-alsa.fw,x240-alsa.fw
+    
+    blacklist e1000e
+    blacklist sierra_net
+    blacklist cdc_mbim
+    blacklist cdc_ncm
+    blacklist bluetooth
+    blacklist btintel
+    blacklist btusb
+    
+    # File: /etc/modprobe.d/local.conf
 
-blacklist e1000e blacklist sierra_net blacklist cdc_mbim blacklist
-cdc_ncm blacklist bluetooth blacklist btintel blacklist btusb File:
-/etc/modprobe.d/local.conf
-
-On the weird snd_hda_intel line see below
+On the weird ``snd_hda_intel`` line see below
 
 A constant source of trouble on the bos is PCIe ASPM (that's active state
-power management). First, the machine's ACPI reports it doesn't support it. On
-kernels before ~5.4, that meant that the package would never reach the C7
-state, which wastes about 1 W (which is significant when the whole thing
-just pulls 4 W). I hence passed pcie_aspm=force in the kernel command line.
+power management).
 
-Warning: The kernel docs say: “Forcing ASPM on may cause system lockups.”
+First, the machine's ACPI reports it doesn't support it.
+
+On kernels before ~5.4, that meant that the package would never reach the C7
+state, which wastes about 1 W (which is significant when the whole thing
+just pulls 4 W).
+
+I hence passed "**pcie_aspm=force**" in the kernel command line.
+
+**Warning:** The kernel docs say: “Forcing ASPM on may cause system lockups.”
+
 That is true; While things had been just fine before, after version 5.4
 forcing ASPM has rather consistently led to lockups on my box. On the other
-hand, even without forcing ASPM, the machine started to reach PC7. But then
-it started to lock up, too.
+hand, even without forcing ASPM, the machine started to reach PC7.
+
+But then it started to lock up, too.
 
 I'm still experimenting whenever I hit an unstable kernel
-version. Right now, I'm forcing ASPM again, and I'm keeping the the policy
-(cf. /sys/module/pcie_aspm/parameters/policy) on performance. That keeps the
-box out of PC7 and thus costs about a Watt, but lockups aren't funny. So:
-To be continued.
+version.
 
-Monitoring Just as my trusty old XP731, the X240 has two batteries, and
-it still seems that's not terribly well supported by most of the battery
-applets. So, I continued to hack on my little window make dockapp (that
-works just dandy in most other places), which is a fork from wmacpimon. Prod
-me to do a proper release one of these days; meanwhile, get the stuff from
+Right now, I'm forcing ASPM again, and I'm keeping the the policy
+(cf. ``/sys/module/pcie_aspm/parameters/policy``) on performance.
+That keeps the box out of PC7 and thus costs about a Watt, but lockups aren't
+funny.
+
+So: To be continued.
+
+Monitoring
+==========
+
+Just as my trusty old XP731, the X240 has two batteries, and it still seems
+that's not terribly well supported by most of the battery applets.
+
+So, I continued to hack on my little window make dockapp (that works just dandy
+in most other places), which is a fork from ``wmacpimon``.
+
+Prod me to do a proper release one of these days; meanwhile, get the stuff from
 SVN or as a tarball.
 
-Screen Brightness The backlight eats up a significant percentage of
-the power of the system, so keeping it down to whatever the environment
-allows really helps battery life. Doing it manually is, of course, not an
-option, so I've written a little piece of opencv-based python (dependency:
-python-opencv): adjust_backlight.py. You may want to adjust the levels in
-THRESHOLDS to your taste – I suspect you'll find my levels a bit too low,
-in particular in brighter light.
+Screen Brightness
+=================
+
+The backlight eats up a significant percentage of the power of the system, so
+keeping it down to whatever the environment allows really helps battery life.
+
+Doing it manually is, of course, not an option, so I've written a little piece
+of opencv-based python (dependency: python-opencv):
+`adjust_backlight.py <https://www.tfiu.de/x240/adjust_backlight.py>`_
+
+You may want to adjust the levels in THRESHOLDS to your taste – I suspect
+you'll find my levels a bit too low, in particular in brighter light.
 
 In practice, I'm executing this after system wakeup, because quite typically
 lighting conditions don't change much unless I move (and hence let the
 machine sleep). This, in turn, is started from a shell script that I let
 pm-suspend run under my unprivileged user-id. To make that happen, I dump
-a little shell script into /etc/pm/sleep.d:
+a little shell script into ``/etc/pm/sleep.d``:
 
-#!/bin/sh case "$1" in
-	resume|thaw)
-		su msdemlei -c "~/mybin/afterwakeup" ;;
-esac exit 0 File: /etc/pm/sleep.d/40userscript
+.. code-block:: SHELL
 
-Of course, you'll have to adjust msdemlei to your user id, and this assumes
-your user script is called mybin/afterwakeup. In case you're curious or are
-looking for inspriation what to put into such a wakeup script, here's mine
-(hoping I won't acidentally put something confidential in there:):
+    #!/bin/sh
+    
+    case "$1" in
+        resume|thaw)
+            su msdemlei -c "~/mybin/afterwakeup" ;;
+    esac
+    exit 0
+    # File: /etc/pm/sleep.d/40userscript
 
-#!/bin/sh cd killall dclock export DISPLAY=:0 if [ -f ~/.afterwakeup ]; then
-	LC_ALL=de_DE.UTF-8 /usr/games/xcowsay `cat ~/.afterwakeup` &
-else
-	LC_ALL=de_DE.UTF-8 /usr/games/xcowfortune&
-fi
+Of course, you'll have to adjust ``msdemlei`` to your user id, and this assumes
+your user script is called mybin/afterwakeup.
 
-dclock& xplanet -tmpdir ~/.xplanet/images -config overlay_clouds -projection
-rectangular -num_times 1& (sleep 1; python ~/mybin/adjust_backlight.py)&
-(sleep 6; ~/mybin/display-phone-status.sh)& (sleep 10; sudo rfkill block
-bluetooth)& ~/mybin/ifdocked & File: /home/msdemlei/mybin/afterwakeup
+In case you're curious or are looking for inspriation what to put into such a
+wakeup script, here's mine (hoping I won't acidentally put something
+confidential in there:):
 
-Sound I run alsa natively, i.e., without pulse or any similar cruft in
+.. code-block:: SHELL
+
+    #!/bin/sh
+    
+    cd
+    killall dclock
+    export DISPLAY=:0
+    if [ -f ~/.afterwakeup ]; then
+        LC_ALL=de_DE.UTF-8 /usr/games/xcowsay `cat ~/.afterwakeup` &
+    else
+        LC_ALL=de_DE.UTF-8 /usr/games/xcowfortune&
+    fi
+    
+    dclock&
+    xplanet \
+        -tmpdir ~/.xplanet/images \
+        -config overlay_clouds \
+        -projection rectangular \
+        -num_times 1&
+        (sleep 1; python ~/mybin/adjust_backlight.py)&
+        (sleep 6; ~/mybin/display-phone-status.sh)&
+        (sleep 10; sudo rfkill block bluetooth)&
+        ~/mybin/ifdocked & 
+    
+    # File: /home/msdemlei/mybin/afterwakeup
+
+Sound
+=====
+
+I run alsa natively, i.e., without pulse or any similar cruft in
 between. Unfortunately, the X240's sound hardware is a bit sucky in that:
 
-it only supports very few sample rates, and there are quite a few clients that
-rely on the sound hardware's capability to know sample rates like 22050 Hz.
-The way things are enumerated on my system, the HDMI audio out ends up as
-the default.  Lenovo mounted the speakers on the back, which marginally
-works when the machine sits on a hard surface, but usually results in fairly
-weak sound.  To solve all this, I'm using a special /etc/asound.conf:
+- it only supports very few sample rates, and there are quite a few clients
+  that rely on the sound hardware's capability to know sample rates
+  like 22050 Hz.
+- The way things are enumerated on my system, the HDMI audio out ends up as
+  the default.  Lenovo mounted the speakers on the back, which marginally works
+  when the machine sits on a hard surface, but usually results in fairly weak
+  sound.
 
-pcm.!default {
-	type plug slave.pcm {
-		@func getenv
-			vars [ ALSA_SLAVE ] default allmix
-		}
-}
+To solve all this, I'm using a special ``/etc/asound.conf``:
 
-pcm.!allmix {
-	type asym playback.pcm "boosted" capture.pcm "mixrec"
-}
+.. code-block:: TEXT
 
-pcm.boosted {
-	type softvol slave {
-		pcm mixed
-	} control {
-		name "Playback Boost" card 1
-	} min_dB -15.0 max_dB 15.0
-}
-
-pcm.mixed {
-	type dmix ipc_key 1024 ipc_key_add_uid false ipc_perm 0666 slave
-	spkr bindings {
-		0 0 1 1
-	}
-}
-
-pcm.mixrec {
-	type plug slave.pcm "snoop"
-}
-
-pcm.snoop {
-	type dsnoop ipc_key 1026 slave {
-		pcm "hw:1,0"
-	}
-}
-
-pcm.usbsnoop {
-	type dsnoop ipc_key 1027 slave {
-		pcm "hw:2,0"
-	}
-}
-
-pcm.usbmix {
-	type dmix ipc_key 1028 slave {
-		pcm "hw:2,0"
-	}
-}
-
-pcm.usbrec {
-	type plug slave.pcm usbsnoop
-}
-
-pcm.usbplay {
-	type plug slave.pcm usbmix
-}
-
-pcm_slave.spkr {
-	pcm "hw:1,0" period_time 0 period_size 735 buffer_size 11025 channels
-	2 rate 44100 format S16_LE
-}
-
-ctl.!default {
-	type hw card 1
-}
-
-pcm.glotze {
-	type hw card 0 device 3
-} File: /etc/asound.conf
+    pcm.!default {
+        type plug
+        slave.pcm {
+            @func getenv
+                vars [ ALSA_SLAVE ]
+                default allmix
+            }
+    }
+    
+    pcm.!allmix {
+        type asym
+        playback.pcm "boosted"
+        capture.pcm "mixrec"
+    }
+    
+    pcm.boosted {
+        type softvol
+        slave {
+            pcm mixed
+        }
+        control {
+            name "Playback Boost"
+            card 1
+        }
+        min_dB -15.0
+        max_dB 15.0
+    }
+    
+    pcm.mixed {
+        type dmix
+        ipc_key 1024
+        ipc_key_add_uid false
+        ipc_perm 0666
+        slave spkr
+        bindings {
+            0 0
+            1 1
+        }
+    }
+    
+    pcm.mixrec {
+        type plug
+        slave.pcm "snoop"
+    }
+    
+    pcm.snoop {
+        type dsnoop
+        ipc_key 1026
+        slave {
+            pcm "hw:1,0"
+        }
+    }
+    
+    pcm.usbsnoop {
+        type dsnoop
+        ipc_key 1027
+        slave {
+            pcm "hw:2,0"
+        }
+    }
+    
+    pcm.usbmix {
+        type dmix
+        ipc_key 1028
+        slave {
+            pcm "hw:2,0"
+        }
+    }
+    
+    pcm.usbrec {
+        type plug
+        slave.pcm usbsnoop
+    }
+    
+    pcm.usbplay {
+        type plug
+        slave.pcm usbmix
+    }
+    
+    pcm_slave.spkr {
+        pcm "hw:1,0"
+        period_time 0
+        period_size 735
+        buffer_size 11025
+        channels 2
+        rate 44100
+        format S16_LE
+    }
+    
+    ctl.!default {
+        type hw
+        card 1
+    }
+    
+    pcm.glotze {
+        type hw
+        card 0
+        device 3
+    }
+    # File: /etc/asound.conf
 
 This does the sample rate adaption (via the plughw slave), puts the HDMI
 control in the background and allows for some pre-amplification for sources
-that have a bit of extra dynamic range. To quickly switch between pre-amping
+that have a bit of extra dynamic range.
+
+To quickly switch between pre-amping
 and not (to avoid overmodulation), I've also added
 
-(bind-keys global-keymap "M-F1" '(system "amixer set 'Playback Boost' 128"))
-(bind-keys global-keymap "S-M-F1" '(system "amixer set 'Playback Boost'
-256")) to my .sawfishrc (note the icon on F1...).
+::
+
+    (bind-keys global-keymap "M-F1" '(system "amixer set 'Playback Boost' 128"))
+    (bind-keys global-keymap "S-M-F1" '(system "amixer set 'Playback Boost' 256"))
+
+to my .sawfishrc (note the icon on F1...).
 
 There's an extra issue when you have a dock; at least for the Ultradock
 and with recent kernels up to 4.5, the audio jack (or headphone jack,
@@ -443,57 +556,127 @@ going on, peruse Documentation/sound/hd-audio/notes.rst (the "Early Patching"
 chapter). If not, to get sound out of the ultradock's audio jack, you'll
 need to do two things:
 
-Drop a this into /lib/firmware/x240.alsa.fw: [codec] 0x10ec0292 0x17aa2214 0
+1. Drop a this into 
+   "``/lib/firmware/x240.alsa.fw``": 
 
-[pincfg] 0x16 0x21211010 0x19 0x21a11010 File: /lib/firmware/x240-alsa.fw
+   .. code-block:: INI
+    
+        [codec]
+        0x10ec0292 0x17aa2214 0
+        
+        [pincfg]
+        0x16 0x21211010 0x19 0x21a11010
+        File: /lib/firmware/x240-alsa.fw
 
-Arrange for this "patch" to be loaded. For that, you need a line like
-options snd-hda-intel patch=x240-alsa.fw,x240-alsa.fw,x240-alsa.fw in
-somewhere in modprobe.d. The above modprobe.d/local.conf already contains
-this. The "firmware" file name is given three times since at least kernel 4.5
-recognises three different hardware outputs (try aplay -L | grep "^hw:").
+2. Arrange for this "patch" to be loaded. For that, you need a line like
+   the following somewhere in "``modprobe.d``":
+
+   .. code-block:: TEXT
+   
+       options snd-hda-intel patch=x240-alsa.fw,x240-alsa.fw,x240-alsa.fw
+
+
+   The above "``modprobe.d/local.conf``" already contains this.
+
+   The "firmware" file name is given three times since at least kernel 4.5
+   recognises three different hardware outputs. Try:
+
+   .. code-block:: TEXT
+
+       aplay -L | grep "^hw:"
+
+
 In case this doesn't help (after reloading the snd-hda-intel), make sure
-your kernel is compiled with CONFIG_SND_HDA_PATCH_LOADER.
+your kernel is compiled with ``CONFIG_SND_HDA_PATCH_LOADER``.
 
-Phone hardware Somewhat to my surprise my X240 had an LTE modem built in. I
-still got myself a SIM card, but just so the carrier doesn't necessarily know
+Phone hardware
+==============
+
+Somewhat to my surprise my X240 had an LTE modem built in.
+
+I still got myself a SIM card, but just so the carrier doesn't necessarily know
 where I am and when I switch my computer on and off, the first thing I tried
-was figure out how to keep it from registering with the network. It turns out
-that's a bit tricky across wakeups, and so I ended up using rfkill. You'll
-need the thinkpad_acpi module, after which you should see something like
+was figure out how to keep it from registering with the network.
 
-$ rfkill list 0: tpacpi_bluetooth_sw: Bluetooth
-	Soft blocked: yes Hard blocked: no
-1: tpacpi_wwan_sw: Wireless WAN
-	Soft blocked: yes Hard blocked: no
-2: phy0: Wireless LAN
-	Soft blocked: no Hard blocked: no
+It turns out that's a bit tricky across wakeups, and so I ended up using rfkill.
+You'll need the ``thinkpad_acpi`` module, after which you should see something like
+
+.. code-block:: TEXT
+
+    $ rfkill list
+    0: tpacpi_bluetooth_sw: Bluetooth
+        Soft blocked: yes
+        Hard blocked: no
+    1: tpacpi_wwan_sw: Wireless WAN
+        Soft blocked: yes
+        Hard blocked: no
+    2: phy0: Wireless LAN
+        Soft blocked: no
+        Hard blocked: no
+
 To be independent of the enumeration of the blocks, you can use rfkill's
 symbolic names to define two aliases:
 
-alias fon="sudo rfkill unblock wwan" alias keinfon="sudo rfkill
-block wwan" together with accompanying entries in sudoers (like user
-NOPASSWD:/usr/sbin/rfkill).
+.. code-block:: SHELL
+
+    alias fon="sudo rfkill unblock wwan"
+    alias keinfon="sudo rfkill block wwan"
+
+together with accompanying entries in sudoers
+(like user NOPASSWD:/usr/sbin/rfkill).
 
 In case you're curious, I use common ifupdown to manage this; currently,
 I'm still going through pppd, where /etc/network/interfaces has
 
-iface o2 inet ppp
-  provider o2
+.. code-block:: TEXT
+
+    iface o2 inet ppp
+      provider o2
+
 This refers to a file in /etc/ppp/peers that probably would work pretty
 much like this for you, too:
 
-/dev/ttyACM0 115200 debug noauth usepeerdns ipcp-accept-remote
-ipcp-accept-local remotename any user thing local nocrtscts defaultroute
-noipdefault connect "/usr/sbin/chat -v -f /etc/ppp/chat-o2" which in turn
-uses /etc/ppp/chat-o2; unless you happen to use their infrastructure,
-you'll need to fix the APN; you may need further authentication, but these
-days I suspect you don't.
 
-TIMEOUT 5 ECHO ON ABORT 'BUSY' ABORT 'ERROR' ABORT 'NO ANSWER' ABORT 'NO
-CARRIER' ABORT 'NO DIALTONE' ABORT 'RINGING\r\n\r\nRINGING' TIMEOUT 12 ''
-"ATZ" OK 'ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0' OK 'AT+CGDCONT=1, "IPV4V6",
-"internet"' OK "\d\dATD*99#" CONNECT "" File: /etc/ppp/chat-o2
+.. code-block:: TEXT
+
+    /dev/ttyACM0
+    115200
+    debug
+    noauth
+    usepeerdns
+    ipcp-accept-remote
+    ipcp-accept-local
+    remotename any
+    user thing
+    local
+    nocrtscts
+    defaultroute
+    noipdefault
+    connect "/usr/sbin/chat -v -f /etc/ppp/chat-o2"
+
+
+which in turn uses /etc/ppp/chat-o2;
+
+unless you happen to use their infrastructure, you'll need to fix the APN;
+you may need further authentication, but these days I suspect you don't.
+
+.. code-block:: TEXT
+
+    TIMEOUT 5
+    ECHO ON
+    ABORT 'BUSY'
+    ABORT 'ERROR'
+    ABORT 'NO ANSWER'
+    ABORT 'NO CARRIER'
+    ABORT 'NO DIALTONE'
+    ABORT 'RINGING\r\n\r\nRINGING'
+    TIMEOUT 12
+    '' "ATZ"
+    OK 'ATQ0 V1 E1 S0=0 &C1 &D2 +FCLASS=0'
+    OK 'AT+CGDCONT=1, "IPV4V6", "internet"'
+    OK "\d\dATD*99#"
+    CONNECT ""
+    # File: /etc/ppp/chat-o2
 
 I plan to move all this to mbim at some point, but as the PPP hack works ok,
 there's not terribly much incentive. If you send me recipes, I'll certainly
@@ -506,10 +689,22 @@ manually, as sometimes some of them are unavailable or temporarily broken,
 and autoselection doesn't appear to work particularly well.
 
 To solve both problems (and help figure out what the modem thinks it's doing),
-I wrote modemconfig.py. Try modemconfig.py --help to figure out how to use
-it. It doesn't need to run as root if you add yourself to the dialout group.
+I wrote modemconfig.py.
 
-Power Connector Ok, this has nothing to do with Linux, but in all
+Try
+
+.. code-block:: SHELL
+
+    modemconfig.py --help
+
+to figure out how to use it.
+
+It doesn't need to run as root if you add yourself to the dialout group.
+
+Power Connector
+===============
+
+Ok, this has nothing to do with Linux, but in all
 likelihood you have 19 V power supplies that you might want to re-use with
 your X240. Well, trouble is, the power connector is some proprietary crap
 roughly in USB format with a single pin in the center. You can get adapters
@@ -522,8 +717,13 @@ while charging. I hence took my Dremel and cut off most of the junk. If
 you want to do the same thing, here's how the connector on the thinkpad
 side needs to be wired:
 
-	____________________________ |				| 3 |1
-	o 2	     1| |__________________________|
+::
+
+    ____________________________ 
+    |                          | 3
+    |1           o 2          1|
+    |__________________________|
+
 On the inside of the plug (1), there is roughly +19 V (note that when running
 and charging, the X240 may pull quite a bit of juice; the power adapters
 for the 2.5 Amp XP731 sometimes shut down due to overload; then again,
