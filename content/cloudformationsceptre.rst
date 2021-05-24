@@ -2,7 +2,7 @@ Sceptre - cloudformation deployment
 ###################################
 
 :Title: Sceptre - cloudformation deployment
-:Date: 2018-09-23 15:20
+:Date: 2021-05-23 15:20
 :Category: devops
 :Tags: Technology
 :Slug: sceptre-say-no-to-big-red-buttons-rst
@@ -16,13 +16,7 @@ Sceptre by Cloudreach
 This is my insight of Sceptre from my experience so far.
 
 .. image:: {static}/images/redbutton.png
-  :alt: Alternative text2
-
-   
-   
-.. |Substitution Name| image:: {static}/images/redbutton.png
-  :width: 400
-  :alt: Alternative text
+  :alt: Deploy!
   
 I've started working with Sceptre in 2017, as the organization I was working
 were using it for build their infrastructure, and using hef to maintain it.
