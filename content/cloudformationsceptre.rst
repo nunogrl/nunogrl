@@ -172,6 +172,68 @@ exact same parameters on the stacks.
     └── templates
         └── acm.yaml
 
+Creating stacks
+***************
+
+Here we're creating a solution with loadbalancer, an auto-scaling group attached
+to a target group, a certificate and all the configurations for route53.
+
+So here are the stacks we're creating:
+
+- vpc
+- site-asg
+- site-asg-targetgroup
+- site-elb-acm
+- site-elb-securitygroup
+- route53-site-zone
+- route53-site-A-records
+
+Note that changing a stack can lead to destruction of some resources within the
+template.
+
+Having this separated give us the confidence to maintain a specific stack
+without be worried that cloudformation will destroy the previous resource and
+create new one.
+
+
+VPC
+===
+
+To do so let's consider the region of ireland (**eu-west-1**) which as 3
+availability zones (**a**, **b** and **c**).
+
+We'll create a private subnet and a public subnet per availability zone.
+
+I'm using for this a template from cloudonaut which did this part really well.
+
+Site Autoscaling group connected to a Load Balancer
+===================================================
+
+Autoscaling
+-----------
+
+here we have to select the image we want to use, the type of instance (some
+extra configuration we may require), securitygroups to apply to individual
+machines, target-group parameters, the autoscaling policies we need to use.
+
+Elastic Load Balancer
+---------------------
+
+Here we need to attach the ACM and create the rules to handle requests.
+
+Security-Groups
+---------------
+
+There are 3 security groups to attach, one to each resource.
+
+Route 53
+========
+
+Here I create a stack with a zone a and another for the A records.
+
+This is to ensure that the zone is kept regardless on the records we're
+managing.
+
 
 Auditing Stacks with Sceptre
 ****************************
@@ -190,8 +252,6 @@ Auditing Stacks with Sceptre
    +-----------+              |
    |  Stack V2 |              |  execute change-set
    +-----------+
-
-
 
 
 Change-sets
