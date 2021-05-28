@@ -31,7 +31,15 @@ documentation on this it's a bit scarse.
 I've been using sceptre v1 for the last year to maintain the systems working,
 but I must confess that I wasn't very happy about it.
 
-Deployments can be very scary if you're not in full control.
+I'm happier with the v2, most annoying bugs were fixed, and new features were
+added.
+
+In other hand some features were lost, but I'm not covering that.
+
+Deployments can be very scary if you're not in full control and cloudformation
+came to  illustrate that very well. A less informed operation can destroy your
+precious data, and you'll be watching it doing it without being able to do
+anything.
 
 
 
@@ -59,7 +67,9 @@ Pre-flight
 ----------
 
 So we have two accounts at London region, one for ``non-prod`` and another for
-``prod``. Here it's how our config files should look like:
+``prod``.
+
+Here it's how our config files should look like based on our credentials file:
 
 **~/.aws/config**:
 
@@ -152,25 +162,102 @@ exact same parameters on the stacks.
     domainCert: "arn:aws:acm:eu-west-1:999999999999:certificate/9999999a-999a-9de9-9999-9ef9adf9a99b"
 
 
+Preparation of stacks
+=====================
+
+Address to the Architect Sceptre documentation on this.
+We can manage independent stacks in different sceptre projects, there's no need
+to force all the stacks to be part of the same group.
+
+In this case I'm making an application and its dependencies on the same stack group.
+
+Sceptre structure adopted:
+
 ::
 
-    ├── config
-    │   ├── config.yaml
-    │   ├── nonprod
+    ├── config/
+    │   ├── nonprod/
     │   │   ├── config.yaml
-    │   │   ├── ssmparameters.yaml
-    │   │   └── tableau-cluster.txt
-    │   ├── prod
-    │   │   ├── acm-dev.yaml
-    │   │   ├── certs-cname-11-20.yaml
-    │   │   ├── certs-cname-21-25.yaml
-    │   │   └── config.yaml
-    │   └── prod-global
-    │       ├── acm-dev-global.yaml
-    │       ├── certs-cname-static.yaml
-    │       └── config.yaml
-    └── templates
-        └── acm.yaml
+    │   │   ├── network/
+    │   │   ├── asg/
+    │   │   └── route53-certs/
+    │   └── prod/
+    │       ├── config.yaml
+    │       ├── network/
+    │       ├── asg/
+    │       └── route53-certs/
+    ├── lambdas/
+    ├── README.rst
+    ├── requirements.txt
+    └── templates/
+
+While implementing this, it should start resembling to the following structure:
+
+::
+
+    ├── config/
+    │   ├── nonprod/
+    │   │   ├── config.yaml
+    │   │   ├── network/
+    │   │   ├── asg/
+    │   │   │   ├── config.yaml
+    │   │   │   ├── devpi-asg-ec2-securitygroup.yaml
+    │   │   │   ├── devpi-asg.yaml
+    │   │   │   ├── devpi-elb-ec2-efs-securitygroup.yaml
+    │   │   │   ├── iam-role-server.yaml
+    │   │   │   ├── loadbalancer-securitygroup.yaml
+    │   │   │   ├── loadbalancer.yaml
+    │   │   │   ├── route53-loadbalancer.yaml
+    │   │   │   ├── target-devpi-cloudwatch.yaml
+    │   │   │   ├── target-devpi.yaml
+    │   │   │   ├── target-jessierepo.yaml
+    │   │   │   └── target-listeners.yaml
+    │   │   └── route53-certs/
+    │   │       └── cname.yaml
+    │   └── prod/
+    │       ├── config.yaml
+    │       ├── network/
+    │       ├── asg/
+    │       │   ├── config.yaml
+    │       │   ├── devpi-asg-ec2-securitygroup.yaml
+    │       │   ├── devpi-asg.yaml
+    │       │   ├── devpi-elb-ec2-efs-securitygroup.yaml
+    │       │   ├── iam-role-server.yaml
+    │       │   ├── loadbalancer-securitygroup.yaml
+    │       │   ├── loadbalancer.yaml
+    │       │   ├── route53-loadbalancer.yaml
+    │       │   ├── target-devpi-cloudwatch.yaml
+    │       │   ├── target-devpi.yaml
+    │       │   ├── target-jessierepo.yaml
+    │       │   └── target-listeners.yaml
+    │       └── route53-certs/
+    │           └── cname.yaml
+    ├── lambdas/
+    │   ├── start-navdevserver.py
+    │   ├── stopEC2.py
+    │   └── stop-navdevserver.py
+    ├── README.rst
+    ├── requirements.txt
+    └── templates/
+        ├── autoscaling.yaml
+        ├── cloudwatch-scheduled-events.yaml
+        ├── directoryservice.yaml
+        ├── dns-cname.j2
+        ├── dns-extras.j2
+        ├── elb-listeners.j2
+        ├── elb-targetgroup-cloudwatch.yaml
+        ├── elb-targetgroups.yaml
+        ├── iam-role.j2
+        ├── inlinelambda.j2
+        ├── loadbalancer.yaml
+        ├── nav-devserversql.yaml
+        ├── nav-devserver.yaml
+        ├── securitygroup-connections.yaml
+        ├── securitygroup-lb-ec2.yaml
+        ├── securitygroups-extras.j2
+        ├── vpc-3azs.yaml
+        └── windows.yaml
+
 
 Creating stacks
 ***************
@@ -190,7 +277,6 @@ So here are the stacks we're creating:
 
 Note that changing a stack can lead to destruction of some resources within the
 template.
-
 Having this separated give us the confidence to maintain a specific stack
 without be worried that cloudformation will destroy the previous resource and
 create new one.
