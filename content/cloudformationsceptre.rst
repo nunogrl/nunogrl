@@ -258,6 +258,22 @@ While implementing this, it should start resembling to the following structure:
         ├── vpc-3azs.yaml
         └── windows.yaml
 
+Hooks and Variables
+===================
+
+Before starting writing our stacks I must introduce some features from sceptre
+such as hooks and variables.
+
+This allow to add some actions or render some variables to a stack so while
+peforming some actions it can automate some tasks in background for us.
+
+For example, one of the my favourite hooks is ``termination_protection`` and
+this will simply prevent a stack to be deleted by mistake, or because you
+performed an operation that cloudformation will interpret as "destroy the
+current resource and create a new one with the new caracteristic".
+
+I'm just presenting a few, there are a bunch of them and you can create your own
+as needed.
 
 Creating stacks
 ***************
