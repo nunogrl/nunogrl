@@ -251,3 +251,222 @@ References:
 
 - `Superuser.com questions
   <https://superuser.com/questions/466396/how-to-manage-gpg-keys-across-multiple-systems>`_
+
+My experiences on gpg.
+
+I have a key for my mail and another for my work mail.
+I realize this leads to two different keys to maintain.
+
+I stopped using the personal gpg and added another mail to my work gpg.
+
+
+
+problem to solve:
+on a device we have expired subkeys, and no master key
+
+we're unable to extend the expicy date
+
+Solutions:
+
+1.
+
+- import master key
+- extend subkeys expiry date
+- delete master key
+
+
+2. 
+
+- import master key
+- export subkeys to files
+- import subkeys
+- extend subkeys expiry date
+- delete all the keys
+- import the new files
+
+3.
+
+on the main pc that has the master key
+- extend keys
+- export subkeys to files
+- share across devices.
+
+All the above processes are tedious, risky and time consuming.
+
+I can't have a encrypted pen to a tablet, and even if I could this is really
+annoying thing to do.
+
+Proposed solution: 
+
+Create a circle of trust using devices keys
+-------------------------------------------
+
+So let's create a new key on each of our devices and create a
+passwordstore configuration so we can share the private key in a secure way
+
+
+
+.. code-block:: bash
+
+    #!/bin/sh
+    
+    DEBUG=${1:-}
+    mail="deployer@pulsingminds.com"
+    username="Deployer"
+    # mail="$(git config --get user.email)"
+    # username="$(git config --get user.name)"
+    SELF=${0}
+    PASSPHRASE="123"
+    
+    cleanall (){
+        echo "removing keys and passwords"
+        rm -rfv gpgkeys vault
+        echo "Done"
+    }
+    
+    usage (){
+    cat << EOF
+    Usage:
+      "${SELF}" <parameter>
+    
+    Parameters:
+    
+      -c   Clean up. Delete with verbosity gpgkeys and vault folders
+    
+    no parameters will create the directories gpgkeys and vault.
+    It also generate the passwords for 
+      - server1/alpha
+      - server2/beta
+    EOF
+    }
+    
+    while getopts ":c" opt; do
+      case ${opt} in
+        c )
+          cleanall
+          exit 0
+        ;;
+        \? )
+          usage
+          exit 0
+        ;;
+      esac
+    done
+    
+    KEYS="$(pwd)/gpgkeys"
+    mkdir -p "${KEYS}"
+    chmod 700 "${KEYS}"
+    [ "${DEBUG:-}" ] && echo "KEYS: ${KEYS}"
+    
+    foo="$(mktemp)"
+    export GNUPGHOME=${KEYS}
+    
+    cat >"${foo}" <<EOF
+         %echo Generating a basic OpenPGP key
+         Key-Type: RSA
+         Key-Length: 4096
+         Subkey-Type: ELG-E
+         Subkey-Length: 4096
+         Name-Real: ${username}
+         Name-Comment: deploy
+         Name-Email: ${mail}
+         Expire-Date: 0
+         %no-ask-passphrase
+         # Passphrase: ${PASSPHRASE}
+         # Do a commit here, so that we can later print "done" :-)
+         %commit
+         %echo done
+    EOF
+    
+    echo
+    echo "== Creating keys ==="
+    gpg --batch --generate-key "${foo}"
+    rm "${foo}"
+    gpg --list-secret-keys
+    
+    # gpg -k
+    VAULT="$(pwd)/vault"
+    mkdir -p "${VAULT}"
+    chmod 700 "${VAULT}"
+    [ "${DEBUG:-}" ] && echo "VAULT: ${VAULT}"
+    export PASSWORD_STORE_DIR="${VAULT}"
+    
+    echo
+    echo "== Creating passwords ==="
+    echo "PASSPHRASE IS: ${PASSPHRASE}"
+    echo
+    pass init "${mail}"
+    pass generate --no-symbols -f server1/site-test/alpha 16
+    pass generate --no-symbols -f server1/ssh/root 16
+    pass generate --no-symbols -f server2/site-test/beta 16
+    pass generate --no-symbols -f server-beta/ssh/root 16
+    echo
+    echo "== Show passwords tree ==="
+    pass
+
+
+
+
+    #!/bin/sh
+    
+    DEBUG=${1:-}
+    mail="deployer@pulsingminds.com"
+    username="Deployer"
+    # mail="$(git config --get user.email)"
+    # username="$(git config --get user.name)"
+    SELF=${0}
+    PASSPHRASE="123"
+    
+    cleanall (){
+        echo "removing keys and passwords"
+        rm -rfv gpgkeys vault
+        echo "Done"
+    }
+    
+    usage (){
+    cat << EOF
+    Usage:
+      "${SELF}" <parameter>
+    
+    Parameters:
+    
+      -c   Clean up. Delete with verbosity gpgkeys and vault folders
+    
+    no parameters will create the directories gpgkeys and vault.
+    It also generate the passwords for 
+      - server1/alpha
+      - server2/beta
+    EOF
+    }
+    
+    while getopts ":c" opt; do
+      case ${opt} in
+        c )
+          cleanall
+          exit 0
+        ;;
+        \? )
+          usage
+          exit 0
+        ;;
+      esac
+    done
+    
+    KEYS="$(pwd)/gpgkeys"
+    mkdir -p "${KEYS}"
+    chmod 700 "${KEYS}"
+    [ "${DEBUG:-}" ] && echo "KEYS: ${KEYS}"
+   
+
+
+::
+
+    $ gpg -K
+    /home/nuno/src/nunogrl/gpgkeys/pubring.kbx
+    ------------------------------------------
+    sec   rsa4096 2021-05-31 [SCEA]
+          DA1E784129E7EEC1D5917DC90EB95C64E25DE0AC
+    uid           [ultimate] campanella (device)
+    ssb   elg4096 2021-05-31 [E]
+
+
