@@ -470,3 +470,29 @@ passwordstore configuration so we can share the private key in a secure way
     ssb   elg4096 2021-05-31 [E]
 
 
+Setting up a device
+===================
+
+on the device:
+
+- create the key pair
+- export the public key to the other machines
+
+On the other machines:
+
+- import the public key
+- trust the new key
+
+on the main machine (with the master key):  
+
+- create a pass repo and add all the device keys
+- export valid subkeys of the main key to pass repo
+
+
+on all machines:
+
+- setup and update the pass repo
+- update the current subkeys
+
+  - delete current subkey
+  - import subkeys
