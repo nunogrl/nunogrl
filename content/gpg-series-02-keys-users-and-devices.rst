@@ -1,4 +1,3 @@
-
 The perfect GPG key - a new approach
 ####################################
 
@@ -26,14 +25,14 @@ a tiny netbook for traveling and a tablet running termux.
 
 I want to be able to have my keys and data on my devices without being worried
 that they can be stolen and anyone with some knowlege could take advantage of
-that. 
+that.
 
 Having multiple keys per device - and every key with their respective subkeys,
 and all the keys have their own expiricy dates... We're talking on 4 keys per
 device, and all the keys would be shared and trusted across devices, so if I
 have 4 devices, I would have 4 keys to handle on every device...
 
-I suppose the best approach would be one person, one key. 
+I suppose the best approach would be one person, one key.
 Share the key through the key servers and keep the revocation key in safe place.
 
 Then find a way to import the key across all the devices.
@@ -45,18 +44,17 @@ without being worried on what device I'm using.
 one key to rule them all
 ========================
 
-I found that one key, one user is the decent way to handle this. 
+I found that one key, one user is the decent way to handle this.
 
 -------------------------------
 
-77
 
 Well, this is a bit embarrassing. I've spent hours over the course of a week
 trying to figure this problem out, and the answer appears to lie with
-subkeys--a topic the GnuPG manual and FAQ glosses over.
+subkeys - a topic the GnuPG manual and FAQ glosses over.
 
 While researching what subkeys are and why they might be used instead of
---gen-key, I stumbled across this gem: http://wiki.debian.org/subkeys.
+``--gen-key``, I stumbled across this gem: http://wiki.debian.org/subkeys.
 
 Debian's wiki explains how to implement option #2 (see OP) using a master key
 with subkeys, and further explains how to remove the master key from any
@@ -76,18 +74,24 @@ Pros:
 Relevant portion from Debian Subkey Wiki:
 -----------------------------------------
 
-1. Make backups of your existing GnuPG files ($HOME/.gnupg). Keep them safe.
-If something goes wrong during the following steps, you may need this to
-return to a known good place. (note: umask 077 will result in restrictive
-permissions for the backup.)
+1. Make backups of your existing GnuPG files (``$HOME/.gnupg``). Keep them safe.
+   If something goes wrong during the following steps, you may need this to
+   return to a known good place. (note: umask 077 will result in restrictive
+   permissions for the backup.)
 
 - ``umask 077; tar -cf $HOME/gnupg-backup.tar -C $HOME .gnupg``
 
 2. Create a new subkey for signing.
 
-- Find your key ID: ``gpg --list-keys yourname``
-- ``gpg --edit-key YOURMASTERKEYID``
-- At the ``gpg>`` prompt: ``addkey``
+- Find your key ID:
+
+  ``gpg --list-keys yourname``
+- Edit your key:
+  
+  ``gpg --edit-key YOURMASTERKEYID``
+- At the **gpg>** prompt:
+  
+  ``addkey``
 - This asks for your passphrase, type it in.
 - Choose the "*RSA (sign only)*" key type.
 - It would be wise to choose 4096 (or 2048) bit key size.
@@ -107,16 +111,27 @@ permissions for the backup.)
    We need to export the subkey, remove the private key, and import the
    subkey back.
 
-- Export the subkeys: ``gpg --export-secret-subkeys YOURMASTERKEYID >secret-subkeys``
+- Export the subkeys:
+  
+  ``gpg --export-secret-subkeys YOURMASTERKEYID >secret-subkeys``
+
   (to choose which subkeys to export, specify the subkey IDs each followed
-  with an exclamation mark: ``gpg --export-secret-subkeys SUBKEYID! [SUBKEYID! ..])``
-- Remove your master secret key: ``gpg --delete-secret-key YOURMASTERKEYID``
-- Import the subkeys back: ``gpg --import secret-subkeys``
-- Verify that gpg -K shows a **sec#** instead of just sec for your private key.
+  with an exclamation mark:
+  
+  ``gpg --export-secret-subkeys SUBKEYID! [SUBKEYID! ..])``
+- Remove your master secret key:
+  
+  ``gpg --delete-secret-key YOURMASTERKEYID``
+- Import the subkeys back:
+
+  ``gpg --import secret-subkeys``
+- Verify that ``gpg -K`` shows a "**sec#**" instead of just "**sec**" for your private key.
   That means the secret key is not really there.
-  (See the also the presence of a dummy OpenPGP packet in the output of
-  ``gpg --export-secret-key YOURMASTERKEYID | gpg --list-packets``).
+  See the also the presence of a dummy OpenPGP packet in the output of
+
+  ``gpg --export-secret-key YOURMASTERKEYID | gpg --list-packets``
 - Optionally, change the passphrase protecting the subkeys:
+  
   ``gpg --edit-key YOURMASTERKEYID passwd``.
   (Note that the private key material on the backup, including the private
   master key, will remain protected by the old passphrase.)
@@ -131,7 +146,7 @@ the GNUPGHOME environment variable:
     export GNUPGHOME=/media/something
     gpg -K
 
-or use --home command-line argument:
+or use ``--home`` command-line argument:
 
 ::
 
@@ -158,93 +173,118 @@ subkeys.
 
 Justin C
 
-Good Q&A, but AFAIK there's still one problem with this setup...
- 
-It's great for signing, but not for encryption if you don't want to share the
-same enc key between your different devices, because when someone makes you
-recipient of an encrypted message, gpg use by default the latest not revoked
-enc key generated.
+    Good Q&A, but AFAIK there's still one problem with this setup...
+    
+    It's great for signing, but not for encryption if you don't want to share the
+    same enc key between your different devices, because when someone makes you
+    recipient of an encrypted message, gpg use by default the latest not revoked
+    enc key generated.
+    
+    It's not possible to force the senders to use an specific
+    enc subkey depending on UID (home or work, etc).
+    
+    -- KurzedMetal Oct 17 '12 at 2:12
 
-It's not possible to force the senders to use an specific
-enc subkey depending on UID (home or work, etc).
 
-– KurzedMetal Oct 17 '12 at 2:12 
-
-3
-
-Perhaps this is a problem.
-
-My greatest concern is losing the web of trust that I build around my master
-key (which only signs). Of course the encryption subkey must exist on all
-devices I use to read encrypted messages.
-
-If my encryption key is ever compromised, then the recovery process involves
-only myself; as opposed to losing my master signing key and having to
-ask/convince my web of trust to sign the new key.
-
-I did not intend to relocate the encryption subkey in my vault.
-
-– Justin C Jul 16 '13 at 20:06
-
+    Perhaps this is a problem.
+    
+    My greatest concern is losing the web of trust that I build around my master
+    key (which only signs). Of course the encryption subkey must exist on all
+    devices I use to read encrypted messages.
+    
+    If my encryption key is ever compromised, then the recovery process involves
+    only myself; as opposed to losing my master signing key and having to
+    ask/convince my web of trust to sign the new key.
+    
+    I did not intend to relocate the encryption subkey in my vault.
+    
+    -- Justin C Jul 16 '13 at 20:06
 
 
 
-As somebody who also doesn't like single points of failure (including master
-keys and especially passwords), this is the way I would do it.
-It allows for devices to operate via a web of trust, while still allowing
-decentralized identity.
 
-I don't know if there's already an existing system for this, but I think it
-could probably be scrobbled together with a cron job and a few lines of Bash.
+    As somebody who also doesn't like single points of failure (including master
+    keys and especially passwords), this is the way I would do it.
+    It allows for devices to operate via a web of trust, while still allowing
+    decentralized identity.
+    
+    I don't know if there's already an existing system for this, but I think it
+    could probably be scrobbled together with a cron job and a few lines of Bash.
+    
+    In this system, you have two classes of keypair: device keypairs and timeframe
+    keypairs.
+    
+    One device keypair is generated for the user on each device, and stays on that
+    device for its lifetime.
+    
+    A timeframe keypair is generated by a central server at routine intervals
+    (monthly, daily, hourly - depends on how paranoid you want to be).
+    
+    The public key is announced publicly (the server itself having its own device
+    keypair to sign with), and the private key is distributed encrypted with the
+    public key of each device that is meant to have access to this key.
+    (This distribution should be as private as possible, eg. having devices
+    connect to the server directly.)
+    
+    For signing messages, you would use the device key of whatever device you're
+    sending the message from.
+    If someone wants to send you a message, they can sign it with your current
+    public timeframe key.
+    (They should have an automated system to keep up with announcements.)
+    You can then read their message from any device.
+    
+    For reading older encrypted messages, older timeframe keypairs are backed up
+    on each device according to an appropriate strategy (including the
+    timeframe-keypair-generating server, if you so wish - again, depending on your
+    level of paranoia), where you have another set of password-protected keypairs
+    protecting the older keys (with however many passwords over time as you feel
+    comfortable remembering).
+    
+    If a device is stolen or otherwise compromised, you can use another one of
+    your publically-trusted devices to create a publicly-signed message verifying
+    your identity (by whatever means, eg. noting that you will be at a public
+    meetup and/or or having a trusted friend verify you in person) and revoking
+    the compromised device key and any timeframe keys it had access to.
+    
+    When revoking the key, you also remove the stolen device from the server's
+    list of trusted devices (with a password and your trusted device key).
+    
+    The policy for trusting newly-announced device keys should follow something
+    like current trust policies - I believe an appropriate policy is to trust the
+    generating server, a mobile device, and a big-and-heavy device, as it is hard
+    to steal/infiltrate a user's phone, a desktop PC, and VPS in a concerted heist
+    before the user notices.
+    
+    If your server is compromised, you just revoke it by the same procedure
+    described for any other compromised device (possibly with a stronger policy
+    akin to the one for adding a new device), and use a re-secured or altogether
+    new server (with a new device keypair) going forward.
 
-In this system, you have two classes of keypair: device keypairs and timeframe
-keypairs.
+    -- Stuart P. Bentley
 
-One device keypair is generated for the user on each device, and stays on that
-device for its lifetime.
 
-A timeframe keypair is generated by a central server at routine intervals
-(monthly, daily, hourly - depends on how paranoid you want to be).
 
-The public key is announced publicly (the server itself having its own device
-keypair to sign with), and the private key is distributed encrypted with the
-public key of each device that is meant to have access to this key.
-(This distribution should be as private as possible, eg. having devices
-connect to the server directly.)
+        The revoking section is a little cloudy as written - revoking a device
+        should be possible with an announcement from any other device (so as to
+        not fail if someone steals your laptop and your phone can't contact the
+        server directly), but not possible to be done by a thief (so devices
+        should have a password-protected key for revocation). In the event of
+        conflicting reports, all keys should be temporarily mistrusted until
+        manual verification by a third party can be performed.
+        
+        -- Stuart P. Bentley Aug 2 '14 at 1:11
 
-For signing messages, you would use the device key of whatever device you're
-sending the message from.
-If someone wants to send you a message, they can sign it with your current
-public timeframe key.
-(They should have an automated system to keep up with announcements.)
-You can then read their message from any device.
+        In fact, it may be advisable to have another mechanism for revoking
+        keys, using a strong public password that is manually updated (replaced)
+        on a regular basis- this way, you can revoke the key without depending
+        on any device (say you're out with only your phone and somebody steals
+        it), so long as you keep the password a secret.
+        
+        -- Stuart P. Bentley
+        Aug 2 '14 at 1:26
 
-For reading older encrypted messages, older timeframe keypairs are backed up
-on each device according to an appropriate strategy (including the
-timeframe-keypair-generating server, if you so wish - again, depending on your
-level of paranoia), where you have another set of password-protected keypairs
-protecting the older keys (with however many passwords over time as you feel
-comfortable remembering).
 
-If a device is stolen or otherwise compromised, you can use another one of
-your publically-trusted devices to create a publicly-signed message verifying
-your identity (by whatever means, eg. noting that you will be at a public
-meetup and/or or having a trusted friend verify you in person) and revoking
-the compromised device key and any timeframe keys it had access to.
 
-When revoking the key, you also remove the stolen device from the server's
-list of trusted devices (with a password and your trusted device key).
-
-The policy for trusting newly-announced device keys should follow something
-like current trust policies - I believe an appropriate policy is to trust the
-generating server, a mobile device, and a big-and-heavy device, as it is hard
-to steal/infiltrate a user's phone, a desktop PC, and VPS in a concerted heist
-before the user notices.
-
-If your server is compromised, you just revoke it by the same procedure
-described for any other compromised device (possibly with a stronger policy
-akin to the one for adding a new device), and use a re-secured or altogether
-new server (with a new device keypair) going forward.
 
 References:
 ===========
@@ -496,3 +536,31 @@ on all machines:
 
   - delete current subkey
   - import subkeys
+
+::
+
+    /home/nuno/.gnupg/pubring.kbx
+    -----------------------------
+    sec   rsa4096 2018-05-09 [SC] [expires: 2022-05-09]
+          1659293320FA3BB9E80AA434A528ACE22DF6A908 🍎
+    uid           [ultimate] Nuno Leitao <nunogrl@gmail.com>
+    uid           [ultimate] Nuno Leitao <nuno.leitao@myoptiquegroup.com>
+    uid           [ultimate] [jpeg image of size 10099]
+    ssb   rsa4096 2018-05-09 [E] [expires: 2022-05-09]🍉
+    
+    
+    
+    🍌🍍🍎
+    
+    
+    🍇🍈🍉
+    🍊🍌🍍
+    
+    🍏🍎🍑
+    🍒
+    🍓
+    🍅
+    🍆
+    🌽
+    🍄
+    🌰

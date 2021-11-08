@@ -14,6 +14,7 @@ Password Store for teams and infrastruture
 :Status: Draft
 
 .. image:: https://imgs.xkcd.com/comics/security.png
+   :alt: security
 
 Security Requirements
 =====================
@@ -37,6 +38,7 @@ I'm using password store to keep most of my passwords so I don't have to:
 
 
 .. image:: {static}/vendiagram.jpg
+   :alt: diagram
 
 
 Benefits
