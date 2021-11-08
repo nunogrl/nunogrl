@@ -13,7 +13,7 @@
 		<script src="https://kit.fontawesome.com/15214b60ba.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700">
 
-        {% assets filters="cssmin", output="css/main.min.css", "css/main.css", "css/custom.css", "css/pygments/native.css" %}
+        {% assets filters="cssmin", output="css/main.min.css", "css/main.css", "css/custom.css", "css/pygments/friendly.css" %}
         <link rel="stylesheet" href="/{{ ASSET_URL }}">
         {% endassets %}
 
@@ -38,23 +38,23 @@
 	</head>
 	<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+	<!-- Wrapper -->
+	<div id="wrapper">
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
+	<!-- Main -->
+		<div id="main">
+			<div class="inner">
                             {% block content %}
                             {% endblock %}
-						</div>
-					</div>
-
-				<!-- Sidebar -->
-					<div id="sidebar">
-                        {% include 'includes/sidebar.html' %}
-					</div>
-
 			</div>
+		</div>
+
+	<!-- Sidebar -->
+		<div id="sidebar">
+                        {% include 'includes/sidebar.html' %}
+		</div>
+
+	</div>
 
 		<!-- Scripts -->
 			<script src="/{{ THEME_STATIC_DIR }}/js/jquery.min.js"></script>
