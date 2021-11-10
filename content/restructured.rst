@@ -8,7 +8,7 @@ Why I moved to Restructured text
 :Slug: vim-restructured-text
 :Authors: Nuno Leitao
 :Summary: Restructured Text 
-:Status: Draft
+:Status: Published
 
 I had a hard time to get convinced on the benefits of RST files.
 
@@ -127,6 +127,33 @@ else:
 
 The syntax might look awckward at first, but we get used to it easily.
 
+
+Validating
+==========
+
+Using Pelican
+~~~~~~~~~~~~~
+
+Pelican can be usefull to validate all the content
+
+
+.. code-block:: INI
+
+   pelican content --debug  2>&1 | egrep -i "error|warn"
+
+
+Rstcheck
+~~~~~~~~
+
+Create a file called **``.rstcheck.cfg``**.
+
+.. code-block:: INI
+
+    [rstcheck]
+    ignore_directives=code-block
+    ignore_roles=src,RFC
+    ignore_messages=(Document or section may not begin with a transition\.$)
+    report=info
 
 
 References
