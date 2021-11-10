@@ -20,7 +20,7 @@ Git setup
 How to save time with gitconfig
 *******************************
 
-Here I share the content of my ``.gitconfig``
+Here I share the content of my **~/.gitconfig**
 
 This is to handle different git configurations depending on the project I'm
 working.
@@ -79,7 +79,7 @@ we're not commiting untidy code.
 
 
 
-Here I share the content of my ``~/.gitconfig-personal``
+Here I share the content of my **~/.gitconfig-personal**
 
 .. code-block:: INI
 
@@ -88,7 +88,7 @@ Here I share the content of my ``~/.gitconfig-personal``
         email = example@example.com
         signingkey = 123456789ABCDEFG
 
-Here I share the content of my ``~/.gitconfig-work``
+Here I share the content of my **~/.gitconfig-work**
 
 .. code-block:: INI
 
@@ -101,6 +101,7 @@ Here I share the content of my ``~/.gitconfig-work``
 I'm using the same GPG key for both entries
 
 .. code-block:: TEXT
+   :hl_lines: 5	
 
     $ gpg -K
     /home/nuno/.gnupg/pubring.kbx
@@ -108,7 +109,7 @@ I'm using the same GPG key for both entries
     sec   rsa4096 2018-05-09 [SC] [expires: 2022-05-09]
           123456789ABCDEFG12345678123456789ABCDEFG
     uid           [ultimate] Nuno Leitao <example@example.com>
-    uid           [ultimate] Nuno Leitao <nuno@acme.com>
+    uid           [ultimate] Nuno Leitao <example@acme.com>
     uid           [ultimate] [jpeg image of size 10099]
     ssb   rsa4096 2018-05-09 [E] [expires: 2022-05-09]
 
