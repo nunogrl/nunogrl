@@ -10,8 +10,9 @@ GPG practices
 :Tags: gpg, devices, security, identity
 :Slug: gpg-practices
 :Authors: Nuno Leitao
+:Image: gpg 
 :Summary: Handling GPG - entities and devices
-
+:Status: Draft
 
 I'm working with gpg for a few years now, and although I feel comfortable
 with the features of signing and encryption, is also true that I don't

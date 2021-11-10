@@ -1,0 +1,19 @@
+---
+language: python
+python: '3.6'
+
+env:
+  matrix:
+  - SITE=local_host.yml
+
+before_install:
+  - sudo apt-get update -qq
+  - openssl aes-256-cbc -K $encrypted_3d3858f01ea0_key -iv $encrypted_3d3858f01ea0_iv
+    -in TravisCIDeployKey.enc -out ./TravisCIDeployKey -d
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - pelican content --debug
+

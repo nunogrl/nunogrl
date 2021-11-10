@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME }} - Home{% endblock %}
+
+{% block meta_description %}
+    <meta name="description" content="A blog featuring posts about DevOps,
+    Security, and some personal bits.">
+{% endblock %}
+
+{% if article is defined %}
+<meta property="og:type" content="article" />
+<meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+<meta property="og:title" content="{{ article.title | replace("\"", "&quot;") }}" />
+<meta property="og:description" content="{{ article.content | striptags | replace("\"", "&quot;") | truncate(196, False, '...') }}" />
+<meta property="og:image" content="{{ SITEURL }}/images/{% if article.opengraph_image is defined %}{{ article.opengraph_image }}{% else %}opengraph-default.jpg{% endif %}" />
+{% elif page is defined %}
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
+<meta
+    property="og:title" content="{{ SITENAME }} - {{ page.title | replace("\"", "&quot;") }}" 
+/>
+<meta property="og:description" content="{{ page.content | striptags | replace("\"", "&quot;") | truncate(196, False, '...') }}" />
+<meta property="og:image" content="{{ SITEURL }}/images/{% if page.opengraph_image is defined %}{{ page.opengraph_image }}{% else %}opengraph-default.jpg{% endif %}" />
+{% else %}
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ SITEURL }}/{{ output_file }}" />
+<meta property="og:title" content="{{ SITENAME }}" />
+<meta property="og:description" content="A blog featuring posts about DevOps,
+    Security, and some personal bits.">
+<meta property="og:image" content="{{ SITEURL }}/images/opengraph-default.jpg" />
+{% endif %}
+
+{% block content %}
+
+<!-- Header -->
+    <header id="header">
+        <ul class="icons">
+            {% for s in SOCIAL %}
+            
+            {% if s[2] %}
+            {% set name_sanitized = s[2]|lower|replace('+','-plus')|replace(' ','-') %}
+            {% else %}
+            {% set name_sanitized = s[0]|lower|replace('+','-plus')|replace(' ','-') %}
+            {% endif %}
+            
+            {% set iconclass = '"fa-' ~ name_sanitized ~ '"' %}
+            
+            <li><a href="{{ s[1] }}" class="icon fa-{{ name_sanitized }}"><span class="label">{{ s[0] }}</span></a></li>
+            
+            {% endfor %}
+        </ul>
+    </header>
+
+<!-- Banner -->
+    <section id="banner">
+        <div class="content">
+            <header>
+                <h1>Columbus Egg</h1>
+		<p>A blog that covers stuff I work with, and stuff I replicate
+		it so it won't be lost.</p>
+            </header>
+
+	    Columbus being at a party with many noble Spaniards, where, as was
+	    customary, the subject of conversation was the Indies: one of them
+	    undertook to say: —"Mr. Christopher, even if you had not found the
+	    Indies, we should not have been devoid of a man who would have
+	    attempted the same that you did, here in our own country of Spain,
+	    as it is full of great men clever in cosmography and literature."
+	    Columbus said nothing in answer to these words, but having desired
+	    an egg to be brought to him, he placed it on the table saying:
+	    "Gentlemen, I will lay a wager with any of you, that you will not
+	    make this egg stand up as I will, naked and without anything at
+	    all." They all tried, and no one succeeded in making it stand up.
+	    When the egg came round to the hands of Columbus, by beating it
+	    down on the table he fixed it, having thus crushed a little of one
+	    end; wherefore all remained confused, understanding what he would
+	    have said: that after the deed is done, everybody knows how to do
+	    it; that they ought first to have sought for the Indies, and not
+	    laugh at him who had sought for it first, while they for some time
+	    had been laughing, and wondered at it as an impossibility.
+	    </p> 
+	    {% for q in QUOTES %}
+            <p class="quote"><i class="fas fa-quote-right"></i> {{ q.quote }} <i class="fas fa-quote-left"></i></p>
+            <p class="quote-source">{{ q.source }}</p>
+            {% endfor %}
+        </div>
+        <span class="image object">
+	    <!-- <img src="/images/global/cover.jpg" alt="Cover" /> -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/ND45Oeuf.jpg" alt="Cover" />
+        </span>
+    </section>
+
+
+{% if CATEGORIES %}
+
+<!-- Section -->
+    <section>
+        <header class="major">
+            <h2>Sections</h2>
+        </header>
+        <div class="features">
+	    {% for cat in CATEGORIES %}
+            <article>
+		<span class="{{ cat.icon }}"></span>
+                <div class="content">
+		    <h3>{{ cat.title }}</h3>
+		    <p>{{ cat.description }}</p>
+		    <a href="{{ cat.href }}" class="button">More</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+
+{% endif %}
+
+<!-- Section -->
+{% if TOPSERIES %}
+    <section>
+	    <header class="major">
+            <h2>Top Series</h2>
+        </header>
+        <div class="posts">
+           {% for a in TOPSERIES %}<article class="card">
+	       <a href="{{ a.href }}" class="image">
+		   <img src={{ a.image }} alt={{ a.alt }} />
+                </a>
+                <div class="card-body">
+		    <a href="{{ a.href }}"><h3 class="card-title">{{ a.title }}</h3></a>
+                    <p class="card-text">
+		    {{ a.description }}</p>
+                    <ul class="actions">  
+			<li><a href={{ a.href }} class="button">Start</a></li>
+                    </ul>
+                </div>
+            </article>{% endfor %}
+        </div>
+    </section>
+{% endif %}
+
+{% if MYVIDEOS %}
+<!-- Section -->
+    <section>
+        <header class="major">
+            <h2>My videos</h2>
+        </header>
+        <div class="posts">
+           {% for a in MYVIDEOS %}<article class="card">
+                <a href="{{ a.href }}" class="image">
+                   <img src={{ a.image }} alt={{ a.alt }} />
+                </a>
+                <div class="card-body">
+		    <a href="{{ a.href }}"><h3 class="card-title">{{ a.title }}</h3></a>
+                    <p class="card-text">
+		    {{ a.description }}</p>
+                    <ul class="actions">  
+			<li><a href={{ a.href }} class="button">Start</a></li>
+                    </ul>
+                </div>
+            </article>{% endfor %}
+        </div>
+    </section>
+{% endif %}
+<!-- Section -->
+    <section>
+        <header class="major">
+            <h2>All posts</h2>
+        </header>
+
+        {% include 'includes/paginated_posts.html' %}
+
+    </section>
+{% endblock %}
