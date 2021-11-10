@@ -27,7 +27,7 @@ Contents
       + 1.3.1 Introduction_
       + 1.3.2 `What is [Term], and Why Does it Matter?`_
       + 1.3.3 `How to [Task]`_
-      + 1.3.4 `# Tips and Reminders for [Term] (Optional)`_
+      + 1.3.4 `Tips and Reminders for [Term] (Optional)`_
       + 1.3.5 Closing_
       + 1.3.6 Call-to-Action_
 
@@ -55,17 +55,20 @@ Contents
 
 Whether it’s “how to make chicken parm” or “how to start a business,” people
 are searching “how to” do things on Google all the time. And you can help those
-people out with a “how to” blog post. 
+people out with a “how to” blog post.
 
 “How to” blog posts provide your readers with a step-by-step guide to doing,
 well, anything. These blogs are also an amazing opportunity for your company to
 position itself as customer-focused and selfless, as you’re laying out a
 tactical approach to fixing a problem or addressing a need without asking for
-anything in return. This helps to make your brand synonymous with trust. 
+anything in return. This helps to make your brand synonymous with trust.
 
-Writing these posts can also help your blog rank for Google’s featured
-snippet – the box that appears in Google search results with a few dozen words
-answering the question. You can see an example of this below. 
+
+.. note::
+
+    Writing these posts can also help your blog rank for Google’s featured
+    snippet – the box that appears in Google search results with a few dozen words
+    answering the question. You can see an example of this below.
 
 
 
@@ -98,7 +101,7 @@ Outline: [Blog Post Title]
 =================
 
 
-Make sure the title starts with “How to…” and runs for 60 characters or less.
+Make sure the title starts with “**How to...**” and runs for 60 characters or less.
 
 
 Introduction
@@ -122,7 +125,7 @@ Obviously, if what you’re writing about is well-known, you can skip
 the definition. 
 
 After defining the term, explain why it’s important for the reader to
-understand the idea and/or know how to do what you’re writing about. 
+understand the idea and/or know how to do what you’re writing about.
 
 How to [Task]
 -------------
@@ -131,18 +134,19 @@ This section should make up the bulk of the writing in your blog post. It’s
 enormously important for each step to have its own section header for optimal
 organization, clarity for the reader, and search engine optimization.
 Additionally, breaking instructions up by sections also lets you include visual
-aids for each step as needed in the form of a GIF, image, or video. 
+aids for each step as needed in the form of a GIF, image, or video.
 It’s important to remember to be clear, concise, and accurate in the steps you
 provide your readers. Any extra “fluff” to the article may confuse them,
-resulting in some readers not achieving the results they intended. 
+resulting in some readers not achieving the results they intended.
 
 If what you’re explaining how to do is solve an equation (i.e. “How to
 Calculate Break Even”), provide a step-by-step explanation and example of how
 to calculate the rate, point, or number you’re explaining how to reach. Show
-all of your work so the reader can follow along easily. 
+all of your work so the reader can follow along easily.
 
-# Tips and Reminders for [Term] (Optional)
-------------------------------------------
+
+Tips and Reminders for [Term] (Optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you’re breaking down a difficult concept or task, some readers may still
 feel overwhelmed and unsure of their ability to tackle it. Break down a few
