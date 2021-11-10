@@ -37,9 +37,6 @@ I'm using password store to keep most of my passwords so I don't have to:
 - memorize any of my passwords.
 
 
-.. image:: {static}/vendiagram.jpg
-   :alt: diagram
-
 
 Benefits
 ========
