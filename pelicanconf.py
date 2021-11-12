@@ -13,6 +13,7 @@ PATH = 'content'
 TIMEZONE = 'Europe/London'
 
 DEFAULT_LANG = u'en'
+ARTICLE_TRANSLATION_ID = 'slug'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = 'atom.xml'
@@ -49,6 +50,13 @@ SITEMAP = {
 }
 
 DEFAULT_DATE_FORMAT = '%d/%m/%Y'
+
+# The default metadata you want to use for all articles and pages.
+DEFAULT_METADATA = {
+  'status': 'draft',
+  'opengraph_image': 'githorrorstory/githorrorstory.jpg'
+}
+
 
 SOCIAL = (
     ('Twitter', 'https://twitter.com/nunogrl'),
