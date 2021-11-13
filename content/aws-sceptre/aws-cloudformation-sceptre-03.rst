@@ -18,6 +18,28 @@ Sceptre - Creating our first stack
 
 Here we're going to create the zone on Route53.
 
+.. code-block:: TEXT
+   :hl_lines: 6 14
+
+    ├── config
+    │   ├── config.yaml
+    │   ├── dev
+    │   │   ├── config.yaml
+    │   │   └── route53
+    │   │       ├── nunogrl-com-zone.yaml
+    │   │       └── nunogrl-com-records.yaml
+    │   └── prod
+    │       ├── config.yaml
+    │       └── route53
+    │           ├── nunogrl-com-zone.yaml
+    │           └── nunogrl-com-records.yaml
+    └── templates
+        ├── dns.yaml
+        └── dns-extras.j2
+
+
+
+
 So let's create the template at **templates/dns.yaml**:
 
 .. code-block:: YAML
@@ -63,6 +85,11 @@ And now let's create the stack file at
     template_path: dns.yaml
     parameters:
       DomainName: nunogrl.com
+    hooks:
+      after_create:
+        - !stack_termination_protection '{{ terminationprotection }}'
+      after_update:
+        - !stack_termination_protection '{{ terminationprotection }}'
 
 And let's launch the stack:
 

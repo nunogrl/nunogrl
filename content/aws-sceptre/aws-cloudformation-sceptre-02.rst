@@ -42,7 +42,7 @@ Using Jinja2 we can go a step further and add some cleverness to our templates
 so we deploy exactly the data we provide.
 
 .. code-block:: TEXT
-   :hl_lines: 2 4 13
+   :hl_lines: 2 4 9
 
     ├── config
     │   ├── config.yaml
@@ -50,23 +50,15 @@ so we deploy exactly the data we provide.
     │   │   ├── config.yaml
     │   │   └── route53
     │   │       ├── nunogrl-com-zone.yaml
-    │   │       ├── nunogrl-com-alias-records.yaml
-    │   │       ├── nunogrl-com-a-records.yaml
-    │   │       ├── nunogrl-com-cname-records.yaml
-    │   │       ├── nunogrl-com-mx-records.yaml
-    │   │       └── nunogrl-com-txt-records.yaml
+    │   │       └── nunogrl-com-records.yaml
     │   └── prod
     │       ├── config.yaml
     │       └── route53
     │           ├── nunogrl-com-zone.yaml
-    │           ├── nunogrl-com-alias-records.yaml
-    │           ├── nunogrl-com-a-records.yaml
-    │           ├── nunogrl-com-cname-records.yaml
-    │           ├── nunogrl-com-mx-records.yaml
-    │           └── nunogrl-com-txt-records.yaml
+    │           └── nunogrl-com-records.yaml
     └── templates
         ├── dns.yaml
-        └── dns-extras.yaml
+        └── dns-extras.j2
 
 
 For now we're going to configure the stacks trees.

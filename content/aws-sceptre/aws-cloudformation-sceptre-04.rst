@@ -34,6 +34,28 @@ For this I want to have a template to handle all the records using *jinja2*.
 In this case I only need to have the records of the type "**A**" and "**CNAME**"
 so I'm writing a template to support only these records.
 
+.. code-block:: TEXT
+   :hl_lines: 7 15
+
+    ├── config
+    │   ├── config.yaml
+    │   ├── dev
+    │   │   ├── config.yaml
+    │   │   └── route53
+    │   │       ├── nunogrl-com-zone.yaml
+    │   │       └── nunogrl-com-records.yaml
+    │   └── prod
+    │       ├── config.yaml
+    │       └── route53
+    │           ├── nunogrl-com-zone.yaml
+    │           └── nunogrl-com-records.yaml
+    └── templates
+        ├── dns.yaml
+        └── dns-extras.j2
+
+Since we're working with jinja2, the template must have the extension j2.
+
+So here's our **templates/dns-extra.j2** file:
 
 .. code-block:: YAML
    :linenos: inline
