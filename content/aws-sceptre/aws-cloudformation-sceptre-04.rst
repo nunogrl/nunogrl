@@ -47,24 +47,38 @@ so I'm writing a template to support only these records.
       Zone:
         Type: String
     Resources:
-      {% if sceptre_user_data.Arecords is defined %}{% for rule in sceptre_user_data.Arecords %}{% set entry = rule.record |replace("-","d")|replace("_","s")|replace('.',"p")%}add{{entry}}arecord:
+      {% if sceptre_user_data.Arecords is defined %}{%
+        for rule in sceptre_user_data.Arecords %}{% 
+          set entry = rule.record |replace("-","d")|replace("_","s")|replace('.',"p")
+          %}add{{entry}}arecord:
         Type: 'AWS::Route53::RecordSet'
         Properties:
           Name: !Join
             - ""
-            - [ !Sub '${ {{ rule.record |replace("-","d")|replace("_","s")|replace('.',"p")}}arecord }','.', !Ref DomainName, '.']
+            - [ !Sub '${ {{ rule.record |replace("-","d")|replace("_","s")|replace('.',"p")}}arecord }',
+                '.',
+                !Ref DomainName,
+                '.'
+              ]
           HostedZoneId: !Sub '${Zone}'
           Type: A
           TTL: {{ rule.ttl }}
           ResourceRecords:
             - {{ rule.address }}
-      {% endfor %}{% endif %}{% if sceptre_user_data.CNAMErecords is defined %}{% for rule in sceptre_user_data.CNAMErecords %}add{{ rule.record |replace("-","d")|replace("_","s")|replace('.',"p")}}cnamerecord:
+      {% endfor %}{% endif %}
+      {% if sceptre_user_data.CNAMErecords is defined %}{%
+      for rule in sceptre_user_data.CNAMErecords 
+      %}add{{ rule.record |replace("-","d")|replace("_","s")|replace('.',"p")}}cnamerecord:
         {% set record = rule.record %}
         Type: 'AWS::Route53::RecordSet'
         Properties:
           Name: !Join
             - ""
-            - [ !Sub '${ {{ rule.record |replace("-","d")|replace("_","s")|replace('.',"p")}}cnamerecord }','.', !Ref DomainName, '.']
+            - [ !Sub '${ {{ rule.record |replace("-","d")|replace("_","s")|replace('.',"p")}}cnamerecord }',
+                '.',
+                !Ref DomainName,
+                '.'
+              ]
           HostedZoneId: !Sub '${Zone}'
           Type: CNAME
           TTL: {{ rule.ttl }}
@@ -72,14 +86,16 @@ so I'm writing a template to support only these records.
             - {{ rule.address }}
       {% endfor %}{% endif %}
     Outputs:
-      {% if sceptre_user_data.CNAMErecords is defined %}{% for rule in sceptre_user_data.CNAMErecords %}add{{ rule.record |replace("-","d")|replace("_","s")|replace('.',"p")}}cnamerecord:
+      {% if sceptre_user_data.CNAMErecords is defined %}{% 
+      for rule in sceptre_user_data.CNAMErecords
+      %}add{{ rule.record |replace("-","d")|replace("_","s")|replace('.',"p")}}cnamerecord:
         Value: !Ref 'add{{ rule.record |replace("-","d")|replace("_","s")|replace('.',"p")}}cnamerecord'
-        # Description: 'add{{ rule.record |replace("-","d")|replace("_","s")|replace('.',"p")}}cnamerecord'
         Description: '{{ rule.address }}'
       {% endfor %}{% endif %}
-       {% if sceptre_user_data.Arecords is defined %}{% for rule in sceptre_user_data.Arecords %}add{{ rule.record |replace("-","d")|replace("_","s")|replace('.',"p")}}arecord:
+      {% if sceptre_user_data.Arecords is defined %}{%
+      for rule in sceptre_user_data.Arecords
+      %}add{{ rule.record |replace("-","d")|replace("_","s")|replace('.',"p")}}arecord:
         Value: !Ref 'add{{ rule.record |replace("-","d")|replace("_","s")|replace('.',"p")}}arecord'
-        # Description: 'add{{ rule.record |replace("-","d")|replace("_","s")|replace('.',"p")}}arecord'
         Description: '{{ rule.address }}'
       {% endfor %}{% endif %}
       StackName:
