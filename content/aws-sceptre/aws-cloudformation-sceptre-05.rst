@@ -7,13 +7,13 @@ Sceptre - Handling Cloudformation Change-sets
 :slug:     aws-cloudformation-sceptre-05
 :authors:  Nuno Leitao
 :summary:  deploying cloudformation using sceptre
-:Image:    aws/sceptre/cloud
+:Image:    aws/sceptre/deploy-change-set
 :Status:   Published
 :Series: Using Sceptre
 :series_index: 5
 
-.. image:: {static}/images/aws/sceptre/cloud.jpg
-  :alt: "My dotfiles"
+.. image:: {static}/images/aws/sceptre/deploy-change-set.svg 
+  :alt: "Executing Change Set on a stack"
   :width: 100%
 
 Now that we have the zone configured at route53 and some records.
