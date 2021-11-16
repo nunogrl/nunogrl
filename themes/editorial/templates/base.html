@@ -13,6 +13,33 @@
 		<script src="https://kit.fontawesome.com/15214b60ba.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700">
 
+{% if article is defined %}
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+    <meta property="og:title" content="{{ article.title | replace("\"", "&quot;") }}" />
+    <meta property="og:description" content="{{ article.content | striptags | replace("\"", "&quot;") | truncate(196, False, '...') }}" />
+    <meta property="og:image" content="{{ SITEURL }}/images/{% if article.opengraph_image is defined %}{{ article.opengraph_image }}{% else %}opengraph-default.jpg{% endif %}" />
+    <meta property="og:image:secure_url" content="{{ SITEURL }}/images/{% if article.opengraph_image is defined %}{{ article.opengraph_image }}{% else %}opengraph-default.jpg{% endif %}" />
+{% elif page is defined %}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
+    <meta property="og:title" content="{{ SITENAME }} - {{ page.title | replace("\"", "&quot;") }}" />
+    <meta property="og:description" content="{{ page.content | striptags | replace("\"", "&quot;") | truncate(196, False, '...') }}" />
+    <meta property="og:image" content="{{ SITEURL }}/images/{% if page.opengraph_image is defined %}{{ page.opengraph_image }}{% else %}opengraph-default.jpg{% endif %}" />
+    <meta property="og:image:secure_url" content="{{ SITEURL }}/images/{% if page.opengraph_image is defined %}{{ page.opengraph_image }}{% else %}opengraph-default.jpg{% endif %}" />
+{% else %}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ SITEURL }}/{{ output_file }}" />
+    <meta property="og:title" content="{{ SITENAME }}" />
+    <meta property="og:description" content="A blog featuring posts about DevOps, Security, and some personal bits.">
+    <meta property="og:image" content="{{ SITEURL }}/images/opengraph-default.jpg" />
+{% endif %}
+    <meta property="og:image:width" content="928" />
+    <meta property="og:image:height" content="585" />
+    <meta property="og:image:alt" content="explicitly provided" />
+    <meta property="og:image:type" content="image/jpeg" />
+
+
         {% assets filters="cssmin", output="css/main.min.css", "css/main.css", "css/custom.css", "css/pygments/friendly.css" %}
         <link rel="stylesheet" href="/{{ ASSET_URL }}">
         {% endassets %}
