@@ -35,10 +35,10 @@ Since it always get the same IP from my router I can add this to my ``~/.ssh/con
 
 ::
 
-   Host 192.168.0.8
-       Port 8022
-       User u0_a201
-       IdentityFile /home/nuno/Documents/nuno/keys/nleitao@acer5740G
+    Host 192.168.0.8
+        Port 8022
+        User "u0_a201"
+        IdentityFile /home/nuno/Documents/nuno/keys/nleitao@acer5740G
 
 
 Installing zsh an Oh My Zsh
@@ -97,9 +97,43 @@ https://awesomeopensource.com/project/adi1090x/termux-style
 
 Reference
 ^^^^^^^^^
+
 - https://jonathansblog.co.uk/zsh-and-oh-my-zsh-in-termux-on-android
 
 Installing python and virtualenvwrapper
 =======================================
+
+Install Python
+--------------
+
+.. code-block:: SHELL
+
+    pkg install python
+
+
+Install virtualenvwrapper
+-------------------------
+
+.. code-block:: SHELL
+
+   pip install virtualenvwrapper
+
+Add the following lines to ``~/.zshrc``:
+
+.. code-block:: SHELL
+
+    export PATH=/data/data/com.termux/files/usr/bin:$PATH
+    export WORKON_HOME=~/Envs
+    source /data/data/com.termux/files/usr/bin/virtualenvwrapper.sh
+
+execute the file:
+
+.. code-block:: SHELL
+
+   . ~/.zshrc
+
+
+Install Vim and plugins
+=======================
 
 
