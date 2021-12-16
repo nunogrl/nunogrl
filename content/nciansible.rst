@@ -46,8 +46,9 @@ etc.
 
 I finally found this one and decided to give it a go.
 
-nci-ansible-ui
-**************
+
+About nci-ansible-ui
+********************
 
 This is done in node, and has ansible... if we were running away from jenkins's
 Java, here is where we put everything on perspective again.

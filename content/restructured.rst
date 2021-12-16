@@ -4,10 +4,10 @@ Why I moved to Restructured text
 :Title: Why I moved to Restructured text
 :Date: 2020-10-18 15:20
 :Category: DevOps
-:Tags: Technology Markdown rst vim
+:Tags: Technology, Markdown, rst, vim
 :Slug: vim-restructured-text
 :Authors: Nuno Leitao
-:Summary: Restructured Text 
+:Summary: Restructured Text
 :Status: Published
 
 I had a hard time to get convinced on the benefits of RST files.
