@@ -137,3 +137,40 @@ Install Vim and plugins
 =======================
 
 
+
+
+Ansible
+=======
+
+Simplifying, if we we're running Android, we most likely running Termux or
+something similar.
+
+So from:
+
+..code-block:: SHELL
+
+    $ uname -o
+    Android
+
+We can include a new playbook to install / update Termux scripts.
+
+PGP keys
+========
+
+We need to install our private key so we can decrypt passwords and also install
+/ Update the current public keys so we encrypt passwords and share with others.
+
+Install Private Keys
+--------------------
+
+
+
+Install or Update Public Keys
+-----------------------------
+
+It's important to keep our public keys up to date.
+
+It's really frustrating to be unable to update a local password because one of
+our shared keys is expired.
+
+This just ensures that our key matches the latest version publicly availabale. 
