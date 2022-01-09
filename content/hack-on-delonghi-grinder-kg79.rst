@@ -42,7 +42,7 @@ And for reference, here's the new coarse setting:
    :alt: new coarse
 
 Conclusion
-==========
+----------
 
 Here's the changes - the cursor path before and after:
 
@@ -50,5 +50,20 @@ Here's the changes - the cursor path before and after:
    :width: 800
    :alt: the change made
 
+
+Operation
+=========
+
+On the usage, the dial has 16 positions from coarse to fine.
+
+The last position revealed to be too fine, the coffee machine was
+struggling to extract an espresso in a timely manner.
+
+By experimentation the best setting is one position immediately before
+the last one.
+
+.. image:: {static}/images/hack-on-delonghi-grinder-kg79/espresso-dial-position.jpg
+   :width: 800
+   :alt: the change made
 
 
