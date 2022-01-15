@@ -10,7 +10,7 @@ Setting up an arduino development
 :Summary: Setting up a linux machine to handle serial ports
 :Status: Draft
 :Series: Arduino
-:series_index: 3
+:series_index: 1
 
 * Contents:
 
