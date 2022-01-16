@@ -18,21 +18,21 @@ Setting up an arduino development
 
     + 1.1 `Kernel Constrains`_
     + 1.2 `Configuring udev mapping`_
-    + 1.3 `Adding yourself to the dialog group`_
+    + 1.3 `Adding yourself to the serial port groups`_
     + 1.4 `Next steps`_
 
 
 ::
 
-    ┌─────────────┐
-    │ Github      │
-    │ ┌────────┐  │
-    │ │ Repo   │  │
-    │ │        │  │
-    │ └───┬────┘  │
-    └─────┼───────┘
-          │
-    ┌─────▼────────────────────────────┐       ┌─────────────────────┐
+    ┌─────────────┐     ┌─────────────┐
+    │ Github      │     │ Computer    │
+    │ ┌────────┐  │     │             │
+    │ │blinkled│  │     │  Ansible    │
+    │ │        │  │     │   Playbook  │
+    │ └───┬────┘  │     │     │       │
+    └─────┼───────┘     └─────┼───────┘
+          │                   │
+    ┌─────▼───────────────────▼────────┐       ┌─────────────────────┐
     │ Raspberry Pi                     │       │ Arduino             │
     │  ┌────────┐  ┌─────────────┐     │   ┌───┤                     │
     │  │ nci    │  │ arduino-cli │     │   │   │                     │
@@ -127,10 +127,11 @@ Configuring udev mapping
 You can test the configuration using the commands ``udevadm trigger`` and
 ``dmesg``.
 
-Adding yourself to the dialog group
-===================================
+Adding yourself to the serial port groups
+=========================================
 
-Add yourself to the dialog group so you can connecto to the interface.
+Add yourself to the ``dialog`` and ``tty`` groups so you can connecto to the
+interface.
 
 Serial ports are used for PPTP connections so network managers try to take
 over and keep resetting your attempts to connect.
