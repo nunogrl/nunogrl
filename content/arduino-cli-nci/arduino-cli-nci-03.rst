@@ -4,7 +4,7 @@ Writing a program and compiling and uploading
 :Date: 2021-04-01 15:20
 :Category: arduino
 :Tags: Technology
-:Slug: arduino-preparing-machine-03
+:Slug: arduino-cli-writing-the-first-program
 :Authors: Nuno Leitao
 :Image: Playbook-hand
 :Summary: Setting up a linux machine to handle serial ports

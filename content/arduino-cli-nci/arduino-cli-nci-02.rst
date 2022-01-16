@@ -197,15 +197,4 @@ Now we should have our boards available on the list:
     WifInfo                          esp8266:esp8266:wifinfo          
     XinaBox CW01                     esp8266:esp8266:cw01             
 
-
-Makefile
-========
-
-Next steps
-==========
-
-To do:
-
-- CI/CD on arduino (nci)
-- nci configuration files
-- deploying nci on Raspberry Pi using ansible
+Now we're ready to start doing things!
