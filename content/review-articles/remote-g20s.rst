@@ -10,6 +10,9 @@ G20s Air Mouse review: setup, training and troubleshooting
 
 .. November 9, 2021
 
+.. image:: {static}/images/remote-g20s/remote-g20s.svg
+
+
 The G20s Air Mouse is a wireless air mouse with built-in position detection,
 sensitive accelerometer and intuitive voice input. The device can be used as a
 regular remote control, mouse, game joystick for Android.
@@ -29,6 +32,10 @@ regular remote control, mouse, game joystick for Android.
     + 1.5 `Problems and solutions`_
     + 1.6 References_
 
+
+.. image:: {static}/images/remote-g20s/500084959-4.jpg
+   :alt: remote
+   :align: center
 
 G20s Air Mouse Specifications
 =============================
@@ -59,7 +66,7 @@ Technical characteristics of the remote air mouse G20s:
     - Body materials: ABS plastic and rubber inserts.
     - Package weight: 68 g.
     - Dimensions: 160x45x20 mm.
-    - User manual (EN / RU).
+    - User manual
 
 The G20s pro air mouse works over a wireless communication standard, so neither
 its direction, nor the presence of obstacles on the way will affect the quality
