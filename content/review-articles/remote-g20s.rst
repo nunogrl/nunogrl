@@ -7,6 +7,7 @@ G20s Air Mouse review: setup, training and troubleshooting
 :Authors: Nuno Leitao
 :Slug: remote-g20s
 :Summary: remote-g20s
+:Status: Published
 
 .. November 9, 2021
 
