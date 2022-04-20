@@ -12,10 +12,20 @@
 		{% block meta_description %}{% endblock %}
 		<script src="https://kit.fontawesome.com/15214b60ba.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700">
-
-        {% assets filters="cssmin", output="css/main.min.css", "css/main.css", "css/custom.css", "css/pygments/friendly.css" %}
+        <!-- CSS stylesheets start -->
+	{% assets filters="cssmin",
+	          output="css/main.min.css",
+                         "css/main.css",
+			 "css/custom.css",
+			 "css/pygments/friendly.css",
+			 "css/gpx.css"
+        %}
         <link rel="stylesheet" href="/{{ ASSET_URL }}">
         {% endassets %}
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+	<!-- CSS stylesheets END -->
+
 
         {% block custom_css %}{% endblock %}
         
@@ -56,12 +66,19 @@
 
 	</div>
 
-		<!-- Scripts -->
-			<script src="/{{ THEME_STATIC_DIR }}/js/jquery.min.js"></script>
-			<script src="/{{ THEME_STATIC_DIR }}/js/browser.min.js"></script>
-			<script src="/{{ THEME_STATIC_DIR }}/js/breakpoints.min.js"></script>
-        {% assets filters="jsmin", output="js/packed.js", "js/util.js", "js/main.js" %}
-            <script src="/{{ ASSET_URL }}"></script>
+	<!-- Scripts -->
+        <script src="/{{ THEME_STATIC_DIR }}/js/jquery.min.js"></script>
+        <script src="/{{ THEME_STATIC_DIR }}/js/browser.min.js"></script>
+        <script src="/{{ THEME_STATIC_DIR }}/js/breakpoints.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.5.1/gpx.js"></script>
+        {% assets filters="jsmin",
+                  output="js/packed.js",
+                         "js/util.js",
+                         "js/main.js",
+                         "js/gpx.js"
+        %}
+        <script src="/{{ ASSET_URL }}"></script>
         {% endassets %}
 
 	</body>
