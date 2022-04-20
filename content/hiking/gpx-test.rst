@@ -15,7 +15,7 @@ This is an example
 
 .. raw:: html
 
-    <section id="demo" class="gpx" data-gpx-source="https://www.nunogrl.com/hiking/06-Jun-2020-1431_caminhada.gpx" data-map-target="demo-map">
+    <section id="demo" class="gpx" data-gpx-source="https://www.nunogrl.com/images/hiking/06-Jun-2020-1431_caminhada.gpx" data-map-target="demo-map">
       <header>
         <h3>Loading...</h3>
         <span class="start"></span>
