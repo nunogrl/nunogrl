@@ -74,11 +74,13 @@ PAGINATION_PATTERNS = (
 RELATIVE_URLS = True
 
 STATIC_PATHS = [
-    'images'
+    'images',
+    'extra/robots.txt',
+    'extra/headers'
 ]
 EXTRA_PATH_METADATA = {
-    'extra/CNAME': {'path': 'CNAME'},
     'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/headers': {'path': '_headers'},
 }
 
 TWITTER_USERNAME = 'nunogrl'
