@@ -27,13 +27,13 @@ This is an example
 
       <footer>
         <ul class="info">
-          <li>Distance:&nbsp;<span class="distance"></span>&nbsp;mi</li>
+          <li>Distance:&nbsp;<span class="distance"></span>&nbsp;m</li>
           &mdash; <li>Duration:&nbsp;<span class="duration"></span></li>
-          &mdash; <li>Pace:&nbsp;<span class="pace"></span>/mi</li>
+          &mdash; <li>Pace:&nbsp;<span class="pace"></span>/km</li>
           &mdash; <li>Avg&nbsp;HR:&nbsp;<span class="avghr"></span>&nbsp;bpm</li>
-          &mdash; <li>Elevation:&nbsp;+<span class="elevation-gain"></span>&nbsp;ft,
-            -<span class="elevation-loss"></span>&nbsp;ft
-            (net:&nbsp;<span class="elevation-net"></span>&nbsp;ft)</li>
+          &mdash; <li>Elevation:&nbsp;+<span class="elevation-gain"></span>&nbsp;m,
+            -<span class="elevation-loss"></span>&nbsp;m
+            (net:&nbsp;<span class="elevation-net"></span>&nbsp;m)</li>
         </ul>
       </footer>
     </section>

@@ -38,9 +38,9 @@
           _c('duration').textContent = gpx.get_duration_string(gpx.get_moving_time());
           _c('pace').textContent     = gpx.get_duration_string(gpx.get_moving_pace_imp(), true);
           _c('avghr').textContent    = gpx.get_average_hr();
-          _c('elevation-gain').textContent = gpx.to_ft(gpx.get_elevation_gain()).toFixed(0);
-          _c('elevation-loss').textContent = gpx.to_ft(gpx.get_elevation_loss()).toFixed(0);
-          _c('elevation-net').textContent  = gpx.to_ft(gpx.get_elevation_gain()
+          _c('elevation-gain').textContent = gpx.to(gpx.get_elevation_gain()).toFixed(0);
+          _c('elevation-loss').textContent = gpx.to(gpx.get_elevation_loss()).toFixed(0);
+          _c('elevation-net').textContent  = gpx.to(gpx.get_elevation_gain()
             - gpx.get_elevation_loss()).toFixed(0);
         }).addTo(map);
       }
