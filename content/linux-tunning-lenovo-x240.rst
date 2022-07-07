@@ -115,9 +115,10 @@ LEDs
 Call me conservative, but I like some blinking when the machine is doing
 something. For Wifi the useless FnLock LED (that's otherwise continually
 on) can be made useful by connecting its trigger with the WiFi's transmit
-activity by dropping the following into /etc/network/if-up.d/ledblink:
+activity by dropping the following into */etc/network/if-up.d/ledblink*:
 
 .. code-block:: SHELL
+   :linenos: table
 
     #!/bin/sh
     
@@ -151,25 +152,32 @@ rc.local, too.
 Incidentally, with the above kernel config (which allows fiddling with
 "important" LEDs, here's what other LEDs I've found:
 
-::
 
-    /sys/class/leds/tpacpi::unknown_led2 -- the LED on the lid
-    /sys/class/leds/tpacpi::power -- the LED in the power button
-    tpacpi\:\:kbd_backlight -- the keyboard backlight The other stuff in
-    /sys/class/leds doesn't seem to be connected on the x240. There's a beautiful
-    red light below the mute button that'd really like to control, too, and
-    blue operation LED of the camera would be nifty, too (though I suspect both
-    might not be available for programmatic control for "security" reasons; sigh).
+
+======================================== =========================================
+**/sys/class/leds/tpacpi::unknown_led2** the LED on the lid
+**/sys/class/leds/tpacpi::power**        the LED in the power button
+**tpacpi\:\:kbd_backlight**              the keyboard backlight
+======================================== =========================================
+
+The other stuff in /sys/class/leds
+doesn't seem to be connected on the x240.
+
+
+There's a beautiful red light below the mute button that'd really like to
+control, too, and blue operation LED of the camera would be nifty, too (though
+I suspect both might not be available for programmatic control for "security"
+reasons; sigh).
 
 The red LED below the microphone mute key at least is available for ACPI
 control. With acpi_call (which you want anyway), you can switch it on or
 let it blink with:
 
-.. code-block:: SHELL
+.. code-block:: console 
 
-    echo '\_SB.PCI0.LPC.EC.LED 0x0e 0x80' | sudo tee /proc/acpi/call
-    echo '\_SB.PCI0.LPC.EC.LED 0x0e 0xc0' | sudo tee /proc/acpi/call
-    echo '\_SB.PCI0.LPC.EC.LED 0x0e 0x00' | sudo tee /proc/acpi/call
+    $ echo '\_SB.PCI0.LPC.EC.LED 0x0e 0x80' | sudo tee /proc/acpi/call
+    $ echo '\_SB.PCI0.LPC.EC.LED 0x0e 0xc0' | sudo tee /proc/acpi/call
+    $ echo '\_SB.PCI0.LPC.EC.LED 0x0e 0x00' | sudo tee /proc/acpi/call
 
 While I was
 reading docs on the LED subsystem, it occurred to me that something like an
