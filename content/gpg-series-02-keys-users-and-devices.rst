@@ -79,19 +79,30 @@ Relevant portion from Debian Subkey Wiki:
    return to a known good place. (note: umask 077 will result in restrictive
    permissions for the backup.)
 
-- ``umask 077; tar -cf $HOME/gnupg-backup.tar -C $HOME .gnupg``
+.. code-block:: CONSOLE
+
+    $ umask 077; tar -cf $HOME/gnupg-backup.tar -C $HOME .gnupg
 
 2. Create a new subkey for signing.
 
 - Find your key ID:
 
-  ``gpg --list-keys yourname``
+.. code-block:: CONSOLE
+
+    $ gpg --list-keys yourname
+
 - Edit your key:
-  
-  ``gpg --edit-key YOURMASTERKEYID``
+
+.. code-block:: CONSOLE
+
+    $ gpg --edit-key YOURMASTERKEYID
+
 - At the **gpg>** prompt:
-  
-  ``addkey``
+
+.. code-block:: CONSOLE
+
+    gpg> addkey
+
 - This asks for your passphrase, type it in.
 - Choose the "*RSA (sign only)*" key type.
 - It would be wise to choose 4096 (or 2048) bit key size.
@@ -100,6 +111,10 @@ Relevant portion from Debian Subkey Wiki:
 - GnuPG will (eventually) create a key, but you may have to wait for it to get
   enough entropy to do so.
 - Save the key: ``save``
+
+.. code-block:: CONSOLE
+
+    gpg> save
 
 3. You can repeat this, and create an "RSA (encrypt only)" sub key as well, if
    you like.
@@ -112,45 +127,63 @@ Relevant portion from Debian Subkey Wiki:
    subkey back.
 
 - Export the subkeys:
-  
-  ``gpg --export-secret-subkeys YOURMASTERKEYID >secret-subkeys``
 
-  (to choose which subkeys to export, specify the subkey IDs each followed
-  with an exclamation mark:
-  
-  ``gpg --export-secret-subkeys SUBKEYID! [SUBKEYID! ..])``
+    .. code-block:: CONSOLE
+    
+        $ gpg --export-secret-subkeys YOURMASTERKEYID >secret-subkeys
+    
+    to choose which subkeys to export, specify the subkey IDs each followed 
+    with an exclamation mark:
+    
+    .. code-block:: CONSOLE
+    
+        $ gpg --export-secret-subkeys SUBKEYID! [SUBKEYID! ..])
+
 - Remove your master secret key:
-  
-  ``gpg --delete-secret-key YOURMASTERKEYID``
+
+.. code-block:: CONSOLE
+
+    $ gpg --delete-secret-key YOURMASTERKEYID
+
 - Import the subkeys back:
 
-  ``gpg --import secret-subkeys``
+.. code-block:: CONSOLE
+
+    $ gpg --import secret-subkeys
+
 - Verify that ``gpg -K`` shows a "**sec#**" instead of just "**sec**" for your private key.
   That means the secret key is not really there.
   See the also the presence of a dummy OpenPGP packet in the output of
 
-  ``gpg --export-secret-key YOURMASTERKEYID | gpg --list-packets``
+.. code-block:: CONSOLE
+
+    $ gpg --export-secret-key YOURMASTERKEYID | gpg --list-packets``
+
 - Optionally, change the passphrase protecting the subkeys:
-  
-  ``gpg --edit-key YOURMASTERKEYID passwd``.
-  (Note that the private key material on the backup, including the private
-  master key, will remain protected by the old passphrase.)
+
+.. code-block:: CONSOLE
+
+    $ gpg --edit-key YOURMASTERKEYID passwd
+
+(Note that the private key material on the backup, including the private
+master key, will remain protected by the old passphrase.)
 
 Your computer is now ready for normal use.
 
 When you need to use the master keys, mount the encrypted USB drive, and set
 the GNUPGHOME environment variable:
 
-::
+.. code-block:: CONSOLE
 
-    export GNUPGHOME=/media/something
-    gpg -K
+    $ export GNUPGHOME=/media/something
+    $ gpg -K
 
 or use ``--home`` command-line argument:
 
-::
+.. code-block:: CONSOLE
 
-    gpg --home=/media/something -K
+    $ gpg --home=/media/something -K
+
 
 The latter command should now list your private key with sec and not sec#.
 
