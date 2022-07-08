@@ -141,15 +141,15 @@ What is the best way to manage gpg keys across multiple devices?
 
 The obvious answer is to use:
 
-.. code-block:: TEXT
+.. code-block:: CONSOLE
 
-   gpg -a --export-secret-key
+   $ gpg -a --export-secret-key
 
 and
 
-.. code-block:: TEXT
+.. code-block:: CONSOLE
 
-   gpg --import
+   $ gpg --import
 
 to share the one key you have across the devices. (Some people suggest copying
 the ~/.gnupg/secring.gpg file, or, even worse, the entire ~/.gnupg/ directory.
@@ -174,7 +174,10 @@ the “master” subkey, then export again (this time missing the master, keepin
 only the subkeys you actually want to export), then import the backup file
 created in the first step. Import only the second export on the device.
 
-Do not create multiple keys. People will be confused over which one to use.
+Do not create multiple keys
+===========================
+
+People will be confused over which one to use.
 
 I'm willing to add more specifics; this is a somewhat generic answer;
 more detail depends on your use cases (e.g. do you want to read encrypted mail
