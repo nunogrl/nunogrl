@@ -100,7 +100,7 @@ Here I share the content of my **~/.gitconfig-work**
 
 I'm using the same GPG key for both entries
 
-.. code-block:: TEXT
+.. code-block:: CONSOLE
    :hl_lines: 5	
 
     $ gpg -K
