@@ -22,7 +22,11 @@
         %}
         <link rel="stylesheet" href="/{{ ASSET_URL }}">
         {% endassets %}
-        
+
+        <!-- search -->
+        <link rel="stylesheet" href="https://files.stork-search.net/basic.css" />
+        <!-- search -->
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
 	<!-- CSS stylesheets END -->
 
@@ -70,6 +74,14 @@
         <script src="/{{ THEME_STATIC_DIR }}/js/jquery.min.js"></script>
         <script src="/{{ THEME_STATIC_DIR }}/js/browser.min.js"></script>
         <script src="/{{ THEME_STATIC_DIR }}/js/breakpoints.min.js"></script>
+
+	<!-- Search  Start -->
+        <script src="https://files.stork-search.net/releases/v1.5.0/stork.js"></script>
+        <script>
+            stork.register("sitesearch", "{{ SITEURL }}/search-index.st")
+	</script>
+	<!-- Search  end -->
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.5.1/gpx.js"></script>
         {% assets filters="jsmin",
