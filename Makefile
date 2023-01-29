@@ -53,6 +53,7 @@ help:
 	@echo '                                                                       '
 
 cargo:
+	rustup default stable
 	cargo install stork-search --locked
 
 html:   clean
