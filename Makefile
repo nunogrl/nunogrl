@@ -53,7 +53,6 @@ help:
 	@echo '                                                                       '
 
 cargobuild:
-	cargo build
 	cargo install stork-search --locked
 
 html:   clean cargobuild
