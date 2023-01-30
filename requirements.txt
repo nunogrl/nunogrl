@@ -1,5 +1,6 @@
 pelican
 pelican-gist
+pelican-search
 markdown
 punch.py
 webassets
