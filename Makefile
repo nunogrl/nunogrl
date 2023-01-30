@@ -52,11 +52,10 @@ help:
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html'
 	@echo '                                                                       '
 
-cargo:
+cargobuild:
 	cargo install --path .
 
-html:   clean
-	cargo
+html:   clean cargobuild
 	pip install pelican-search
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
