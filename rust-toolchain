@@ -1,1 +1,2 @@
-stable-x86_64-unknown-linux-gnu
+[toolchain]
+channel = "stable"
