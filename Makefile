@@ -53,7 +53,7 @@ help:
 	@echo '                                                                       '
 
 cargo:
-	cargo build
+	cargo install --path .
 
 html:   clean
 	cargo
