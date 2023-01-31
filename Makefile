@@ -53,7 +53,7 @@ help:
 	@echo '                                                                       '
 
 cargobuild:
-	cargo install stork-search --locked
+	[ $(which stork) ] || cargo install stork-search --locked
 
 html:   clean cargobuild
 	pip install pelican-search
