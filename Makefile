@@ -55,7 +55,7 @@ help:
 cargobuild:
 	[ ! -f "~/.cargo/bin/stork" ] && cargo install stork-search --locked
 
-html:   clean
+html:   clean cargobuild
 	pip install pelican-search
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
