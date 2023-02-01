@@ -55,7 +55,7 @@ help:
 cargobuild:
 	[ ! -f "~/.cargo/bin/stork" ] && cargo install stork-search --locked
 
-html:   clean cargobuild
+html:   clean
 	pip install pelican-search
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
@@ -109,4 +109,4 @@ github: publish
 	ghp-import $(OUTPUTDIR)
 	git push origin gh-pages
 
-.PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
+.PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github cargobuild
