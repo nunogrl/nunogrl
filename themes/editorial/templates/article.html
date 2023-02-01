@@ -117,11 +117,11 @@
     Share on: {% include 'includes/share.html' %}
     </p>
   </section>
-
-  <section id="content">
-    {{ article.content }}
-  </section>
-
+    <section id="content">
+      <main>
+      {{ article.content }}
+      </main>
+    </section>
   {% if article.series %}
   <section class="footer">
     {% set text = 'Part %(index)s of the %(name)s series' %}

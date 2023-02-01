@@ -51,8 +51,12 @@ PLUGINS = [
      'tag_cloud',
      'assets',
      'share_post',
-     'pelican_gist'
+     'pelican_gist',
+     'search'
 ]
+
+SEARCH_MODE = "output"
+SEARCH_HTML_SELECTOR = "main"
 
 SITEMAP = {
     'format': 'xml',
