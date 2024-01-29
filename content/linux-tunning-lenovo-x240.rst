@@ -71,6 +71,11 @@ get the useless Insert key with FnLock. To fix this, dump this into
 
 You'll have to run "**udevadm hwdb --update**" after that.
 
+.. code-block:: CONSOLE
+
+   $ udevadm hwdb --update
+
+
 This hack courtesy of Thinkwiki x240.
 
 Touchpad
