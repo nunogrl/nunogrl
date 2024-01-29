@@ -7,35 +7,36 @@ Hiking and garmin
 :Authors: Nuno Leitao
 :Slug: gps-tracker-hicking
 :Summary: Garmin for hiking
+:gpx: Trilho-dos-Miradouros-do-Geres_rev01.gpx
 :Status: Published
 
 This is an example
 ==================
 
+bla!!
 
-.. raw:: html
 
-    <section id="demo" class="gpx" data-gpx-source="https://www.nunogrl.com/images/hiking/06-Jun-2020-1431_caminhada.gpx" data-map-target="demo-map">
-      <header>
-        <h3>Loading...</h3>
-        <span class="start"></span>
-      </header>
 
-      <article>
-        <div class="map" id="demo-map"></div>
-      </article>
 
-      <footer>
-        <ul class="info">
-          <li>Distance:&nbsp;<span class="distance"></span>&nbsp;m</li>
-          &mdash; <li>Duration:&nbsp;<span class="duration"></span></li>
-          &mdash; <li>Pace:&nbsp;<span class="pace"></span>/km</li>
-          &mdash; <li>Avg&nbsp;HR:&nbsp;<span class="avghr"></span>&nbsp;bpm</li>
-          &mdash; <li>Elevation:&nbsp;+<span class="elevation-gain"></span>&nbsp;m,
-            -<span class="elevation-loss"></span>&nbsp;m
-            (net:&nbsp;<span class="elevation-net"></span>&nbsp;m)</li>
-        </ul>
-      </footer>
-    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
