@@ -2,7 +2,7 @@ Bookmarks
 #########
 
 :Date: 2019-08-11 8:25
-:Category: personal
+:Category: Caffeinated Coding
 :Tags: shaarli,bookmarks
 :Slug: shaarli-bookmarks
 :Authors: Nuno Leitao
