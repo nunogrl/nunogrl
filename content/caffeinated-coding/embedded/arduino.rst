@@ -2,7 +2,7 @@ Setting up an arduino development
 #################################
 
 :Date: 2021-04-01 15:20
-:Category: arduino
+:Category: Caffeinated Coding
 :Tags: Technology
 :Slug: arduino-preparing-machine
 :Authors: Nuno Leitao
