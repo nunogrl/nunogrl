@@ -3,8 +3,8 @@ nci-ansible-ui
 
 :Title: nci-ansible-ui
 :Date: 2019-08-25 22:28
-:Category: devops
-:Tags: Technology
+:Category: Memory Cache
+:Tags: Caffeinated Coding
 :Slug: ansible-deploy-using-node
 :Authors: Nuno Leitao
 :Image: nci-ansible-ui2
