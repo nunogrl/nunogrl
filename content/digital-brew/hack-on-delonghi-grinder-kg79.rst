@@ -3,7 +3,7 @@ Hack on Delonghi grinder KG79
 
 :Title:  Hack on Delonghi grinder KG79
 :Date: 2022-01-07 14:00:00 +0100
-:Category: personal
+:Category: Digital Brew
 :Tags: coffee, hacks
 :Authors: Nuno Leitao
 :Slug: hack-on-delonghi-grinder-kg79
