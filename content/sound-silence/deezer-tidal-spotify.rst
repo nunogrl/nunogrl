@@ -2,7 +2,7 @@ Spotify vs Tidal vs Deezer
 ##########################
 
 :Date: 2020-08-25 22:28
-:Category: Personal
+:Category: Sound & Silence
 :Tags: Music, Tidal, Deezer, Spotify
 :Slug: spotify-tidal-deezer
 :Authors: Nuno Leitao
