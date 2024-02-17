@@ -2,7 +2,7 @@ Creating a self signed certificate on nginx
 ###########################################
 
 :Date: 2021-01-20 12:00:00 +0100
-:Category: devops
+:Category: Memory Cache
 :Tags: ssl, nginx
 :Authors: Nuno Leitao
 :Slug: ssl-self-cert
