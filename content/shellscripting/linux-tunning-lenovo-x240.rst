@@ -2,7 +2,7 @@ Linux on a Lenovo Thinkpad X240
 ###############################
 
 :Date: 2021-02-18 12:00:00 +0100
-:Category: devops
+:category: Shell Script & Setup Symphony
 :Tags: linux install laptop
 :Authors: Nuno Leitao
 :Slug: linux-lenovo-x240

@@ -1,15 +1,14 @@
 Setting up a tunnel between different networks
 ##############################################
 
-
 :Title: Setting up a tunnel between different networks
 :Date: 2021-01-20 12:00:00 +0100
-:Category: devops 
-:Tags: network ssh tunnel
+:Category: Memory Cache
+:Tags: network, ssh, tunnel
 :Authors: Nuno Leitao
 :Slug: ssh-tunnel-connect-networks
 :Summary: Accessing two independent private servers
-:Status: Draft
+:Status: Published
 
 .. image:: {static}/images/ssh-tunnel/uploading-animate.svg
    :width: 480px
@@ -31,14 +30,14 @@ localhost:8080 of the other server**.
 .. code-block:: SHELL
 
     SERVER=server-net-b
-    CANARY=server-net-a;
+    CLIENT=server-net-a;
     
     # workstation
     ssh -L 8080:$SERVER:80 $SERVER
     
     # workstation
-    ssh -R 8080:localhost:8080 $CANARY
+    ssh -R 8080:localhost:8080 $CLIENT
     
-    # CANARY
+    # on the client instance we can test
     curl localhost:8080
 

@@ -2,7 +2,7 @@ AWS Systems Manager Parameter Store using Powershell
 ####################################################
 
 :Date: 2020-01-23 23:00
-:Category: devops
+:Category: Caffeinated Coding
 :Tags: Technology, AWS, powershell, ssm
 :Slug: aws-ssm-powershell
 :Authors: Nuno Leitao

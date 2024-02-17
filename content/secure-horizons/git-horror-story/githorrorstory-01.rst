@@ -2,7 +2,7 @@ A Git Horror Story: Repository Integrity With Signed Commits
 ############################################################
 
 :Date: 2020-12-30 22:28
-:Category: DevOps
+:Category: Secure Horizons
 :Tags: git
 :Slug: a-git-horror-story-repository-integrity-with-signed-commits-01
 :Authors: Nuno Leitao
