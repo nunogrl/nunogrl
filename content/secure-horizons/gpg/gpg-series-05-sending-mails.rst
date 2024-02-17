@@ -4,7 +4,7 @@ Encrypt and Decrypt Messages with GPG
 #####################################
 
 :Date: 2021-01-05
-:Category: DevOps
+:Category: Secure Horizons
 :Tags: gpg, encryption, signing, authenticate
 :Slug: gpg-series-encrypting-messages
 :Authors: Nuno Leitao

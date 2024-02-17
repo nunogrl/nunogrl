@@ -4,7 +4,7 @@ Password Store for teams and infrastruture
 
 :Title: Password Store for teams and infrastruture
 :Date: 2020-11-23
-:Category: DevOps
+:Category: Secure Horizons
 :Tags: gpg, encryption, signing, authenticate
 :Slug: gpg-series-passwordstore
 :Authors: Nuno Leitao

@@ -5,7 +5,7 @@ GPG series
 
 :Title: GPG Series
 :Date: 2020-10-19
-:Category: DevOps
+:Category: Secure Horizons
 :Tags: gpg, encryption, signing, authenticate
 :Slug: gpg-series-how-to-use
 :Authors: Nuno Leitao

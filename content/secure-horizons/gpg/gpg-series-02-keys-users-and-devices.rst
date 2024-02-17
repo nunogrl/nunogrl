@@ -3,7 +3,7 @@ The perfect GPG key - a new approach
 
 :Title: The perfect GPG key multiple devices
 :Date: 2020-12-31 22:28
-:Category: devops
+:Category: Secure Horizons
 :Tags: gpg, encryption, signing, authenticate
 :Slug:  the-perfect-gpg-key-multiple-devices
 :Authors: Nuno Leitao
