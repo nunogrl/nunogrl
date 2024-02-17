@@ -3,7 +3,7 @@ Git setup
 #########
 
 :date:     2020-08-31 10:00
-:category: devops
+:category: Shell Script & Setup Symphony
 :tags:     dotfiles
 :slug:     git-config
 :authors:  Nuno Leitao

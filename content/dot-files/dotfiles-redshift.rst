@@ -3,7 +3,7 @@ Redshift
 ########
 
 :date:     2021-01-05 10:00
-:category: devops
+:category: Shell Script & Setup Symphony
 :tags:     dotfiles
 :slug:     redshift-dotfiles
 :authors:  Nuno Leitao

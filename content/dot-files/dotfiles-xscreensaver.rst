@@ -3,7 +3,7 @@ xscreensaver
 ############
 
 :date:     2021-01-05 10:00
-:category: devops
+:category: Shell Script & Setup Symphony
 :tags:     dotfiles
 :slug:     xscreensaver-dotfiles
 :authors:  Nuno Leitao

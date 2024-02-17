@@ -3,7 +3,7 @@ Vim ini files and plugins
 #########################
 
 :date:     2021-01-05 10:00
-:category: devops
+:category: Shell Script & Setup Symphony
 :tags:     dotfiles
 :slug:     vim-dotfiles-config
 :authors:  Nuno Leitao
