@@ -2,8 +2,8 @@ G20s Air Mouse review: setup, training and troubleshooting
 ##########################################################
 
 :Date: 2022-02-28 11:00:00 +0100
-:Category: lifestyle
-:Tags: tv
+:Category: Harmonic Hacks
+:Tags: tv, remote, review
 :Authors: Nuno Leitao
 :Slug: remote-g20s
 :Summary: remote-g20s
