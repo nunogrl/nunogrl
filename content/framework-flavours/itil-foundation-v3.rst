@@ -2,7 +2,7 @@ The Essential Guide to ITIL Framework and Processes
 ###################################################
 
 :Date: 2020-08-25 22:28
-:Category: Framework Flavors
+:Category: Framework Flavours
 :Tags: itil, csi, change
 :Slug: essential-guide-to-itil-framework-and-processes
 :Authors: Nuno Leitao
