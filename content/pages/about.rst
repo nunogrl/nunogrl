@@ -5,115 +5,55 @@ About
 :Category: Main
 :Status: hidden
 
-This page is a journal on solutions I came across - professional and personal
-which I found interesting and others that I came up on my own.
 
-Since everything is a work in progress and we can only evolve based on previous
-achievements, I hope this can help others to solve the same problems I once had
-and allow others to go to the next step, the same way this helped me
+I am a seasoned DevOps engineer with 20 years of experience spanning team
+management, customer support, automation, reliability, and security.
 
+My approach to DevOps is deeply rooted in practical problem-solving, having
+aligned with DevOps methodologies long before the role was formally recognized.
 
-About myself
-============
+Philosophy & Core Principles
+-----------------------------
 
-I'm above alli just another curious person trying to figure some solutions on
-the daily problems, but I'm also a IT professional and sometimes the daily
-problems and the professional challenges overlap, so I found useful to have
-this kind of blog around.
+We go as fast as the slowest moving part.
+I focus on optimizing bottlenecks to ensure smooth and efficient workflows.
 
+Security should be implemented by design, not as an afterthought.
+My work integrates security from the ground up.
 
+Give power to people, and they'll show you great results.
+I believe in enabling teams with the right tools and autonomy.
 
-Why do we need another blog?? 
-=============================
-
-We don't. I created it for my own convenience. 
-
-Across the years I've been looking for information to do my work.
-
-The source could be some forum, some blog, some personal page hosted on an
-university... These pages for some reason aren't maintained anymore so they
-got lost forever.
-The authors eventually forgot they wrote that, or moved the content to another
-place to be found.
-
-This is blog is where I keep a personal log of things I've been doing and also
-an homage to some articles that I consider relevant to keep.
+Why This Blog?
+--------------
 
 
-What's this about 
-=================
+DevOps resumes often fail to reflect true technical depth, focusing more on
+years of experience with tools rather than real-world problem-solving.
 
-Ideas and projects that I find interesting. 
+This blog serves as a living portfolio, showcasing how I tackle challenges
+hands-on, from infrastructure automation to optimizing system reliability.
 
-Some stuff I own, other things I just want to keep a copy of stuff I found once
-online and don't want to keep googling to one day just to find the page is not
-maintained anymore (yes, I was a geocities user once, and also a delicious user,
-and it's sad to see knowledge and efforts to fade away).
+Each article is structured to highlight the real problem that needed solving,
+followed by the practical solution implemented.
 
-Couldn't you use a normal blog hosting like a normal person? 
-============================================================
+This ensures that my work isn’t just theoretical experimentation but directly
+applicable in real-world scenarios.
 
-Yes, but that would defeat the purpose mentioned above.
-I struggled recovering websites based on lamp, just to find the right version
-of mysql and the right version of php. In a space of few years I found services
-becoming obsolete and hard to maintain.
+Experience & Expertise
+----------------------
 
-Just figured that I only need a static content page and frontend technologies
-are the right tool for the job. Python as a history (and good school) of
-handling package versions conflicts, so I found it would be the perfect tool
-for the job.
+**Infrastructure Automation**: Building and maintaining scalable infrastructure
+with Ansible, Terraform, and Kubernetes.
 
-This tools together among version control, provide me the portability I was
-looking for. 
+**CI/CD & Reliability Engineering**: Streamlining deployments with
+CloudFormation, Sceptre, and custom pipelines.
 
-So this is not your very first try
-==================================
+**Security & Compliance**: Enforcing best practices with GPG, SSH Certificates,
+and system hardening.
 
-No, I was using hosted solutions from my former ISP providers, some uni web
-account, and later blogspot. 
-All had their golden age. Some would say WordPress would be the natural choice.
-I beg to disagree:
+**Homelab & Self-Hosting**: Running a complete DevOps environment,
+integrating monitoring, networking, and automation.
 
-- WordPress has a great backoffice and great plugins for ecommerce. I don't
-  require any of these great features. 
-- WordPress requires active monitoring and several security updates. 
-- WordPress is supported by a large community, security is their first
-  priority. Well, the security issue revolves around php and database
-  exploits. I just removed the weak links of the chain.
-- I don't want to depend on PHP or MySQL versions to keep a simple site
-  running
+For more details, check out my CV <#>_ and technical blog articles.
 
-Credits
-=======
-
-I believe I own very little of the content of this blog. I wrote mostly some
-directives on how to use other people's tools and at most I make some wrapper
-to combine multiple technologies for my own convenience.
-
-I'd like to refer the blog `The Digital Cat <https://www.thedigitalcatonline.com/>`_
-as my inspiration to start using Pelican with a custom theme. Thanks Leonardo
-Giordani for the kick off.
-
-I'd like to refer to the following personal pages:
-
-- `Don's Blog <https://www.donaldsimpson.co.uk/>`_
-- `John Paul Newman <https://johnpaulnewman.com/>`_
-
-as a guideline as it's very close for what I was looking for a portfolio /
-personal page.
-
-License
-=======
-
-The content of the blog is open source and available on github at
-`nunogrl repository <https://github.com/nunogrl/nunogrl>`_
-
-Feel free to fork it and start creating your own content!
-
-
-
-To do
-=====
-
-- what I'll most likely will post here
-- What you won't find here
