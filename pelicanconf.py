@@ -51,8 +51,9 @@ PLUGINS = [
      'tag_cloud',
      'assets',
      'share_post',
-     'pelican_gist',
-     'search'
+     'search',
+     'code_include',
+     'mermaid-include'
 ]
 
 SEARCH_MODE = "output"
