@@ -5,7 +5,7 @@ Git setup
 :date:     2020-08-31 10:00
 :category: devops
 :tags:     dotfiles
-:slug:     git-config
+:slug:     git-config-old
 :authors:  Nuno Leitao
 :summary:  multi setup for git
 :Image:    dotfiles/dotfiles
