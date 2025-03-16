@@ -52,10 +52,13 @@ help:
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html'
 	@echo '                                                                       '
 
+gitmodules:
+	git submodule update --init --recursive
+
 cargobuild:
 	[ ! -f "~/.cargo/bin/stork" ] && cargo install stork-search --locked --force
 
-html:   clean cargobuild
+html:   clean cargobuild gitmodules
 	pip install pelican-search
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
@@ -109,4 +112,4 @@ github: publish
 	ghp-import $(OUTPUTDIR)
 	git push origin gh-pages
 
-.PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github cargobuild
+.PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github cargobuild gitmodules
