@@ -21,6 +21,7 @@ Problem & Solution
 
 **Problem:** I needed a reliable and secure environment for automation, CI/CD testing, Git hosting, and local infrastructure—
 **without relying on cloud platforms or exposing services to the internet**.
+
 Additionally, the solution had to run on **low-powered, repurposed hardware** with minimal overhead
 and support **remote access**, **internal DNS resolution**, and **segmented security domains**.
 
@@ -28,6 +29,7 @@ and support **remote access**, **internal DNS resolution**, and **segmented secu
 isolated zones for each function, and layered services:
 
 - **Tailscale** provides secure access to internal services, even when offsite.
+- **Cloudflare Tunnel** allows for secure access to internal services from the internet.
 - **AdGuard Home** filters DNS-based ads and trackers at the router level.
 - **TinyDNS + BIND** handle authoritative DNS within the homelab.
 - **Traefik** serves as the reverse proxy using a wildcard cert via DNS verification.
