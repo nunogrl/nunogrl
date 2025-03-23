@@ -6,6 +6,10 @@
     <meta name="description" content="A blog featuring posts about DevOps,
     Security, and some personal bits.">
 
+    <!-- opengraph -->
+    {% include 'includes/opengraph.html' %}
+    <!-- end opengraph -->
+<!--
     {% if article is defined %}
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
@@ -28,6 +32,7 @@
         Security, and some personal bits.">
     <meta property="og:image" content="{{ SITEURL }}/images/opengraph-default.jpg" />
     {% endif %}
+-->
 {% endblock %}
 
 {% block content %}

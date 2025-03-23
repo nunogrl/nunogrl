@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 
 {% block meta_description %}
+
+    <!-- opengraph -->
+    {% include 'includes/opengraph.html' %}
+    <!-- end opengraph -->
+
 {% if article.summary %}
 <meta name="description" content="{{ article.summary|striptags }}">
 {% endif %}
