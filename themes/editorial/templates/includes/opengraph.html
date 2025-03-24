@@ -8,7 +8,7 @@
             {{ article.opengraph_image }}
         {% else %}
             opengraph-default.jpg
-        {%- endif %}" />
+        {%- endif -%}" />
 {% elif page is defined %}
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
