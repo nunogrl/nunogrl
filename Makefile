@@ -2,6 +2,8 @@ PY=python
 PELICAN=pelican
 PELICANOPTS=
 
+BRANCH := $(shell git rev-parse --abbrev-ref HEAD)
+
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
@@ -58,9 +60,20 @@ gitmodules:
 cargobuild:
 	[ ! -f "~/.cargo/bin/stork" ] && cargo install stork-search --locked --force
 
-html:   clean cargobuild gitmodules
+html:
+ifeq ($(BRANCH),master)
+	$(MAKE) publish
+else
+	$(MAKE) devbuild
+endif
+
+devbuild: gitmodules
 	pip install pelican-search
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+
+publish: clean cargobuild gitmodules
+	pip install pelican-search
+	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
@@ -87,9 +100,6 @@ stopserver:
 	kill -9 `cat srv.pid`
 	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
-publish:
-	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
-
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
 
@@ -112,4 +122,5 @@ github: publish
 	ghp-import $(OUTPUTDIR)
 	git push origin gh-pages
 
-.PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github cargobuild gitmodules
+.PHONY:
+	html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github cargobuild gitmodules dev
