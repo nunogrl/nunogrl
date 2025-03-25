@@ -8,8 +8,6 @@ Homelab Network Overview
 :slug:     homelab-network-overview
 :authors:  Nuno Leitao
 :summary:  A comprehensive guide to building a secure homelab network with VLANs, DNS, monitoring, and automation
-:image:    homelab-network
-:opengraph_image: homelab-network.jpg
 :Status:   Published
 
 My homelab network is designed to provide a **secure, efficient, and self-hosted environment**
