@@ -17,6 +17,15 @@ Testing Microservices Securely Using SSH Tunnels
 📌 **Context / Backstory**
 --------------------------
 
+This is a solution to connect two different servers on different networks.
+
+What I was trying to achieve was to get the server from network-A to reach the
+port 80 from the network-B.
+
+These networks are different VPCs on AWS, and connecting the networks is not an
+option, because of some conflicts with DNS.
+
+
 We needed to test a **local microservice using a production endpoint**, which wasn't publicly accessible. This endpoint couldn't be mocked or duplicated in staging — and pushing untested code to production would have been reckless.
 
 Additionally, we had a **staging microservice** that also needed to interact with the same production service. The risk of breaking production due to untested integration was high, but access was restricted for good reason.
@@ -44,29 +53,57 @@ We used **SSH tunnels** to create secure, temporary links between the testing en
 ⚙️ Technical Implementation
 ===========================
 
-Let's visualize the different types of SSH tunnels we'll be using:
+I can reach both networks from my laptop through VPNs, so the solution I'm
+sharing here is on how to **forward the port 80 from a server to
+localhost:8080 of the other server**.
+
+.. code-block:: SHELL
+
+    SERVER=server-net-b
+    CANARY=server-net-a;
+    
+    # workstation
+    ssh -L 8080:$SERVER:80 $SERVER
+    
+    # workstation
+    ssh -R 8080:localhost:8080 $CANARY
+    
+    # CANARY
+    curl localhost:8080
+
+
+Here's a diagram of the solution:
+
 
 .. mermaid::
 
    flowchart LR
-      L -->|Local Port Forward
-            ssh -L| P
-      L -->|Remote Port Forward
-            ssh -R| S
-      L -->|Proxy
-            ssh -D| P
 
       subgraph local network
       L[Local Machine]  
       end
       
       subgraph vpc-prod
-      P[Production Server]
+      S[Server
+        *webapp-0ef31
+        localhost:80*]
       end
 
       subgraph vpc-dev
-      S[Staging Server]
+      P[Canary]
       end
+
+      L --- |*webapp-0ef31
+             localhost:8080*|L
+      L --- |Local Port Forward
+            ssh -L 8080:Server:80| S
+      L -->|Remote Port Forward
+            ssh -R 8080:CANARY:8080| P
+      P --> |*webapp-0ef31
+             localhost:8080*| P
+
+
+Let's visualize the different types of SSH tunnels we can use:
 
 
 1️⃣ Local Port Forwarding (Local to Production)
