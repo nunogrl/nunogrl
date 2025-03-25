@@ -28,8 +28,11 @@ RELATED_POSTS_MAX = 10
 # JINJA_ENVIRONMENT = {
 #        'extensions': ['jinja2.ext.with_', 'jinja2.ext.do']}
 
-ARTICLE_URL = 'blog/{date:%Y}/{date:%m}/{date:%d}/{slug}/'
+ARTICLE_URL = 'articles/{slug}/'
 ARTICLE_SAVE_AS = ARTICLE_URL + 'index.html'
+
+PAGE_URL = '{slug}/'
+PAGE_SAVE_AS = PAGE_URL + 'index.html'
 
 CATEGORY_URL = 'category/{slug}/'
 CATEGORY_SAVE_AS = CATEGORY_URL + 'index.html'
@@ -51,8 +54,9 @@ PLUGINS = [
      'tag_cloud',
      'assets',
      'share_post',
-     'pelican_gist',
-     'search'
+     'search',
+     'code_include',
+     'mermaid-include'
 ]
 
 SEARCH_MODE = "output"

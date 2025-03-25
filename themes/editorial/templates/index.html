@@ -5,33 +5,37 @@
 {% block meta_description %}
     <meta name="description" content="A blog featuring posts about DevOps,
     Security, and some personal bits.">
+
+    <!-- opengraph -->
+    {% include 'includes/opengraph.html' %}
+    <!-- end opengraph -->
+<!--
+    {% if article is defined %}
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+    <meta property="og:title" content="{{ article.title | replace("\"", "&quot;") }}" />
+    <meta property="og:description" content="{{ article.content | striptags | replace("\"", "&quot;") | truncate(196, False, '...') }}" />
+    <meta property="og:image" content="{{ SITEURL }}/images/{% if article.opengraph_image is defined %}{{ article.opengraph_image }}{% else %}opengraph-default.jpg{% endif %}" />
+    {% elif page is defined %}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
+    <meta
+        property="og:title" content="{{ SITENAME }} - {{ page.title | replace("\"", "&quot;") }}" 
+    />
+    <meta property="og:description" content="{{ page.content | striptags | replace("\"", "&quot;") | truncate(196, False, '...') }}" />
+    <meta property="og:image" content="{{ SITEURL }}/images/{% if page.opengraph_image is defined %}{{ page.opengraph_image }}{% else %}opengraph-default.jpg{% endif %}" />
+    {% else %}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ SITEURL }}/{{ output_file }}" />
+    <meta property="og:title" content="{{ SITENAME }}" />
+    <meta property="og:description" content="A blog featuring posts about DevOps,
+        Security, and some personal bits.">
+    <meta property="og:image" content="{{ SITEURL }}/images/opengraph-default.jpg" />
+    {% endif %}
+-->
 {% endblock %}
 
-{% if article is defined %}
-<meta property="og:type" content="article" />
-<meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
-<meta property="og:title" content="{{ article.title | replace("\"", "&quot;") }}" />
-<meta property="og:description" content="{{ article.content | striptags | replace("\"", "&quot;") | truncate(196, False, '...') }}" />
-<meta property="og:image" content="{{ SITEURL }}/images/{% if article.opengraph_image is defined %}{{ article.opengraph_image }}{% else %}opengraph-default.jpg{% endif %}" />
-{% elif page is defined %}
-<meta property="og:type" content="website" />
-<meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
-<meta
-    property="og:title" content="{{ SITENAME }} - {{ page.title | replace("\"", "&quot;") }}" 
-/>
-<meta property="og:description" content="{{ page.content | striptags | replace("\"", "&quot;") | truncate(196, False, '...') }}" />
-<meta property="og:image" content="{{ SITEURL }}/images/{% if page.opengraph_image is defined %}{{ page.opengraph_image }}{% else %}opengraph-default.jpg{% endif %}" />
-{% else %}
-<meta property="og:type" content="website" />
-<meta property="og:url" content="{{ SITEURL }}/{{ output_file }}" />
-<meta property="og:title" content="{{ SITENAME }}" />
-<meta property="og:description" content="A blog featuring posts about DevOps,
-    Security, and some personal bits.">
-<meta property="og:image" content="{{ SITEURL }}/images/opengraph-default.jpg" />
-{% endif %}
-
 {% block content %}
-
 <!-- Header -->
     <header id="header">
         <ul class="icons">
@@ -55,28 +59,34 @@
     <section id="banner">
         <div class="content">
             <header>
-                <h1>Columbus Egg</h1>
-		<p>A blog that covers stuff I work with, and stuff I replicate
-		it so it won't be lost.</p>
+                <h1>Automate Everything with nunogrl</h1>
+		<p>A hands-on DevOps journal documenting real-world automation,
+		infrastructure, and security solutions—bridging the gap between
+		theory and practical problem-solving.</p>
             </header>
 
-	    My name is Nuno Leitao, I work as a DevOps in central London, UK.
-	    As part of my role, I have to work implement and secure cloud
-	    environments and also continuously adapt to the technologies that
-	    are adopted by the stack.
-
-            Here you can find some snippets of of configurations, some coffee
-            and outdoors related topics.
-	    
-            I hope this blog site is helpful for you, and hopefully, you will
-	    share this blog site with the community.
 
 
-	    </p> 
+<h2>What You'll Find Here</h2>
+<ul>
+    <li><strong>Deep-dive technical guides</strong> → Practical implementations of DevOps methodologies.</li>
+    <li><strong>Real-world problem-solving</strong> → Not just theory—solutions implemented in production environments.</li>
+    <li><strong>Automation workflows</strong> → Infrastructure as Code, self-hosting, CI/CD optimizations.</li>
+    <li><strong>Security best practices</strong> → GPG, SSH Certificates, system hardening, and secure secrets management.</li>
+</ul>
+
+
+<h2>Freelance & Consulting</h2>
+<p>If you need <strong>DevOps consulting, infrastructure automation, or security best practices</strong>, feel free to reach out. This blog not only serves as a knowledge base but also as a <strong>portfolio showcasing my expertise in solving complex infrastructure challenges</strong>.</p>
+
+<p>Check out my <a href="#">CV</a> and <a href="#">contact me</a> if you're interested in working together!</p>
+
+<!--
 	    {% for q in QUOTES %}
             <p class="quote"><i class="fas fa-quote-right"></i> {{ q.quote }} <i class="fas fa-quote-left"></i></p>
             <p class="quote-source">{{ q.source }}</p>
             {% endfor %}
+-->
         </div>
         <span class="image object">
 	    <img src="/images/homepage.svg" alt="Cover" /> 
