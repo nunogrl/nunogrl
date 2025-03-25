@@ -8,7 +8,7 @@ Why I moved to Restructured text
 :Slug: vim-restructured-text
 :Authors: Nuno Leitao
 :Summary: Restructured Text
-:Status: Published
+:Status: Draft
 
 I had a hard time to get convinced on the benefits of RST files.
 
