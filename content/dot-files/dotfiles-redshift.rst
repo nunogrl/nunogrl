@@ -9,7 +9,7 @@ Redshift
 :authors:  Nuno Leitao
 :summary:  redshift configuration
 :Image:    dotfiles/redshift
-:Status:   Published
+:Status:   Draft
 
 
 .. image:: {static}/images/dotfiles/redshift.jpg
