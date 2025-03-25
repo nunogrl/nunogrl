@@ -55,5 +55,5 @@ and system hardening.
 **Homelab & Self-Hosting**: Running a complete DevOps environment,
 integrating monitoring, networking, and automation.
 
-For more details, check out my CV <#>_ and technical blog articles.
+For more details, check out me out on LinkedIn `here <https://www.linkedin.com/in/nunogrl/>`_ or my technical blog articles.
 
