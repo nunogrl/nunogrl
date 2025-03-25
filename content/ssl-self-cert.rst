@@ -7,7 +7,7 @@ Creating a self signed certificate on nginx
 :Authors: Nuno Leitao
 :Slug: ssl-self-cert
 :Summary: ssl-self-cert
-:Status: Published
+:Status: Draft
 
 Creating the Certificate
 ========================
