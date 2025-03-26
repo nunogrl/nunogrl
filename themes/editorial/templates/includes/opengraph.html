@@ -7,7 +7,7 @@
         {%- if article.noog is defined %}
 	  content="{{ SITEURL }}/images/{{ 'article_image_placeholder' }}.jpg" />
         {% else %} 
-	  content="{{ SITEURL }}/images/{{ article.slug }}/og.jpg" />
+	  content="https://nunogrl.com/images/{{ article.slug }}/og.jpg" />
         {% endif %}
         
 {% elif page is defined %}
