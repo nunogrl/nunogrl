@@ -9,17 +9,19 @@ INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
+NONPRODCONF=$(BASEDIR)/nonprodconf.py
 
 FTP_HOST=localhost
 FTP_USER=anonymous
 FTP_TARGET_DIR=/
 
-SSH_HOST=skoorb.net
+SSH_HOST=blog.int.pulsingminds.com
 SSH_PORT=22
-SSH_USER=brooks
-SSH_TARGET_DIR=/var/www/blog
+SSH_USER=nuno
+SSH_TARGET_DIR=/srv/data/blog
 
 S3_BUCKET=my_s3_bucket
+R2BUCKET=nunogrl-tech-blog
 
 CLOUDFILES_USERNAME=my_rackspace_username
 CLOUDFILES_API_KEY=my_rackspace_api_key
@@ -58,7 +60,7 @@ gitmodules:
 	git submodule update --init --recursive
 
 cargobuild:
-	[ ! -f "~/.cargo/bin/stork" ] && cargo install stork-search --locked --force
+	[ -f "~/.cargo/bin/stork" ] && cargo install stork-search --locked --force || echo "OK"
 
 html:
 ifeq ($(BRANCH),master)
@@ -74,6 +76,10 @@ devbuild: gitmodules
 publish: clean cargobuild gitmodules
 	pip install pelican-search
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
+
+nonprodbuild: clean cargobuild gitmodules
+	pip install pelican-search
+	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(NONPRODCONF) $(PELICANOPTS)
 
 clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
@@ -100,6 +106,13 @@ stopserver:
 	kill -9 `cat srv.pid`
 	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
+nonprod_upload: clean nonprodbuild
+	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
+
+prod_upload: clean publish
+	rclone copy $(OUTPUTDIR)/. r2:$(R2BUCKET)/
+
+
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
 
@@ -122,5 +135,6 @@ github: publish
 	ghp-import $(OUTPUTDIR)
 	git push origin gh-pages
 
-.PHONY:
-	html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github cargobuild gitmodules dev
+.PHONY: 
+	html help clean regenerate serve devserver publish ssh_upload rsync_upload 
+	dropbox_upload ftp_upload s3_upload cf_upload github cargobuild gitmodules dev nonprodbuild nonprod_upload
