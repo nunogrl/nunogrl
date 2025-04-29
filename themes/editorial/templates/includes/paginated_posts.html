@@ -23,7 +23,8 @@
                 <time datetime="{{ article.date.isoformat( ) }}">{{ article.date | strftime('%b %-d, %Y') }}</time>
                 <span class="fas fa-tags"></span>
                 {% for tag in article.tags %}
-                <a href="/{{ tag.url }}" class="tag">{{ tag }}</a>{% if not loop.last %}{% endif %}
+                <a href="/{{ tag.url }}" class="tag">{{ tag }}</a>
+		{% if not loop.last %}{% endif %}
                 {% endfor %}
             </p>
         </div>
