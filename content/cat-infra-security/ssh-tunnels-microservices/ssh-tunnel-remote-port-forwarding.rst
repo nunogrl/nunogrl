@@ -5,23 +5,12 @@ Remote port forwarding to local using SSH Tunnels
 :date:     2024-03-21
 :category: Infrastructure Security
 :tags:     ssh, tunnels, secure-access, devops-tools, microservices
-:slug:     remote-port-forwarding-using-ssh-tunnels
+:slug:     ssh-tunnel-remote-port-forwarding
 :authors:  Nuno Leitao
-:summary:  To make your local microservice available to a remote server 
+:summary:  To make your local microservice available to a remote securely
 :Status:   Published
 :Series:   ssh
 :series_index: 3
-
-
-
-..
-    type of image:
-
-    - take ball of a bag
-    - examining an object out of a bag
-    - apple branch coming out of a portal
-    - juice emerging out of straw
-
 
 
 🚀 Problem & Solution
@@ -30,13 +19,14 @@ Remote port forwarding to local using SSH Tunnels
 📌 **Context / Backstory**
 --------------------------
 
-This is a very common problem people face.
+This is a common issue many people run into:
 
-You can connect to a server within a network but you need to reach a
-service/website on that same network.
+You’re able to connect to a machine inside a private network via SSH, but you
+also need to access another service or web interface (e.g., a router or
+internal site) within that same network.
 
-I've seen people working around this in the most imaginative ways so here's a
-quick solution on how to solve this.
+Over the years, I’ve seen people work around this in the most imaginative ways.
+Here’s a clean, simple, and secure solution.
 
 
 ⚠️ **The Problem**
@@ -53,84 +43,88 @@ Fortunately we can reach a machine via **SSH** from the outside.
 So if we connect, we're techically within the network but we still need to
 connect to the router page.
 
+You can SSH into a machine inside the network - which is a good starting point
+- but you still can’t reach the router's web UI directly.
+
+
+.. warning::
+
+    Exposing SSH to the internet is inherently risky — make sure it's secured (e.g., using keys, certificates, and fail2ban).
+
+
 
 
 💡 **The Solution**
 -------------------
 
-We use a **SSH tunnels** to create secure, temporary link between the target and our station.
 
-This allows us to connect to the router safely without exposing any services over the
-internet and exposing the port locally.
+Use an SSH tunnel to create a secure, temporary connection between your machine
+and the internal router.
 
-I'm picking for example the port **7000**, as I know I'm not using anything on this port on my station.
+This approach forwards the router’s internal HTTP port (port 80 on ``192.168.1.1``)
+to a local port on your machine (e.g., ``localhost:7000``).
 
+Now you can access the router’s web interface via your own machine without exposing
+anything to the internet.
 
-So from here, I'm connecting to my remote network and forwarding
-**192.168.1.1:80** (http) to my **localhost:7000**
-
-All the traffic is encrypted within the **SSH** connection.
+All traffic travels securely over SSH.
 
 
 
 👥 **Who This Helps**
 
-- People that need to reach a local service that they don't want to expose to the internet
-- Homelab or cloud setups requiring secure point-to-point testing  
+- Anyone needing temporary access to internal services without exposing them publicly
+- Homelab users, cloud engineers, or developers testing internal-only endpoints
 
 ⚙️ Technical Implementation
 ===========================
 
 
-So since
+Assumptions:
 
-- I can reach the my instance at **cortana.duckdns.org**,
-- I know my target is the router at **192.168.1.1** listening on the port **80**.
-- My local machine is not using the port **7000** for anything
+- You can SSH into your internal machine via cortana.duckdns.org
+- The router is at ``192.168.1.1``, listening on port 80 (HTTP)
+- Your local machine has port ``7000`` free
 
-Here's the command:
+Run the following command:
+
 
 .. code-block:: SHELL
 
     $ ssh -L 7000:192.168.1.4:81 cortana.duckdns.org
 
 
-Here's a diagram of the solution:
+Now you can visit ``http://localhost:7000`` in your browser to access the router UI.
+
+
+📈 Diagram of the Setup
+=======================
 
 
 .. mermaid::
 
-
-   flowchart LR
-      L -->| ssh -L 
-            7000:192.168.1.1:80
-            user@server | S
-      L -->| http://localhost:7000| L
-      S === R
-
-      S <-.- |80| R
-      L <-.- |7000| S
-      R === dev1
-      R === dev2
-
-      subgraph local network
-      L[Local Machine]
+    flowchart LR
+      subgraph local["Local Machine"]
+        L[You
+          localhost:7000]
       end
-
-
-      subgraph Private Network [Private Network 192.168.1.0/24]
-        R[Router 
-        192.168.1.1]
+    
+      subgraph net["Private Network 192.168.1.0/24"]
         S[SSH Server
-                   192.168.1.x]
-        dev1[
-           device01
-              192.168.1.x]
-        dev2[
-           device02 192.168.1.x]
+          192.168.1.x]
+        R[Router
+          192.168.1.1]
+        D1[Device01
+           192.168.1.x]
+        D2[Device02
+           192.168.1.x]
       end
-
-
+    
+      L -->|SSH tunnel| S
+      L -->|http://localhost:7000| R
+      S -->|port 80| R
+      R --> D1
+      R --> D2
 
 
 🛠️ Troubleshooting & Debugging
@@ -154,11 +148,13 @@ Here's a diagram of the solution:
 Using SSH tunnels allowed us to test services against production safely, without deploying code or violating security constraints. This pattern is lightweight, robust, and fits well into environments where:
 
 - VPN is not an option
-- Public exposure is forbidden
-- Controlled testing against production is required
+- Public exposure is a security risk
+- You need to test against internal or production-like environments temporarily
+
 
 💬 Comments & Next Steps
 =========================
 
-Have you used SSH tunnels in your microservices architecture? Share your experience or ask questions below!
+Have you used SSH tunnels in your microservices architecture?
+Share your experience or ask questions below!
 
