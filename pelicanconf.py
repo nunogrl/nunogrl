@@ -2,9 +2,26 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+
+import subprocess
+
+def get_git_commit():
+    try:
+        # Run command and decode result
+        return subprocess.check_output(
+            ['git', 'rev-parse', 'HEAD'],
+            stderr=subprocess.DEVNULL
+        ).decode('utf-8').strip()[:8]
+    except Exception:
+        return 'unknown'
+
+GITCOMMIT = get_git_commit()
+
+
 AUTHOR = u'Nuno Leitao'
 SITENAME = u'nunogrl.com'
-SITEURL = 'https://www.nunogrl.com'
+SITEURL = ''
+# SITEURL = 'https://www.nunogrl.com'
 PATH = 'content'
 DEBUG = True
 
@@ -87,7 +104,8 @@ PAGINATION_PATTERNS = (
 )
 
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
+# RELATIVE_URLS = True
+RELATIVE_URLS = False
 
 STATIC_PATHS = [
     'images',
